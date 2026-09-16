@@ -1,0 +1,32 @@
+[
+  {
+    "facility_id": "ghatkopar_ticket_01",
+    "station_id": "ghatkopar",
+    "station_name": "Ghatkopar",
+    "station_code": "GC",
+    "name": "Metro Interchange Concourse Booking Windows",
+    "category": "ticket_counter",
+    "floor_level": "Elevated Concourse",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2025-01-10",
+    "source_method": "OSM public tags",
+    "notes": "Direct ticketing for suburban rail at the Metro Line 1 gate."
+  },
+  {
+    "facility_id": "ghatkopar_washroom_01",
+    "station_id": "ghatkopar",
+    "station_name": "Ghatkopar",
+    "station_code": "GC",
+    "name": "Skywalk Concourse Restroom",
+    "category": "washroom",
+    "floor_level": "Skywalk Level",
+    "availability_status": "operational",
+    "verification_status": "needs_verification",
+    "is_official": false,
+    "last_updated": "2025-01-10",
+    "source_method": "Passenger report",
+    "notes": "Accessible from the elevated overbridge walkway."
+  }
+]

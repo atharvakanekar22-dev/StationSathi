@@ -1,0 +1,32 @@
+[
+  {
+    "facility_id": "byculla_ticket_01",
+    "station_id": "byculla",
+    "station_name": "Byculla",
+    "station_code": "BY",
+    "name": "East Concourse Booking Office (Ambedkar Road)",
+    "category": "ticket_counter",
+    "floor_level": "Ground Concourse",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2025-01-15",
+    "source_method": "OSM public tags",
+    "notes": "Main booking counter on the east entrance facing Dr. Babasaheb Ambedkar Road."
+  },
+  {
+    "facility_id": "byculla_washroom_01",
+    "station_id": "byculla",
+    "station_name": "Byculla",
+    "station_code": "BY",
+    "name": "Platform 1 Public Restrooms",
+    "category": "washroom",
+    "floor_level": "Platform Level",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2025-01-15",
+    "source_method": "OSM public tags",
+    "notes": "Located on Slow Northbound Platform 1."
+  }
+]

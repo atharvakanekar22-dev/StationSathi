@@ -1,0 +1,164 @@
+[
+  {
+    "station_id": "dadar",
+    "name": "Dadar Central",
+    "code": "DR",
+    "network": "Central Railway",
+    "description": "Critical multimodal interchange in central Mumbai bridging Central Railway (Suburban & Outstation) and Western Railway. High footfall station featuring three major Foot Overbridges (North, Central, South), dedicated elevated escalators, accessible elevators, and multiple concourses.",
+    "coverage": "detailed_prototype",
+    "coverage_label": "Detailed navigation prototype",
+    "map_type": "interactive_svg",
+    "platforms_count": 8,
+    "entrances": [
+      "East Entrance (Swami Gyan Jivandas Marg / Dadar TT)",
+      "West Entrance (Senapati Bapat Marg / Flower Market)",
+      "North Foot Overbridge Direct Access (Kabutarkhana Side)",
+      "Central Foot Overbridge Concourse Gate"
+    ],
+    "facilities_summary": [
+      "8 Platforms (Suburban & Express)",
+      "Central Accessible Elevators (Concourse to Platforms)",
+      "Divyangjan Accessible Washrooms",
+      "Shoe-Polishing Kiosks (East Concourse & Platform 2)",
+      "Water Vending Units & Potable Taps",
+      "IRCTC Ahaar Food Counters",
+      "RPF & Station Sahayata Help Desks",
+      "ATVMs & Manual Ticket Booking Counters"
+    ],
+    "verification_status": "prototype_data",
+    "is_official": false,
+    "source_method": "Prototype mapping based on OpenStreetMap nodes and surveyed concourse layout",
+    "last_updated": "2025-02-15"
+  },
+  {
+    "station_id": "csmt",
+    "name": "Chhatrapati Shivaji Maharaj Terminus",
+    "code": "CSMT",
+    "network": "Central Railway",
+    "description": "Historic UNESCO World Heritage railway terminus serving Central Railway suburban harbor/main line and long-distance outstation trains. Station features Star concourse, suburban concourses, and extensive heritage corridors.",
+    "coverage": "basic_station_info",
+    "coverage_label": "Basic station information",
+    "map_type": "schematic_overview",
+    "platforms_count": 18,
+    "entrances": [
+      "Main Heritage Concourse Gate (Dr. D.N. Road)",
+      "Suburban Concourse Gate (Walchand Hirachand Marg)",
+      "Subway Link to Fort Commercial District",
+      "P. D'Mello Road East Gate"
+    ],
+    "facilities_summary": [
+      "Suburban Platforms 1-7 (Slow, Fast, Harbour)",
+      "Mainline Terminus Platforms 8-18",
+      "Tourist & Commuter Help Desk",
+      "Executive Waiting Lounges & Cloak Rooms",
+      "Suburban Booking Offices & Digital ATVMs"
+    ],
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "source_method": "Government open-data portal & OpenStreetMap public infrastructure tags",
+    "last_updated": "2025-01-20"
+  },
+  {
+    "station_id": "byculla",
+    "name": "Byculla",
+    "code": "BY",
+    "network": "Central Railway",
+    "description": "Heritage suburban station on the Central Line serving South-Central Mumbai, the Jijamata Udyan (Byculla Zoo), and textile mill residential redevelopment corridors.",
+    "coverage": "basic_station_info",
+    "coverage_label": "Basic station information",
+    "map_type": "schematic_overview",
+    "platforms_count": 4,
+    "entrances": [
+      "East Entrance (Dr. Babasaheb Ambedkar Road)",
+      "West Entrance (Jijamata Udyan / Khada Parsi Side)"
+    ],
+    "facilities_summary": [
+      "Platforms 1-4 (Central Mainline Suburban)",
+      "Heritage Concourse Booking Windows",
+      "Passenger Foot Overbridges with Stairways",
+      "Public Conveniences & Drinking Water Points"
+    ],
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "source_method": "Public railway timetables & OpenStreetMap station boundaries",
+    "last_updated": "2025-01-15"
+  },
+  {
+    "station_id": "ghatkopar",
+    "name": "Ghatkopar",
+    "code": "GC",
+    "network": "Central Railway",
+    "description": "Major multimodal transit hub providing direct elevated concourse interchange between Central Railway suburban trains and Mumbai Metro Line 1 (Versova-Andheri-Ghatkopar).",
+    "coverage": "basic_station_info",
+    "coverage_label": "Basic station information",
+    "map_type": "schematic_overview",
+    "platforms_count": 5,
+    "entrances": [
+      "West Concourse Link (Direct Metro 1 Interchange)",
+      "East Entrance (LBS Marg / Station Road)",
+      "Skywalk Concourse"
+    ],
+    "facilities_summary": [
+      "Platforms 1-5 (Suburban Slow & Fast lines)",
+      "Direct Metro Line 1 Turnstiles and Skywalk",
+      "UTS Booking Windows & ATVM kiosks",
+      "High-capacity Foot Overbridges and Escalators"
+    ],
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "source_method": "OpenStreetMap public tags & Mumbai Metro transit maps",
+    "last_updated": "2025-01-10"
+  },
+  {
+    "station_id": "thane",
+    "name": "Thane",
+    "code": "TNA",
+    "network": "Central Railway",
+    "description": "One of Indian Railways' highest-footfall junction stations, serving suburban main line, trans-harbour link to Navi Mumbai, and long-distance trains.",
+    "coverage": "basic_station_info",
+    "coverage_label": "Basic station information",
+    "map_type": "schematic_overview",
+    "platforms_count": 10,
+    "entrances": [
+      "East Entrance (Kopri / CIDCO Bus Terminal side)",
+      "West Entrance (Gokhale Road / Talao Pali side)",
+      "Elevated SATIS Deck Entrance"
+    ],
+    "facilities_summary": [
+      "Platforms 1-10 (Mainline, Trans-Harbour & Express)",
+      "Elevated Bus-Terminal Deck (SATIS system)",
+      "Multiple North, Central, South Overbridges",
+      "Passenger Refreshment Counters & Waiting Rooms"
+    ],
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "source_method": "OpenRailwayMap & Central Railway public documents",
+    "last_updated": "2025-01-05"
+  },
+  {
+    "station_id": "kalyan",
+    "name": "Kalyan Junction",
+    "code": "KYN",
+    "network": "Central Railway",
+    "description": "Crucial junction where Central Railway splits into the northeastern line (to Kasara, Nashik, North/East India) and southeastern line (to Karjat, Pune, South India).",
+    "coverage": "basic_station_info",
+    "coverage_label": "Basic station information",
+    "map_type": "schematic_overview",
+    "platforms_count": 8,
+    "entrances": [
+      "West Entrance (Kalyan Bus Depot / Market area)",
+      "East Entrance (Waldhuni / Kolsewadi side)",
+      "South Concourse Foot Overbridge Gate"
+    ],
+    "facilities_summary": [
+      "Platforms 1-8 (Suburban Terminal & Express Junction)",
+      "Extensive Concourse with IRCTC Food Court",
+      "Express Rake Water and Parcel Facilities",
+      "Waiting Rooms & Divyangjan Ramps"
+    ],
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "source_method": "OpenRailwayMap & Central Railway public portal",
+    "last_updated": "2025-01-05"
+  }
+]

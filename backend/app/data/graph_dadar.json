@@ -1,0 +1,583 @@
+{
+  "station_id": "dadar",
+  "nodes": {
+    "node_entrance_east": {
+      "id": "node_entrance_east",
+      "name": "East Entrance (Dadar TT / Swami Gyan Jivandas Marg)",
+      "type": "entrance",
+      "x": 890,
+      "y": 330,
+      "level": "Ground Concourse"
+    },
+    "node_concourse_east": {
+      "id": "node_concourse_east",
+      "name": "East Main Concourse",
+      "type": "concourse",
+      "x": 850,
+      "y": 330,
+      "level": "Ground Concourse"
+    },
+    "node_ticket_east": {
+      "id": "node_ticket_east",
+      "name": "East Booking Windows & ATVM Zone",
+      "type": "facility",
+      "x": 850,
+      "y": 250,
+      "level": "Ground Concourse"
+    },
+    "node_washroom_east": {
+      "id": "node_washroom_east",
+      "name": "East Concourse Washroom Complex (Divyangjan Accessible)",
+      "type": "facility",
+      "x": 850,
+      "y": 420,
+      "level": "Ground Concourse"
+    },
+    "node_shoepolish_east": {
+      "id": "node_shoepolish_east",
+      "name": "Shoe-Polishing Kiosk (East Concourse)",
+      "type": "facility",
+      "x": 820,
+      "y": 290,
+      "level": "Ground Concourse"
+    },
+    "node_food_east": {
+      "id": "node_food_east",
+      "name": "IRCTC Ahaar Food Stall (East Concourse)",
+      "type": "facility",
+      "x": 850,
+      "y": 200,
+      "level": "Ground Concourse"
+    },
+    "node_water_east": {
+      "id": "node_water_east",
+      "name": "Potable Drinking Water Point (East Concourse)",
+      "type": "facility",
+      "x": 850,
+      "y": 460,
+      "level": "Ground Concourse"
+    },
+    "node_helpdesk_east": {
+      "id": "node_helpdesk_east",
+      "name": "RPF & Station Sahayata Help Desk",
+      "type": "facility",
+      "x": 850,
+      "y": 370,
+      "level": "Ground Concourse"
+    },
+    "node_elevator_east": {
+      "id": "node_elevator_east",
+      "name": "Central FOB Accessible Elevator (East Concourse)",
+      "type": "elevator",
+      "x": 780,
+      "y": 330,
+      "level": "Ground / FOB Level 1"
+    },
+    "node_stairs_fob_east": {
+      "id": "node_stairs_fob_east",
+      "name": "Central FOB East Staircase",
+      "type": "stairs",
+      "x": 780,
+      "y": 290,
+      "level": "Stair Landing"
+    },
+    "node_fob_central_span_east": {
+      "id": "node_fob_central_span_east",
+      "name": "Central FOB East Junction",
+      "type": "fob",
+      "x": 740,
+      "y": 330,
+      "level": "FOB Level 1"
+    },
+    "node_fob_central_span_pf5": {
+      "id": "node_fob_central_span_pf5",
+      "name": "Central FOB Junction (above Platform 5/6)",
+      "type": "fob",
+      "x": 610,
+      "y": 330,
+      "level": "FOB Level 1"
+    },
+    "node_stairs_pf5": {
+      "id": "node_stairs_pf5",
+      "name": "Platform 5 Stairway from Central FOB",
+      "type": "stairs",
+      "x": 610,
+      "y": 290,
+      "level": "Stairs"
+    },
+    "node_elevator_pf5": {
+      "id": "node_elevator_pf5",
+      "name": "Platform 5 Accessible Elevator",
+      "type": "elevator",
+      "x": 610,
+      "y": 370,
+      "level": "FOB / Platform Level"
+    },
+    "node_pf5": {
+      "id": "node_pf5",
+      "name": "Platform 5 (Mainline & Express)",
+      "type": "platform",
+      "x": 610,
+      "y": 330,
+      "level": "Platform Level"
+    },
+    "node_fob_central_span_pf4": {
+      "id": "node_fob_central_span_pf4",
+      "name": "Central FOB Junction (above Platform 3/4)",
+      "type": "fob",
+      "x": 440,
+      "y": 330,
+      "level": "FOB Level 1"
+    },
+    "node_stairs_pf4": {
+      "id": "node_stairs_pf4",
+      "name": "Platform 4 Stairway from Central FOB",
+      "type": "stairs",
+      "x": 440,
+      "y": 280,
+      "level": "Stairs"
+    },
+    "node_elevator_pf4": {
+      "id": "node_elevator_pf4",
+      "name": "Platform 4 Accessible Elevator",
+      "type": "elevator",
+      "x": 440,
+      "y": 380,
+      "level": "FOB / Platform Level"
+    },
+    "node_pf4": {
+      "id": "node_pf4",
+      "name": "Platform 4 (Central Fast Southbound to CSMT)",
+      "type": "platform",
+      "x": 440,
+      "y": 330,
+      "level": "Platform Level"
+    },
+    "node_pf3": {
+      "id": "node_pf3",
+      "name": "Platform 3 (Central Fast Northbound to Thane/Kalyan)",
+      "type": "platform",
+      "x": 410,
+      "y": 330,
+      "level": "Platform Level"
+    },
+    "node_fob_central_span_pf2": {
+      "id": "node_fob_central_span_pf2",
+      "name": "Central FOB Junction (above Platform 1/2)",
+      "type": "fob",
+      "x": 270,
+      "y": 330,
+      "level": "FOB Level 1"
+    },
+    "node_stairs_pf2": {
+      "id": "node_stairs_pf2",
+      "name": "Platform 2 Stairway from Central FOB",
+      "type": "stairs",
+      "x": 270,
+      "y": 290,
+      "level": "Stairs"
+    },
+    "node_pf2": {
+      "id": "node_pf2",
+      "name": "Platform 2 (Central Slow Southbound to CSMT)",
+      "type": "platform",
+      "x": 270,
+      "y": 330,
+      "level": "Platform Level"
+    },
+    "node_shoepolish_pf2": {
+      "id": "node_shoepolish_pf2",
+      "name": "Shoe-Polishing Service (Platform 2 Mid-Section)",
+      "type": "facility",
+      "x": 270,
+      "y": 380,
+      "level": "Platform Level"
+    },
+    "node_pf1": {
+      "id": "node_pf1",
+      "name": "Platform 1 (Central Slow Northbound)",
+      "type": "platform",
+      "x": 240,
+      "y": 330,
+      "level": "Platform Level"
+    },
+    "node_fob_central_west": {
+      "id": "node_fob_central_west",
+      "name": "Central FOB West Junction",
+      "type": "fob",
+      "x": 170,
+      "y": 330,
+      "level": "FOB Level 1"
+    },
+    "node_stairs_fob_west": {
+      "id": "node_stairs_fob_west",
+      "name": "West Concourse Staircase",
+      "type": "stairs",
+      "x": 140,
+      "y": 330,
+      "level": "Stairs"
+    },
+    "node_concourse_west": {
+      "id": "node_concourse_west",
+      "name": "West Concourse (Ground)",
+      "type": "concourse",
+      "x": 100,
+      "y": 330,
+      "level": "Ground Concourse"
+    },
+    "node_entrance_west": {
+      "id": "node_entrance_west",
+      "name": "West Entrance (Senapati Bapat Marg / Flower Market)",
+      "type": "entrance",
+      "x": 60,
+      "y": 330,
+      "level": "Ground Concourse"
+    },
+    "node_ticket_west": {
+      "id": "node_ticket_west",
+      "name": "West Booking Windows",
+      "type": "facility",
+      "x": 100,
+      "y": 270,
+      "level": "Ground Concourse"
+    },
+    "node_fob_north_span": {
+      "id": "node_fob_north_span",
+      "name": "North Foot Overbridge Crossway",
+      "type": "fob",
+      "x": 500,
+      "y": 180,
+      "level": "North FOB Level"
+    },
+    "node_fob_south_span": {
+      "id": "node_fob_south_span",
+      "name": "South Foot Overbridge Crossway",
+      "type": "fob",
+      "x": 500,
+      "y": 480,
+      "level": "South FOB Level"
+    }
+  },
+  "edges": [
+    {
+      "id": "edge_e1",
+      "from_node": "node_entrance_east",
+      "to_node": "node_concourse_east",
+      "distance_m": 25.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Walk straight into East Main Concourse"
+    },
+    {
+      "id": "edge_e2",
+      "from_node": "node_concourse_east",
+      "to_node": "node_ticket_east",
+      "distance_m": 20.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Head north across concourse to East Ticket Booking & ATVM counters"
+    },
+    {
+      "id": "edge_e3",
+      "from_node": "node_concourse_east",
+      "to_node": "node_washroom_east",
+      "distance_m": 30.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Head south along East Concourse towards the Washroom complex"
+    },
+    {
+      "id": "edge_e4",
+      "from_node": "node_concourse_east",
+      "to_node": "node_shoepolish_east",
+      "distance_m": 15.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Proceed to the Shoe-Polishing Kiosk near FOB stairs"
+    },
+    {
+      "id": "edge_e5",
+      "from_node": "node_concourse_east",
+      "to_node": "node_food_east",
+      "distance_m": 35.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Head past ticket counters to IRCTC Ahaar Food Stall"
+    },
+    {
+      "id": "edge_e6",
+      "from_node": "node_concourse_east",
+      "to_node": "node_water_east",
+      "distance_m": 40.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Walk south past washrooms to the Potable Drinking Water tap"
+    },
+    {
+      "id": "edge_e7",
+      "from_node": "node_concourse_east",
+      "to_node": "node_helpdesk_east",
+      "distance_m": 18.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Step to the RPF & Sahayata Help Desk"
+    },
+    {
+      "id": "edge_e8",
+      "from_node": "node_concourse_east",
+      "to_node": "node_elevator_east",
+      "distance_m": 22.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Proceed directly to the Central FOB Accessible Elevator (East side)"
+    },
+    {
+      "id": "edge_e9",
+      "from_node": "node_concourse_east",
+      "to_node": "node_stairs_fob_east",
+      "distance_m": 20.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Approach the East staircase ascending to Central FOB"
+    },
+    {
+      "id": "edge_e10",
+      "from_node": "node_stairs_fob_east",
+      "to_node": "node_fob_central_span_east",
+      "distance_m": 15.0,
+      "edge_type": "stairs",
+      "is_accessible": false,
+      "direction": "bidirectional",
+      "description": "Climb Central FOB East Staircase to the bridge level"
+    },
+    {
+      "id": "edge_e11",
+      "from_node": "node_elevator_east",
+      "to_node": "node_fob_central_span_east",
+      "distance_m": 12.0,
+      "edge_type": "elevator",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Take the Accessible Elevator up to Central FOB Bridge Level"
+    },
+    {
+      "id": "edge_e12",
+      "from_node": "node_fob_central_span_east",
+      "to_node": "node_fob_central_span_pf5",
+      "distance_m": 45.0,
+      "edge_type": "fob",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Walk west along the Central FOB bridge deck over tracks towards Platform 5"
+    },
+    {
+      "id": "edge_e13",
+      "from_node": "node_fob_central_span_pf5",
+      "to_node": "node_stairs_pf5",
+      "distance_m": 10.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Approach Platform 5 stairway landing on the bridge"
+    },
+    {
+      "id": "edge_e14",
+      "from_node": "node_stairs_pf5",
+      "to_node": "node_pf5",
+      "distance_m": 18.0,
+      "edge_type": "stairs",
+      "is_accessible": false,
+      "direction": "bidirectional",
+      "description": "Descend stairs from Central FOB down onto Platform 5"
+    },
+    {
+      "id": "edge_e15",
+      "from_node": "node_fob_central_span_pf5",
+      "to_node": "node_elevator_pf5",
+      "distance_m": 12.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Approach Platform 5 Accessible Elevator on Central FOB"
+    },
+    {
+      "id": "edge_e16",
+      "from_node": "node_elevator_pf5",
+      "to_node": "node_pf5",
+      "distance_m": 12.0,
+      "edge_type": "elevator",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Take Accessible Elevator down directly onto Platform 5"
+    },
+    {
+      "id": "edge_e17",
+      "from_node": "node_fob_central_span_pf5",
+      "to_node": "node_fob_central_span_pf4",
+      "distance_m": 50.0,
+      "edge_type": "fob",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Continue walking west along Central FOB crossway above tracks towards Platform 3/4"
+    },
+    {
+      "id": "edge_e18",
+      "from_node": "node_fob_central_span_pf4",
+      "to_node": "node_stairs_pf4",
+      "distance_m": 10.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Approach Platform 4 stairwell landing on the bridge"
+    },
+    {
+      "id": "edge_e19",
+      "from_node": "node_stairs_pf4",
+      "to_node": "node_pf4",
+      "distance_m": 18.0,
+      "edge_type": "stairs",
+      "is_accessible": false,
+      "direction": "bidirectional",
+      "description": "Descend stairs from Central FOB down onto Platform 4"
+    },
+    {
+      "id": "edge_e20",
+      "from_node": "node_fob_central_span_pf4",
+      "to_node": "node_elevator_pf4",
+      "distance_m": 12.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Proceed to the Platform 4 Accessible Elevator shaft on the bridge"
+    },
+    {
+      "id": "edge_e21",
+      "from_node": "node_elevator_pf4",
+      "to_node": "node_pf4",
+      "distance_m": 12.0,
+      "edge_type": "elevator",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Take Accessible Elevator down directly onto Platform 4"
+    },
+    {
+      "id": "edge_e22",
+      "from_node": "node_pf4",
+      "to_node": "node_pf3",
+      "distance_m": 12.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Cross island platform width to Platform 3"
+    },
+    {
+      "id": "edge_e23",
+      "from_node": "node_fob_central_span_pf4",
+      "to_node": "node_fob_central_span_pf2",
+      "distance_m": 55.0,
+      "edge_type": "fob",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Continue walking west along Central FOB crossway towards Platform 1/2"
+    },
+    {
+      "id": "edge_e24",
+      "from_node": "node_fob_central_span_pf2",
+      "to_node": "node_stairs_pf2",
+      "distance_m": 10.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Approach Platform 2 stair landing on the bridge"
+    },
+    {
+      "id": "edge_e25",
+      "from_node": "node_stairs_pf2",
+      "to_node": "node_pf2",
+      "distance_m": 18.0,
+      "edge_type": "stairs",
+      "is_accessible": false,
+      "direction": "bidirectional",
+      "description": "Descend stairs from Central FOB down onto Platform 2"
+    },
+    {
+      "id": "edge_e26",
+      "from_node": "node_pf2",
+      "to_node": "node_shoepolish_pf2",
+      "distance_m": 25.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Walk along Platform 2 to the mid-platform Shoe-Polishing stand"
+    },
+    {
+      "id": "edge_e27",
+      "from_node": "node_pf2",
+      "to_node": "node_pf1",
+      "distance_m": 12.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Cross island platform width to Platform 1"
+    },
+    {
+      "id": "edge_e28",
+      "from_node": "node_fob_central_span_pf2",
+      "to_node": "node_fob_central_west",
+      "distance_m": 40.0,
+      "edge_type": "fob",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Walk west to the West Concourse landing on the bridge"
+    },
+    {
+      "id": "edge_e29",
+      "from_node": "node_fob_central_west",
+      "to_node": "node_stairs_fob_west",
+      "distance_m": 12.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Approach the West Concourse staircase"
+    },
+    {
+      "id": "edge_e30",
+      "from_node": "node_stairs_fob_west",
+      "to_node": "node_concourse_west",
+      "distance_m": 20.0,
+      "edge_type": "stairs",
+      "is_accessible": false,
+      "direction": "bidirectional",
+      "description": "Descend staircase to West Concourse ground floor"
+    },
+    {
+      "id": "edge_e31",
+      "from_node": "node_concourse_west",
+      "to_node": "node_entrance_west",
+      "distance_m": 25.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Exit via West Entrance to Senapati Bapat Marg / Flower Market"
+    },
+    {
+      "id": "edge_e32",
+      "from_node": "node_concourse_west",
+      "to_node": "node_ticket_west",
+      "distance_m": 20.0,
+      "edge_type": "walkway",
+      "is_accessible": true,
+      "direction": "bidirectional",
+      "description": "Walk to West Booking Office ticket counters"
+    }
+  ]
+}

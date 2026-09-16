@@ -1,0 +1,47 @@
+[
+  {
+    "facility_id": "thane_ticket_01",
+    "station_id": "thane",
+    "station_name": "Thane",
+    "station_code": "TNA",
+    "name": "East Concourse Booking Office (Kopri Side)",
+    "category": "ticket_counter",
+    "floor_level": "Ground Concourse",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2025-01-05",
+    "source_method": "OSM public tags",
+    "notes": "Near CIDCO bus stop and auto-rickshaw terminal."
+  },
+  {
+    "facility_id": "thane_washroom_01",
+    "station_id": "thane",
+    "station_name": "Thane",
+    "station_code": "TNA",
+    "name": "Platform 2/3 Island Washroom",
+    "category": "washroom",
+    "floor_level": "Platform Level",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2025-01-05",
+    "source_method": "OSM public tags",
+    "notes": "Located on Slow local platform."
+  },
+  {
+    "facility_id": "thane_helpdesk_01",
+    "station_id": "thane",
+    "station_name": "Thane",
+    "station_code": "TNA",
+    "name": "Central Railway Sahayata Help Desk (West Gate)",
+    "category": "help_desk",
+    "floor_level": "Ground Concourse",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2025-01-05",
+    "source_method": "Central Railway public document",
+    "notes": "Information & assistance near Gokhale Road entrance."
+  }
+]

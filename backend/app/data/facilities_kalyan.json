@@ -1,0 +1,32 @@
+[
+  {
+    "facility_id": "kalyan_ticket_01",
+    "station_id": "kalyan",
+    "station_name": "Kalyan Junction",
+    "station_code": "KYN",
+    "name": "West Concourse Main Booking Windows",
+    "category": "ticket_counter",
+    "floor_level": "Ground Concourse",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2025-01-05",
+    "source_method": "OSM public tags",
+    "notes": "Main ticket counters near bus stand."
+  },
+  {
+    "facility_id": "kalyan_washroom_01",
+    "station_id": "kalyan",
+    "station_name": "Kalyan Junction",
+    "station_code": "KYN",
+    "name": "Platform 4/5 Waiting Hall Washrooms",
+    "category": "washroom",
+    "floor_level": "Platform Level",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2025-01-05",
+    "source_method": "OSM public tags",
+    "notes": "Near passenger waiting room on Express platforms."
+  }
+]

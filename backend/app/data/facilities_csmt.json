@@ -1,0 +1,62 @@
+[
+  {
+    "facility_id": "csmt_ticket_01",
+    "station_id": "csmt",
+    "station_name": "Chhatrapati Shivaji Maharaj Terminus",
+    "station_code": "CSMT",
+    "name": "Suburban Star Concourse Booking Windows",
+    "category": "ticket_counter",
+    "floor_level": "Ground Concourse",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2025-01-20",
+    "source_method": "Public railway portal data",
+    "notes": "Main ticket hall facing DN Road and Suburban entrance."
+  },
+  {
+    "facility_id": "csmt_helpdesk_01",
+    "station_id": "csmt",
+    "station_name": "Chhatrapati Shivaji Maharaj Terminus",
+    "station_code": "CSMT",
+    "name": "Tourist & Commuter Facilitation Centre",
+    "category": "help_desk",
+    "floor_level": "Ground Concourse",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2025-01-20",
+    "source_method": "Heritage station documentation",
+    "notes": "General enquiry, tourist guides, and lost luggage support."
+  },
+  {
+    "facility_id": "csmt_washroom_01",
+    "station_id": "csmt",
+    "station_name": "Chhatrapati Shivaji Maharaj Terminus",
+    "station_code": "CSMT",
+    "name": "Platform 1 Suburban Concourse Restrooms",
+    "category": "washroom",
+    "floor_level": "Ground Concourse",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2025-01-20",
+    "source_method": "OSM public tags",
+    "notes": "Restrooms located adjacent to Harbor Line buffer buffers."
+  },
+  {
+    "facility_id": "csmt_shoepolish_01",
+    "station_id": "csmt",
+    "station_name": "Chhatrapati Shivaji Maharaj Terminus",
+    "station_code": "CSMT",
+    "name": "Mainline Concourse Shoe-Polishing Kiosk",
+    "category": "shoepolish",
+    "floor_level": "Ground Concourse",
+    "availability_status": "operational",
+    "verification_status": "needs_verification",
+    "is_official": false,
+    "last_updated": "2025-01-15",
+    "source_method": "Passenger report",
+    "notes": "Near outstation reservation enquiry counter."
+  }
+]
