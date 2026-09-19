@@ -1,7 +1,7 @@
 # StationSathi: Intelligent Railway Station Assistant for Mumbai Central Railway
 
 
-StationSathi is a public-transport technology web application designed to help commuters navigate complex Mumbai Central Railway stations. Unlike standard transit applications that merely provide train timetables or outdoor GPS driving routes, StationSathi models and navigates the **internal built environment** of railway terminals: platforms, foot overbridges (FOBs), concourses, ticket counters, stairs, accessible elevators, washrooms, drinking water taps, and micro-services like shoe-polishing stands.
+StationSathi is a public-transport technology web application designed to help commuters navigate complex Mumbai Central Railway stations. Unlike standard transit applications that merely provide train timetables or outdoor GPS driving routes, StationSathi models and navigates the **internal built environment** of railway terminals: platforms, foot overbridges , concourses, ticket counters, stairs, accessible elevators, washrooms, drinking water taps, and micro-services like shoe-polishing stands.
 
 ---
 
@@ -22,7 +22,7 @@ StationSathi addresses this by combining **2D indoor SVG mapping**, **Dijkstra g
 - **Transparent Data Verification Model**: Every facility record maintains explicit provenance metadata (`prototype_data`, `needs_verification`, `publicly_sourced`) with last-updated timestamps.
 - **Grounded Assistant**: Natural language query interpreter understanding commuter inquiries (*"Where can I polish my shoes?"*, *"Reach Platform 10 without stairs"*) without hallucinations.
 - **Six Station Coverage Model**:
-  - **Dadar Central (DR)**: Detailed interactive prototype with walkable graph and renumbered platforms (CR Platforms 8 to 14 effective Dec 9, 2023).
+  - **Dadar Central (DR)**: Detailed interactive prototype with walkable graph and renumbered platforms.
   - **CSMT, Byculla, Ghatkopar, Thane, Kalyan**: Topological routing graphs and custom schematic maps modeling buffer concourses, Metro 1 transfer decks, SATIS bus decks, and accessible ramps.
 - **Resilient Dual-Mode Design**: Authoritative FastAPI backend with automatic client-side fallback mode ensuring a reliable demonstration.
 - **Built-in Demo Controller**: Pre-configured multi-station scenario launchers and instantaneous demo reset state.
