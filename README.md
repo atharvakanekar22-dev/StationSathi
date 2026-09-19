@@ -14,8 +14,6 @@ Mumbai suburban railway stations such as Dadar, CSMT, and Thane accommodate mill
 
 StationSathi addresses this by combining **2D indoor SVG mapping**, **Dijkstra graph-based navigation with accessibility cost constraints**, and a **grounded natural-language query engine**.
 
----
-
 ## 2. Key Features
 
 - **Interactive 2D Station Map**: Custom vector map supporting pan, zoom, clickable facility markers, platform safety lines, and animated route visualization with transparent Map Accuracy indicators (`prototype` vs `schematic`).
