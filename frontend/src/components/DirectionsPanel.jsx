@@ -10,23 +10,24 @@ import {
   ShieldCheck,
   X
 } from 'lucide-react';
-import VerificationBadge from './VerificationBadge';
 
 export default function DirectionsPanel({ route, onClose }) {
   if (!route) return null;
 
   if (!route.success) {
     return (
-      <div className="bg-white rounded-2xl p-5 border border-rose-200 shadow-sm">
+      <div className="bg-white rounded-2xl p-5 border border-amber-200 shadow-xs">
         <div className="flex items-start gap-3">
-          <div className="p-2 rounded-xl bg-rose-100 text-rose-600">
+          <div className="p-2 rounded-xl bg-amber-100 text-amber-700 shrink-0">
             <AlertTriangle className="w-5 h-5" />
           </div>
           <div className="flex-1">
-            <h4 className="text-sm font-bold text-rose-900">No Mapped Route Available</h4>
-            <p className="text-xs text-rose-700 mt-1 leading-relaxed">{route.explanation}</p>
-            <p className="text-[11px] text-slate-500 mt-2 bg-slate-50 p-2 rounded-lg border border-slate-200">
-              Note: The prototype dataset only traverses mapped, verified pathways. If an accessible route does not exist between these points, we do not invent one.
+            <h4 className="text-sm font-bold text-slate-900">Route Not Found</h4>
+            <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+              {route.explanation || "We don't have enough mapped information to provide a reliable route for this location yet."}
+            </p>
+            <p className="text-[11px] text-slate-500 mt-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+              Note: We only provide verified pathways. If a reliable step-free or direct route is not yet verified between these points, we do not estimate or invent one.
             </p>
           </div>
           {onClose && (
@@ -39,59 +40,46 @@ export default function DirectionsPanel({ route, onClose }) {
     );
   }
 
-  const mins = Math.floor(route.estimated_time_seconds / 60);
-  const secs = route.estimated_time_seconds % 60;
-  const timeStr = mins > 0 ? `${mins} min ${secs} sec` : `${secs} sec`;
+  const mins = Math.max(1, Math.round(route.estimated_time_seconds / 60));
 
   return (
-    <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-sm flex flex-col gap-3">
-      {/* Header & Accessibility Status */}
+    <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-xs flex flex-col gap-3.5">
+      {/* Header & Status */}
       <div className="flex items-start justify-between">
         <div>
-          <div className="flex items-center gap-2">
-            <h3 className="text-base font-bold text-slate-900 tracking-tight">Step-by-Step Directions</h3>
-            <VerificationBadge status={route.verification_status} />
-          </div>
+          <h3 className="text-base font-bold text-slate-900 tracking-tight">Your Route</h3>
           <p className="text-xs text-slate-500 mt-0.5">{route.explanation}</p>
         </div>
         {onClose && (
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 p-1 rounded-lg">
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 p-1.5 rounded-lg hover:bg-slate-100 transition">
             <X className="w-4 h-4" />
           </button>
         )}
       </div>
 
-      {/* Metrics Card (Estimated values clearly labeled!) */}
-      <div className="grid grid-cols-3 gap-2 bg-slate-50 p-3 rounded-xl border border-slate-200 text-center">
+      {/* Metrics Card: Approx. distance and walking time */}
+      <div className="grid grid-cols-2 gap-3 bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-center">
         <div>
           <span className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider block">
-            Est. Distance
+            Approx. Distance
           </span>
-          <span className="text-sm sm:text-base font-bold text-slate-900">
+          <span className="text-base sm:text-lg font-bold text-slate-900">
             {route.total_distance_m} m
           </span>
         </div>
         <div>
           <span className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider block">
-            Est. Steps
+            Approx. Walking Time
           </span>
-          <span className="text-sm sm:text-base font-bold text-slate-900">
-            ~{route.estimated_steps}
-          </span>
-        </div>
-        <div>
-          <span className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider block">
-            Est. Walk Time
-          </span>
-          <span className="text-sm sm:text-base font-bold text-slate-900">
-            {timeStr}
+          <span className="text-base sm:text-lg font-bold text-slate-900">
+            {mins} min
           </span>
         </div>
       </div>
 
-      {/* Step-Free Accessibility Notice */}
+      {/* Reassuring Accessibility Confirmation */}
       <div
-        className={`px-3 py-2 rounded-xl text-xs flex items-center gap-2 border ${
+        className={`px-3.5 py-2.5 rounded-xl text-xs flex items-center gap-2.5 border ${
           route.is_step_free
             ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
             : 'bg-amber-50 text-amber-800 border-amber-200'
@@ -100,18 +88,18 @@ export default function DirectionsPanel({ route, onClose }) {
         {route.is_step_free ? (
           <>
             <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-            <span><strong>Step-Free Route:</strong> Verified accessible using elevators and level corridors.</span>
+            <span><strong>Step-free route:</strong> Accessible throughout using elevators and level corridors.</span>
           </>
         ) : (
           <>
             <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
-            <span><strong>Notice:</strong> This route includes staircases. Switch preference to "Avoid stairs" for accessible elevators.</span>
+            <span><strong>Includes stairs:</strong> To avoid staircases, select the "Avoid stairs" preference above.</span>
           </>
         )}
       </div>
 
-      {/* Turn-by-Turn Steps List */}
-      <div className="space-y-2 mt-1 max-h-[320px] overflow-y-auto pr-1">
+      {/* Step-by-Step Turns List */}
+      <div className="space-y-2 mt-1 max-h-[300px] overflow-y-auto pr-1">
         {route.steps.map((step, idx) => {
           const isFirst = idx === 0;
           const isLast = idx === route.steps.length - 1;
@@ -136,10 +124,10 @@ export default function DirectionsPanel({ route, onClose }) {
                 <div className="flex items-center gap-2 mt-1 text-[11px] text-slate-400">
                   <span className="capitalize">{step.edge_type}</span>
                   {step.edge_type === 'elevator' && (
-                    <span className="text-emerald-600 font-semibold">• Accessible Lift</span>
+                    <span className="text-emerald-600 font-semibold">• Accessible Elevator</span>
                   )}
                   {step.edge_type === 'stairs' && (
-                    <span className="text-amber-600 font-semibold">• Flight of Stairs</span>
+                    <span className="text-amber-600 font-semibold">• Staircase</span>
                   )}
                 </div>
               </div>
@@ -147,10 +135,6 @@ export default function DirectionsPanel({ route, onClose }) {
           );
         })}
       </div>
-
-      <p className="text-[10px] text-slate-400 text-center italic mt-1">
-        * Estimated distances and step counts are computed strictly from verified graph coordinates (~0.75m per stride).
-      </p>
     </div>
   );
 }

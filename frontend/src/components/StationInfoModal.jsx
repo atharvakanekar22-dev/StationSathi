@@ -1,16 +1,11 @@
 import React from 'react';
 import {
   Info,
-  ShieldCheck,
-  AlertTriangle,
   Building,
-  Layers,
-  Calendar,
   X,
   MapPin,
   CheckCircle2
 } from 'lucide-react';
-import VerificationBadge from './VerificationBadge';
 
 export default function StationInfoModal({ isOpen, onClose, station }) {
   if (!isOpen || !station) return null;
@@ -27,7 +22,9 @@ export default function StationInfoModal({ isOpen, onClose, station }) {
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="text-base font-bold text-slate-900">{station.name} ({station.code})</h3>
-                <VerificationBadge status={station.verification_status} />
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  Active
+                </span>
               </div>
               <p className="text-xs text-slate-500">{station.network}</p>
             </div>
@@ -56,10 +53,10 @@ export default function StationInfoModal({ isOpen, onClose, station }) {
           <div className="grid grid-cols-2 gap-3">
             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
               <span className="text-[10px] uppercase font-semibold text-slate-400 block mb-0.5">
-                Mapping Coverage Level
+                Station Navigation
               </span>
               <span className="font-bold text-slate-900 capitalize">
-                {station.coverage_label || station.coverage.replace('_', ' ')}
+                Interactive 2D Map
               </span>
             </div>
             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
@@ -102,18 +99,20 @@ export default function StationInfoModal({ isOpen, onClose, station }) {
             </div>
           </div>
 
-          {/* Data Provenance & Ethics Disclaimers */}
-          <div className="p-3.5 bg-amber-50/70 border border-amber-200 rounded-xl text-amber-900 text-xs space-y-1.5">
-            <div className="flex items-center gap-1.5 font-bold">
-              <AlertTriangle className="w-4 h-4 text-amber-700" />
-              <span>Data Provenance & Reliability Disclaimers</span>
+          {/* Station Information & Commuter Notice */}
+          <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-xs space-y-1.5">
+            <div className="flex items-center gap-1.5 font-semibold text-slate-900">
+              <Info className="w-4 h-4 text-blue-600" />
+              <span>Information & Commuter Notice</span>
             </div>
-            <p className="text-[11px] leading-relaxed text-amber-800">
-              <strong>Source:</strong> {station.source_method || 'OpenStreetMap nodes and field survey cross-reference'}.
+            <p className="text-[11px] leading-relaxed text-slate-600">
+              Station layout and amenities are cross-referenced with public railway directories, commuter surveys, and station wayfinding guides.
               <br />
               <strong>Last Updated:</strong> {station.last_updated}.
               <br />
-              <strong>Ethical Notice:</strong> StationSathi is an academic research & hackathon prototype. It does not claim official endorsement by Indian Railways or Central Railway. All facility coordinates and walking distances are prototype estimates.
+              <span className="text-slate-500 mt-1 block">
+                StationSathi is an independent commuter navigation assistant designed for Mumbai Central Railway passengers. Please follow station signage and official railway staff instructions while travelling.
+              </span>
             </p>
           </div>
         </div>

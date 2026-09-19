@@ -39,13 +39,14 @@ Lists all initial 6 stations with their coverage status.
     "coverage": "detailed_prototype",
     "coverage_label": "Detailed navigation prototype",
     "map_type": "interactive_svg",
-    "platforms_count": 8,
+    "map_accuracy": "prototype",
+    "platforms_count": 7,
     "entrances": ["East Entrance (Dadar TT)", "West Entrance (Flower Market)"],
-    "facilities_summary": ["8 Platforms", "Central Accessible Elevators"],
+    "facilities_summary": ["7 CR Platforms (8-14)", "Central Accessible Elevators"],
     "verification_status": "prototype_data",
     "is_official": false,
-    "source_method": "OSM Overpass extraction & manual survey",
-    "last_updated": "2025-02-15"
+    "source_method": "Central Railway station layout renumbering notice (Dec 2023) & surveyed concourse layout",
+    "last_updated": "2026-09-19"
   }
 ]
 ```
@@ -54,7 +55,7 @@ Lists all initial 6 stations with their coverage status.
 Returns details for a specific station.
 
 ### `GET /api/stations/{station_id}/graph`
-Returns graph nodes and edges for stations with `detailed_prototype` coverage.
+Returns topological graph nodes and edges for any supported station (`dadar`, `csmt`, `byculla`, `ghatkopar`, `thane`, `kalyan`).
 
 **Response `200 OK` (for Dadar)**:
 ```json
@@ -115,7 +116,7 @@ Filters facilities by optional category and keyword search.
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
+    "last_updated": "2026-09-19",
     "source_method": "Field verified prototype record",
     "notes": "Traditional station shoe-shine stand with fixed pricing."
   }
@@ -134,7 +135,7 @@ Calculates indoor walkable route via Dijkstra's algorithm.
 {
   "station_id": "dadar",
   "origin_node_id": "node_entrance_east",
-  "destination_node_id": "node_pf4",
+  "destination_node_id": "node_pf10",
   "preference": "avoid_stairs"
 }
 ```
@@ -146,24 +147,24 @@ Calculates indoor walkable route via Dijkstra's algorithm.
   "station_id": "dadar",
   "preference_applied": "avoid_stairs",
   "explanation": "Route calculated avoiding all staircases using accessible elevators and level concourses.",
-  "total_distance_m": 178.0,
-  "estimated_steps": 237,
-  "estimated_time_seconds": 212,
+  "total_distance_m": 188.0,
+  "estimated_steps": 251,
+  "estimated_time_seconds": 221,
   "is_step_free": true,
   "path_node_ids": [
     "node_entrance_east",
     "node_concourse_east",
     "node_elevator_east",
     "node_fob_central_span_east",
-    "node_fob_central_span_pf5",
-    "node_fob_central_span_pf4",
-    "node_elevator_pf4",
-    "node_pf4"
+    "node_fob_central_span_pf11_12",
+    "node_fob_central_span_pf9_10",
+    "node_elevator_pf10",
+    "node_pf10"
   ],
   "steps": [
     {
       "step_number": 1,
-      "instruction": "Start at East Entrance (Dadar TT / Swami Gyan Jivandas Marg) (Ground Concourse).",
+      "instruction": "Start at East Entrance (Ground Concourse).",
       "from_node": "node_entrance_east",
       "to_node": "node_entrance_east",
       "distance_m": 0.0,

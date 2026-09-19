@@ -7,12 +7,43 @@
     "name": "East Concourse Booking Office (Ambedkar Road)",
     "category": "ticket_counter",
     "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 780,
+      "y": 240
+    },
+    "node_id": "node_byculla_ticket_east",
     "availability_status": "operational",
     "verification_status": "publicly_sourced",
     "is_official": false,
-    "last_updated": "2025-01-15",
+    "last_updated": "2026-09-19",
+    "source_method": "OSM public tags & Central Railway suburban directory",
+    "source_reference": "OSM Way: Byculla East Booking Hall",
+    "source_access_date": "2026-09-19",
+    "notes": "Main booking counter on the east entrance facing Dr. Babasaheb Ambedkar Road with ATVMs.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "byculla_ticket_02",
+    "station_id": "byculla",
+    "station_name": "Byculla",
+    "station_code": "BY",
+    "name": "West Concourse Booking Windows",
+    "category": "ticket_counter",
+    "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 160,
+      "y": 240
+    },
+    "node_id": "node_byculla_ticket_west",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
     "source_method": "OSM public tags",
-    "notes": "Main booking counter on the east entrance facing Dr. Babasaheb Ambedkar Road."
+    "source_reference": "OSM Node: Byculla West UTS",
+    "source_access_date": "2026-09-19",
+    "notes": "UTS suburban counters serving Khada Parsi and Jijamata Udyan arrivals.",
+    "confidence_level": "medium"
   },
   {
     "facility_id": "byculla_washroom_01",
@@ -22,11 +53,134 @@
     "name": "Platform 1 Public Restrooms",
     "category": "washroom",
     "floor_level": "Platform Level",
+    "svg_coords": {
+      "x": 380,
+      "y": 380
+    },
+    "node_id": "node_byculla_washroom_pf1",
     "availability_status": "operational",
     "verification_status": "publicly_sourced",
     "is_official": false,
-    "last_updated": "2025-01-15",
+    "last_updated": "2026-09-19",
     "source_method": "OSM public tags",
-    "notes": "Located on Slow Northbound Platform 1."
+    "source_reference": "OSM Node: Byculla Toilets #3829104",
+    "source_access_date": "2026-09-19",
+    "notes": "Located on Slow Northbound Platform 1 south end.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "byculla_water_01",
+    "station_id": "byculla",
+    "station_name": "Byculla",
+    "station_code": "BY",
+    "name": "Potable Drinking Water Point (Platform 1)",
+    "category": "drinking_water",
+    "floor_level": "Platform Level",
+    "svg_coords": {
+      "x": 380,
+      "y": 220
+    },
+    "node_id": "node_byculla_water_pf1",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "Station passenger amenities registry",
+    "source_reference": "CR Suburban drinking water survey",
+    "source_access_date": "2026-09-19",
+    "notes": "Free filtered water facility on Slow Line Platform 1.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "byculla_entrance_01",
+    "station_id": "byculla",
+    "station_name": "Byculla",
+    "station_code": "BY",
+    "name": "East Entrance (Dr. Babasaheb Ambedkar Road)",
+    "category": "entrance_exit",
+    "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 840,
+      "y": 300
+    },
+    "node_id": "node_byculla_entrance_east",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "OSM Station Entrance Node",
+    "source_reference": "OSM Node #3829101",
+    "source_access_date": "2026-09-19",
+    "notes": "Restored Victorian-era heritage entrance facing Dr. Ambedkar Road.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "byculla_entrance_02",
+    "station_id": "byculla",
+    "station_name": "Byculla",
+    "station_code": "BY",
+    "name": "West Entrance (Jijamata Udyan / Khada Parsi Side)",
+    "category": "entrance_exit",
+    "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 100,
+      "y": 300
+    },
+    "node_id": "node_byculla_entrance_west",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "OSM Station Entrance Node",
+    "source_reference": "OSM Node #3829102",
+    "source_access_date": "2026-09-19",
+    "notes": "Entrance on Byculla West near zoo garden and bus stop.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "byculla_pf_01",
+    "station_id": "byculla",
+    "station_name": "Byculla",
+    "station_code": "BY",
+    "name": "Platform 1 (Central Slow Northbound)",
+    "category": "platform",
+    "floor_level": "Platform Level",
+    "svg_coords": {
+      "x": 380,
+      "y": 300
+    },
+    "node_id": "node_byculla_pf1",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "Central Railway Suburban Timetable",
+    "source_reference": "CR Suburban network slow line layout",
+    "source_access_date": "2026-09-19",
+    "notes": "Slow trains towards Dadar, Kurla, Thane, and Kalyan.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "byculla_pf_03",
+    "station_id": "byculla",
+    "station_name": "Byculla",
+    "station_code": "BY",
+    "name": "Platform 3 (Central Fast Northbound to Thane/Kalyan)",
+    "category": "platform",
+    "floor_level": "Platform Level",
+    "svg_coords": {
+      "x": 560,
+      "y": 300
+    },
+    "node_id": "node_byculla_pf3",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "Central Railway Suburban Timetable",
+    "source_reference": "CR Suburban network fast line layout",
+    "source_access_date": "2026-09-19",
+    "notes": "Fast services northbound towards Dadar and Thane.",
+    "confidence_level": "medium"
   }
 ]

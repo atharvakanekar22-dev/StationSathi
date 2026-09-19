@@ -70,7 +70,7 @@ To confirm all algorithms, API routes, and graph traversals are working perfectl
 cd c:\Users\Atharva\OneDrive\Desktop\Projects\GeeksToCode\StationSathi
 python -m pytest backend/tests/test_api.py -v
 ```
-You will see 9 passing tests covering station lists, Dadar facilities, Dijkstra shortest route, stair-free elevator routing, and natural language intent parsing.
+You will see 17 passing tests covering station lists, all 6 station graphs and facilities, Dadar renumbering validation, Dijkstra shortest route, stair-free elevator routing, and natural language intent parsing.
 
 ---
 
@@ -84,14 +84,14 @@ When presenting StationSathi in a hackathon, viva, or live demo, follow this str
    > *"Standard GPS apps only tell you when your train arrives or show outdoor driving directions. Once you step inside Dadar or CSMT, outdoor GPS fails. You are left guessing: Where is the elevator? Which bridge has no stairs for heavy luggage? Where can I polish my shoes or find drinking water?"*
 3. **Show the Station Network**:
    - Scroll down to show all **6 initial stations**: Dadar, CSMT, Byculla, Ghatkopar, Thane, Kalyan.
-   - Point out the coverage status badges: **Dadar** is the *Detailed navigation prototype*, while others are clearly marked as *Basic station information* (highlighting honesty in engineering).
+   - Point out the coverage status badges and Map Accuracy indicators (`prototype` for Dadar, `schematic` for CSMT, Byculla, Ghatkopar, Thane, Kalyan).
 4. Click **"Explore Interactive Prototype (Dadar)"**.
 
 ---
 
 ### Minute 2: Interactive 2D Station Map (Dadar Central)
 1. **Explain the Custom Map**:
-   > *"This is a custom 2D vector map built for Dadar Central (DR). It represents the actual surveyed layout: West Concourse, East Main Concourse on Swami Gyan Jivandas Marg, Platforms 1 to 6 with safety yellow tactile strips, and the 3 major Foot Overbridges (North, Central, South)."*
+   > *"This is a custom 2D vector map built for Dadar Central (DR). It represents the actual surveyed layout: West Concourse, East Main Concourse on Swami Gyan Jivandas Marg, Central Railway Platforms 8 to 14 (renumbered effective Dec 9, 2023; former Platform 2 surrendered to widen Platform 8), and the 3 major Foot Overbridges (North, Central, South)."*
 2. **Show the Interactions**:
    - **Pan**: Click and drag the map smoothly.
    - **Zoom**: Use the mouse wheel or click `+` and `-` in the top right.
@@ -100,8 +100,8 @@ When presenting StationSathi in a hackathon, viva, or live demo, follow this str
 
 ---
 
-### Minute 3: The 5 Live Demo Scenarios
-Click the **"Demo Scenarios"** button in the top header. You can run all 5 scenarios with a single click:
+### Minute 3: The Live Demo Scenarios
+Click the **"Demo Scenarios"** button in the top header. You can run all scenarios with a single click:
 
 #### Scenario 1: Facility Discovery (Washrooms)
 - Click **"Run" on Scenario 1** (or search `"washroom"` in the search bar).
@@ -113,50 +113,50 @@ Click the **"Demo Scenarios"** button in the top header. You can run all 5 scena
 
 #### Scenario 2: Shoe-Polishing Kiosks
 - Click **"Run" on Scenario 2** (or click the **Shoe Polish** filter pill).
-- **Result**: Points out the traditional licensed shoe-shine kiosks located under the East FOB staircase and on Platform 2.
+- **Result**: Points out the traditional licensed shoe-shine kiosks located under the East FOB staircase and on Platform 8 (the widened platform island where Old 2 was surrendered).
 - Explain: *"StationSathi maps essential station micro-amenities that big tech map apps ignore."*
 
 #### Scenario 3: Indoor Graph Navigation (Shortest Route)
 - Click **"Run" on Scenario 3**.
-- Origin: **East Entrance (Dadar TT)**
-- Destination: **Platform 5 (Mainline & Express)**
+- Origin: **East Entrance (Ground Concourse)**
+- Destination: **Platform 11 (Mainline & Express Terminal)**
 - Preference: **Shortest route**
 - **Result**:
   - Dijkstra calculates the shortest path (127 meters, ~169 steps, ~115 seconds).
-  - An animated blue glowing line draws the route on the SVG map.
+  - An animated blue glowing line draws the route on the SVG map across Central FOB.
   - The **Directions Panel** gives step-by-step turns with a warning that this route involves stairs.
 
 #### Scenario 4: Accessibility-Aware Routing (Stair-Free Route)
 - Click **"Run" on Scenario 4**.
 - Origin: **East Entrance**
-- Destination: **Platform 4 (Central Fast Southbound)**
+- Destination: **Platform 10 (Central Fast Southbound)**
 - Preference: **Avoid stairs**
 - **Result**:
   - The algorithm **strictly eliminates all staircases**.
-  - Instead of climbing stairs, it routes the commuter through the **Central FOB Accessible Elevator**, across the bridge deck, and down via the **Platform 4 Elevator**.
-  - Displays the green **"Step-Free Route Verified"** badge!
+  - Instead of climbing stairs, it routes the commuter through the **Central FOB Accessible Elevator**, across the bridge deck, and down via the **Platform 10 Elevator**.
+  - Displays the green **"Step-Free Route Verified"** badge and 100% elevator path!
 
-#### Scenario 5: Station Switching & Transparency
-- Click **"Run" on Scenario 5** (or use the station dropdown to choose **Thane**).
-- **Result**:
-  - Shows Thane's verified basic overview, platform count, and entrance directory.
-  - Clearly explains: *"Detailed 2D indoor map is active for Dadar Central prototype; Thane is in basic information coverage."*
-  - Shows that we do not fabricate fake indoor graphs for unsurveyed stations.
+#### Multi-Station Scenarios: CSMT, Ghatkopar, Thane, Kalyan
+- Click through the station tabs in the Demo Controller:
+  - **CSMT**: Walchand Hirachand Marg gate to Platform 4 step-free buffer apron.
+  - **Ghatkopar**: Metro Line 1 elevated transfer deck directly to Platform 1 via accessible lift.
+  - **Thane**: Elevated SATIS bus deck to Platform 1 via accessible connecting ramp.
+  - **Kalyan**: West Bus Depot entrance to Platform 4 Express via South FOB.
 
 ---
 
 ### Minute 4: The Natural-Language Station Assistant
 1. Click the **"Assistant"** button in the top header.
-2. Click any of the prompt chips (e.g., *"Where can I polish my shoes?"* or *"Reach Platform 4 without using stairs"*).
+2. Click any of the prompt chips (e.g., *"Where can I polish my shoes?"* or *"Reach Platform 10 without using stairs"*).
 3. **Show the Query Interpretation Breakdown**:
-   - **Interpreted Intent**: `facility_search` or `accessibility_route`
-   - **Category**: `shoepolish`
+   - **Interpreted Intent**: `facility_search` or `navigate_to_platform`
+   - **Category**: `shoepolish` or `platform`
    - **Station**: `Dadar`
    - **Action**: `show_facilities` or `calculate_route`
 4. Show the **"Honest Distance Rule"**:
    - Ask: *"Find the nearest washroom"*.
    - Because no start location is selected, the assistant honestly explains:
-     > *"Mapped 1 washroom location at Dadar. Please select your current landmark above to calculate exact walking distance."*
+     > *"Please specify your current landmark or select an entrance on the map so I can calculate the closest facility for you."*
    - It will **never invent a false distance** without knowing where the commuter is!
 
 ---
@@ -219,6 +219,7 @@ When asked about scalability and enterprise database support:
 |---|---|---|
 | **Start Backend** | `python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload` | Project root |
 | **Start Frontend** | `cmd.exe /c npm.cmd run dev` | `frontend/` directory |
+| **Validate Data** | `python backend/scripts/validate_station_data.py` | Project root |
 | **Run Tests** | `python -m pytest backend/tests/test_api.py -v` | Project root |
 | **Build Frontend** | `cmd.exe /c npm.cmd run build` | `frontend/` directory |
 | **Open App** | Visit `http://localhost:5173/` | Web Browser |

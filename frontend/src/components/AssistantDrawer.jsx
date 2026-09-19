@@ -10,7 +10,6 @@ import {
   X,
   Bot
 } from 'lucide-react';
-import VerificationBadge from './VerificationBadge';
 
 export default function AssistantDrawer({
   isOpen,

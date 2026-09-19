@@ -7,12 +7,43 @@
     "name": "West Concourse Main Booking Windows",
     "category": "ticket_counter",
     "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 160,
+      "y": 210
+    },
+    "node_id": "node_kalyan_ticket_west",
     "availability_status": "operational",
     "verification_status": "publicly_sourced",
     "is_official": false,
-    "last_updated": "2025-01-05",
+    "last_updated": "2026-09-19",
+    "source_method": "OSM public tags & Central Railway directory",
+    "source_reference": "OSM Node: Kalyan West Booking Office #3829110",
+    "source_access_date": "2026-09-19",
+    "notes": "Main ticket counters near bus stand and auto terminal with 8 ATVMs.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "kalyan_ticket_02",
+    "station_id": "kalyan",
+    "station_name": "Kalyan Junction",
+    "station_code": "KYN",
+    "name": "East Kolsewadi Booking Windows",
+    "category": "ticket_counter",
+    "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 800,
+      "y": 220
+    },
+    "node_id": "node_kalyan_ticket_east",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
     "source_method": "OSM public tags",
-    "notes": "Main ticket counters near bus stand."
+    "source_reference": "OSM Node: Kalyan East UTS",
+    "source_access_date": "2026-09-19",
+    "notes": "UTS suburban counters serving Kolsewadi and Waldhuni commuters.",
+    "confidence_level": "medium"
   },
   {
     "facility_id": "kalyan_washroom_01",
@@ -22,11 +53,157 @@
     "name": "Platform 4/5 Waiting Hall Washrooms",
     "category": "washroom",
     "floor_level": "Platform Level",
+    "svg_coords": {
+      "x": 520,
+      "y": 380
+    },
+    "node_id": "node_kalyan_washroom_pf4",
     "availability_status": "operational",
     "verification_status": "publicly_sourced",
     "is_official": false,
-    "last_updated": "2025-01-05",
+    "last_updated": "2026-09-19",
     "source_method": "OSM public tags",
-    "notes": "Near passenger waiting room on Express platforms."
+    "source_reference": "OSM Amenity: Toilets #3829124",
+    "source_access_date": "2026-09-19",
+    "notes": "Near passenger waiting room on Express platforms.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "kalyan_water_01",
+    "station_id": "kalyan",
+    "station_name": "Kalyan Junction",
+    "station_code": "KYN",
+    "name": "Potable Drinking Water Booth (Platform 1)",
+    "category": "drinking_water",
+    "floor_level": "Platform Level",
+    "svg_coords": {
+      "x": 360,
+      "y": 360
+    },
+    "node_id": "node_kalyan_water_pf1",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "Station passenger amenities register",
+    "source_reference": "CR Suburban drinking water survey",
+    "source_access_date": "2026-09-19",
+    "notes": "Free filtered municipal water cooler on Platform 1.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "kalyan_helpdesk_01",
+    "station_id": "kalyan",
+    "station_name": "Kalyan Junction",
+    "station_code": "KYN",
+    "name": "Station Master & RPF Enquiry Desk",
+    "category": "help_desk",
+    "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 160,
+      "y": 350
+    },
+    "node_id": "node_kalyan_helpdesk_west",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "CR Mumbai Division Junction directory",
+    "source_reference": "CR Kalyan station administration guide",
+    "source_access_date": "2026-09-19",
+    "notes": "Junction movement enquiry, lost luggage assistance, and railway police post.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "kalyan_entrance_01",
+    "station_id": "kalyan",
+    "station_name": "Kalyan Junction",
+    "station_code": "KYN",
+    "name": "West Entrance (Kalyan Bus Depot & Market area)",
+    "category": "entrance_exit",
+    "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 80,
+      "y": 280
+    },
+    "node_id": "node_kalyan_gate_west",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "OSM Station Entrance Node",
+    "source_reference": "OSM Node #3829106",
+    "source_access_date": "2026-09-19",
+    "notes": "Main entrance connecting to KDMT city bus depot and market concourse.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "kalyan_entrance_02",
+    "station_id": "kalyan",
+    "station_name": "Kalyan Junction",
+    "station_code": "KYN",
+    "name": "East Entrance (Kolsewadi / Waldhuni side)",
+    "category": "entrance_exit",
+    "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 860,
+      "y": 280
+    },
+    "node_id": "node_kalyan_gate_east",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "OSM Station Entrance Node",
+    "source_reference": "OSM Node #3829114",
+    "source_access_date": "2026-09-19",
+    "notes": "East side entrance with access to Kolsewadi auto stand.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "kalyan_pf_01",
+    "station_id": "kalyan",
+    "station_name": "Kalyan Junction",
+    "station_code": "KYN",
+    "name": "Platform 1 (Suburban Local Terminal & Through)",
+    "category": "platform",
+    "floor_level": "Platform Level",
+    "svg_coords": {
+      "x": 360,
+      "y": 280
+    },
+    "node_id": "node_kalyan_pf1",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "Central Railway Suburban Timetable",
+    "source_reference": "CR Suburban terminal platform directory",
+    "source_access_date": "2026-09-19",
+    "notes": "Suburban trains terminating from CSMT and originating towards CSMT.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "kalyan_pf_04",
+    "station_id": "kalyan",
+    "station_name": "Kalyan Junction",
+    "station_code": "KYN",
+    "name": "Platform 4 (Express Northbound to Kasara/Nashik)",
+    "category": "platform",
+    "floor_level": "Platform Level",
+    "svg_coords": {
+      "x": 500,
+      "y": 280
+    },
+    "node_id": "node_kalyan_pf4",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "Central Railway Junction Timetable",
+    "source_reference": "CR Outstation route chart",
+    "source_access_date": "2026-09-19",
+    "notes": "Long-distance and suburban trains on North-East corridor (Titwala, Asangaon, Kasara).",
+    "confidence_level": "medium"
   }
 ]

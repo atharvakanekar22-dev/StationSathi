@@ -1,0 +1,56 @@
+[
+  {
+    "report_id": "rep_893f6ceb",
+    "station_id": "dadar",
+    "item_id": "dadar_fac_washroom_east",
+    "issue_type": "facility_unavailable",
+    "description": "Cleaning in progress between 2-3 PM",
+    "timestamp": "2026-09-19T10:00:00Z",
+    "status": "pending_review"
+  },
+  {
+    "report_id": "rep_7ff7faea",
+    "station_id": "dadar",
+    "item_id": "dadar_fac_washroom_east",
+    "issue_type": "facility_unavailable",
+    "description": "Cleaning in progress between 2-3 PM",
+    "timestamp": "2026-09-19T10:00:00Z",
+    "status": "pending_review"
+  },
+  {
+    "report_id": "rep_f223867f",
+    "station_id": "dadar",
+    "item_id": "dadar_fac_washroom_east",
+    "issue_type": "facility_unavailable",
+    "description": "Cleaning in progress between 2-3 PM",
+    "timestamp": "2026-09-19T10:00:00Z",
+    "status": "pending_review"
+  },
+  {
+    "report_id": "rep_1f058fa7",
+    "station_id": "dadar",
+    "item_id": "dadar_fac_washroom_east",
+    "issue_type": "facility_unavailable",
+    "description": "Cleaning in progress between 2-3 PM",
+    "timestamp": "2026-09-19T10:00:00Z",
+    "status": "pending_review"
+  },
+  {
+    "report_id": "rep_1570d3c4",
+    "station_id": "dadar",
+    "item_id": "dadar_fac_washroom_east",
+    "issue_type": "facility_unavailable",
+    "description": "Cleaning in progress between 2-3 PM",
+    "timestamp": "2026-09-19T10:00:00Z",
+    "status": "pending_review"
+  },
+  {
+    "report_id": "rep_b4c892ad",
+    "station_id": "ghatkopar",
+    "item_id": null,
+    "issue_type": "entrance_or_exit",
+    "description": "Yash mhatre",
+    "timestamp": "2026-09-19T11:29:01.333Z",
+    "status": "pending_review"
+  }
+]

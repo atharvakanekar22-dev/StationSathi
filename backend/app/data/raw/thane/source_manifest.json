@@ -1,0 +1,24 @@
+{
+  "station_id": "thane",
+  "sources": [
+    {
+      "source_id": "SRC-CR-THANE",
+      "name": "Central Railway Mumbai Division - Thane Station Profile",
+      "type": "official_directory",
+      "access_date": "2026-09-19",
+      "license": "Public Railway Directory",
+      "verification_status": "publicly_sourced",
+      "confidence_level": "medium"
+    },
+    {
+      "source_id": "SRC-OSM-THANE",
+      "name": "OpenStreetMap Overpass Station Geometry - Thane",
+      "type": "geospatial_vector",
+      "access_date": "2026-09-19",
+      "license": "ODbL",
+      "verification_status": "publicly_sourced",
+      "confidence_level": "medium"
+    }
+  ],
+  "last_ingested": "2026-09-19"
+}

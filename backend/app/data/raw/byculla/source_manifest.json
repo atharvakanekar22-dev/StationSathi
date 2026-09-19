@@ -1,0 +1,24 @@
+{
+  "station_id": "byculla",
+  "sources": [
+    {
+      "source_id": "SRC-CR-BYCULLA",
+      "name": "Central Railway Mumbai Division - Byculla Station Profile",
+      "type": "official_directory",
+      "access_date": "2026-09-19",
+      "license": "Public Railway Directory",
+      "verification_status": "publicly_sourced",
+      "confidence_level": "medium"
+    },
+    {
+      "source_id": "SRC-OSM-BYCULLA",
+      "name": "OpenStreetMap Overpass Station Geometry - Byculla",
+      "type": "geospatial_vector",
+      "access_date": "2026-09-19",
+      "license": "ODbL",
+      "verification_status": "publicly_sourced",
+      "confidence_level": "medium"
+    }
+  ],
+  "last_ingested": "2026-09-19"
+}

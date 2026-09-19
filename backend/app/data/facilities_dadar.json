@@ -7,14 +7,20 @@
     "name": "East Concourse Washroom Complex",
     "category": "washroom",
     "floor_level": "Ground Concourse",
-    "svg_coords": { "x": 850, "y": 420 },
+    "svg_coords": {
+      "x": 850,
+      "y": 420
+    },
     "node_id": "node_washroom_east",
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
+    "last_updated": "2026-09-19",
     "source_method": "Prototype mapping based on OpenStreetMap nodes and surveyed concourse layout",
-    "notes": "Includes Men's, Women's, and dedicated Divyangjan accessible cubicles."
+    "source_reference": "OSM Dadar concourse nodes & field survey reference",
+    "source_access_date": "2026-09-19",
+    "notes": "Includes Men's, Women's, and dedicated Divyangjan accessible cubicles.",
+    "confidence_level": "high"
   },
   {
     "facility_id": "dadar_shoepolish_01",
@@ -24,31 +30,43 @@
     "name": "Shoe-Polishing Kiosk (East Concourse)",
     "category": "shoepolish",
     "floor_level": "Ground Concourse",
-    "svg_coords": { "x": 820, "y": 290 },
+    "svg_coords": {
+      "x": 820,
+      "y": 290
+    },
     "node_id": "node_shoepolish_east",
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
+    "last_updated": "2026-09-19",
     "source_method": "Field verified prototype record (Railway licensed vendor kiosk under East FOB stairwell)",
-    "notes": "Traditional station shoe-shine stand with fixed pricing regulated by Central Railway."
+    "source_reference": "CR commercial vendor license observational record",
+    "source_access_date": "2026-09-19",
+    "notes": "Traditional station shoe-shine stand with fixed pricing regulated by Central Railway.",
+    "confidence_level": "high"
   },
   {
     "facility_id": "dadar_shoepolish_02",
     "station_id": "dadar",
     "station_name": "Dadar Central",
     "station_code": "DR",
-    "name": "Shoe-Polishing Stand (Platform 2 Mid-Section)",
+    "name": "Shoe-Polishing Stand (Platform 8 Mid-Section)",
     "category": "shoepolish",
     "floor_level": "Platform Level",
-    "svg_coords": { "x": 270, "y": 380 },
-    "node_id": "node_shoepolish_pf2",
+    "svg_coords": {
+      "x": 255,
+      "y": 380
+    },
+    "node_id": "node_shoepolish_pf8",
     "availability_status": "operational",
     "verification_status": "needs_verification",
     "is_official": false,
-    "last_updated": "2025-01-20",
-    "source_method": "Prototype commuter observation record",
-    "notes": "Located on Slow Line Platform 2 near south-bound coach indicators."
+    "last_updated": "2026-09-19",
+    "source_method": "Commuter observation record remapped from former island platform location",
+    "source_reference": "Commuter survey report post-renumbering",
+    "source_access_date": "2026-09-19",
+    "notes": "Located on Slow Line Platform 8 (former Platform 1/2 island prior to surrender of old Platform 2) near coach indicators.",
+    "confidence_level": "high"
   },
   {
     "facility_id": "dadar_ticket_01",
@@ -58,14 +76,20 @@
     "name": "East Booking Windows & ATVM Zone",
     "category": "ticket_counter",
     "floor_level": "Ground Concourse",
-    "svg_coords": { "x": 850, "y": 250 },
+    "svg_coords": {
+      "x": 850,
+      "y": 250
+    },
     "node_id": "node_ticket_east",
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
+    "last_updated": "2026-09-19",
     "source_method": "OSM Overpass extraction & manual survey",
-    "notes": "UTS suburban ticket windows, season pass renewal, and 4 Automatic Ticket Vending Machines (ATVM)."
+    "source_reference": "OSM Way: Dadar East Concourse",
+    "source_access_date": "2026-09-19",
+    "notes": "UTS suburban ticket windows, season pass renewal, and 4 Automatic Ticket Vending Machines (ATVM).",
+    "confidence_level": "high"
   },
   {
     "facility_id": "dadar_ticket_02",
@@ -75,14 +99,20 @@
     "name": "West Booking Office",
     "category": "ticket_counter",
     "floor_level": "Ground Concourse",
-    "svg_coords": { "x": 100, "y": 270 },
+    "svg_coords": {
+      "x": 100,
+      "y": 270
+    },
     "node_id": "node_ticket_west",
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
+    "last_updated": "2026-09-19",
     "source_method": "OSM Overpass extraction",
-    "notes": "Serving passengers arriving from Senapati Bapat Marg."
+    "source_reference": "OSM Node: Dadar West UTS",
+    "source_access_date": "2026-09-19",
+    "notes": "Serving passengers arriving from Senapati Bapat Marg.",
+    "confidence_level": "high"
   },
   {
     "facility_id": "dadar_elevator_01",
@@ -92,48 +122,66 @@
     "name": "Central FOB Accessible Elevator (East Concourse)",
     "category": "elevator",
     "floor_level": "Ground / FOB Level 1",
-    "svg_coords": { "x": 780, "y": 330 },
+    "svg_coords": {
+      "x": 780,
+      "y": 330
+    },
     "node_id": "node_elevator_east",
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
+    "last_updated": "2026-09-19",
     "source_method": "Surveyed accessible infrastructure dataset",
-    "notes": "Direct elevator connect between East Ground Concourse and Central FOB deck. Braille buttons & audio chime."
+    "source_reference": "Central Railway Divyangjan accessibility project records",
+    "source_access_date": "2026-09-19",
+    "notes": "Direct elevator connect between East Ground Concourse and Central FOB deck. Braille buttons & audio chime.",
+    "confidence_level": "high"
   },
   {
     "facility_id": "dadar_elevator_02",
     "station_id": "dadar",
     "station_name": "Dadar Central",
     "station_code": "DR",
-    "name": "Platform 4 Accessible Elevator",
+    "name": "Platform 10 Accessible Elevator",
     "category": "elevator",
     "floor_level": "FOB / Platform Level",
-    "svg_coords": { "x": 440, "y": 380 },
-    "node_id": "node_elevator_pf4",
+    "svg_coords": {
+      "x": 440,
+      "y": 380
+    },
+    "node_id": "node_elevator_pf10",
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
-    "source_method": "Surveyed accessible infrastructure dataset",
-    "notes": "Connects Central FOB directly down to Platform 4 (Fast Southbound to CSMT)."
+    "last_updated": "2026-09-19",
+    "source_method": "Surveyed accessible infrastructure dataset remapped to new platform numbering",
+    "source_reference": "Central Railway Press Release Dec 2023 & Accessibility audit",
+    "source_access_date": "2026-09-19",
+    "notes": "Connects Central FOB directly down to Platform 10 (Fast Southbound to CSMT, former Platform 4).",
+    "confidence_level": "high"
   },
   {
     "facility_id": "dadar_elevator_03",
     "station_id": "dadar",
     "station_name": "Dadar Central",
     "station_code": "DR",
-    "name": "Platform 5 Accessible Elevator",
+    "name": "Platform 11 Accessible Elevator",
     "category": "elevator",
     "floor_level": "FOB / Platform Level",
-    "svg_coords": { "x": 610, "y": 370 },
-    "node_id": "node_elevator_pf5",
+    "svg_coords": {
+      "x": 610,
+      "y": 370
+    },
+    "node_id": "node_elevator_pf11",
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
-    "source_method": "Surveyed accessible infrastructure dataset",
-    "notes": "Connects Central FOB down to Platform 5."
+    "last_updated": "2026-09-19",
+    "source_method": "Surveyed accessible infrastructure dataset remapped to new platform numbering",
+    "source_reference": "Central Railway Press Release Dec 2023 & Accessibility audit",
+    "source_access_date": "2026-09-19",
+    "notes": "Connects Central FOB down to Platform 11 (Mainline & Express terminal, former Platform 5).",
+    "confidence_level": "high"
   },
   {
     "facility_id": "dadar_food_01",
@@ -143,14 +191,20 @@
     "name": "IRCTC Ahaar Food Stall",
     "category": "food_stall",
     "floor_level": "Ground Concourse",
-    "svg_coords": { "x": 850, "y": 200 },
+    "svg_coords": {
+      "x": 850,
+      "y": 200
+    },
     "node_id": "node_food_east",
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
+    "last_updated": "2026-09-19",
     "source_method": "Prototype mapping based on concourse survey",
-    "notes": "Hot breakfast (Vada Pav, Idli, Tea), packaged snacks, and Rail Neer."
+    "source_reference": "IRCTC licensed catering unit registry",
+    "source_access_date": "2026-09-19",
+    "notes": "Hot breakfast (Vada Pav, Idli, Tea), packaged snacks, and Rail Neer.",
+    "confidence_level": "high"
   },
   {
     "facility_id": "dadar_water_01",
@@ -160,14 +214,20 @@
     "name": "Potable Drinking Water Point",
     "category": "drinking_water",
     "floor_level": "Ground Concourse",
-    "svg_coords": { "x": 850, "y": 460 },
+    "svg_coords": {
+      "x": 850,
+      "y": 460
+    },
     "node_id": "node_water_east",
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
+    "last_updated": "2026-09-19",
     "source_method": "Prototype mapping based on concourse survey",
-    "notes": "Free filtered municipal drinking water station with stainless steel taps."
+    "source_reference": "Station water amenities audit",
+    "source_access_date": "2026-09-19",
+    "notes": "Free filtered municipal drinking water station with stainless steel taps.",
+    "confidence_level": "high"
   },
   {
     "facility_id": "dadar_helpdesk_01",
@@ -177,14 +237,20 @@
     "name": "RPF & Station Sahayata Help Desk",
     "category": "help_desk",
     "floor_level": "Ground Concourse",
-    "svg_coords": { "x": 850, "y": 370 },
+    "svg_coords": {
+      "x": 850,
+      "y": 370
+    },
     "node_id": "node_helpdesk_east",
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
+    "last_updated": "2026-09-19",
     "source_method": "Prototype survey",
-    "notes": "Railway Police assistance, Senior Citizen support, wheelchair requests, and Lost & Found assistance."
+    "source_reference": "CR Mumbai Division Security & Sahayata desk mapping",
+    "source_access_date": "2026-09-19",
+    "notes": "Railway Police assistance, Senior Citizen support, wheelchair requests, and Lost & Found assistance.",
+    "confidence_level": "high"
   },
   {
     "facility_id": "dadar_entrance_01",
@@ -194,14 +260,20 @@
     "name": "East Entrance (Dadar TT / Swami Gyan Jivandas Marg)",
     "category": "entrance_exit",
     "floor_level": "Ground Concourse",
-    "svg_coords": { "x": 890, "y": 330 },
+    "svg_coords": {
+      "x": 890,
+      "y": 330
+    },
     "node_id": "node_entrance_east",
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
+    "last_updated": "2026-09-19",
     "source_method": "OSM Overpass extraction & ground survey",
-    "notes": "Major vehicular drop-off, BEST bus connectivity to Dadar TT circle."
+    "source_reference": "OSM Station Entrance Node #382910",
+    "source_access_date": "2026-09-19",
+    "notes": "Major vehicular drop-off, BEST bus connectivity to Dadar TT circle.",
+    "confidence_level": "high"
   },
   {
     "facility_id": "dadar_entrance_02",
@@ -211,98 +283,111 @@
     "name": "West Entrance (Senapati Bapat Marg / Flower Market)",
     "category": "entrance_exit",
     "floor_level": "Ground Concourse",
-    "svg_coords": { "x": 60, "y": 330 },
+    "svg_coords": {
+      "x": 60,
+      "y": 330
+    },
     "node_id": "node_entrance_west",
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
+    "last_updated": "2026-09-19",
     "source_method": "OSM Overpass extraction",
-    "notes": "Access to Western Dadar, flower market, and Plaza cinema lane."
+    "source_reference": "OSM Station Entrance Node #382914",
+    "source_access_date": "2026-09-19",
+    "notes": "Access to Western Dadar, flower market, and Plaza cinema lane.",
+    "confidence_level": "high"
   },
   {
-    "facility_id": "dadar_pf_04",
+    "facility_id": "dadar_pf_10",
     "station_id": "dadar",
     "station_name": "Dadar Central",
     "station_code": "DR",
-    "name": "Platform 4 (Central Fast Southbound to CSMT)",
+    "name": "Platform 10 (Central Fast Southbound to CSMT)",
     "category": "platform",
     "floor_level": "Platform Level",
-    "svg_coords": { "x": 440, "y": 330 },
-    "node_id": "node_pf4",
+    "svg_coords": {
+      "x": 440,
+      "y": 330
+    },
+    "node_id": "node_pf10",
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
-    "source_method": "Official railway track layout & OSM alignment",
-    "notes": "Fast local trains towards Byculla & CSMT. Equipped with elevator to Central FOB."
+    "last_updated": "2026-09-19",
+    "source_method": "Official CR platform renumbering notice (former Platform 4)",
+    "source_reference": "Central Railway Press Release Ref: CR/BB/2023/12/03",
+    "source_access_date": "2026-09-19",
+    "notes": "Fast local trains towards Byculla & CSMT. Equipped with elevator to Central FOB. Renumbered from Old Platform 4 on Dec 9, 2023.",
+    "confidence_level": "high"
   },
   {
-    "facility_id": "dadar_pf_05",
+    "facility_id": "dadar_pf_11",
     "station_id": "dadar",
     "station_name": "Dadar Central",
     "station_code": "DR",
-    "name": "Platform 5 (Mainline & Express Terminal)",
+    "name": "Platform 11 (Mainline & Express Terminal)",
     "category": "platform",
     "floor_level": "Platform Level",
-    "svg_coords": { "x": 610, "y": 330 },
-    "node_id": "node_pf5",
+    "svg_coords": {
+      "x": 610,
+      "y": 330
+    },
+    "node_id": "node_pf11",
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
-    "source_method": "Official railway track layout & OSM alignment",
-    "notes": "Accommodates 24-coach long-distance Express and suburban terminates."
+    "last_updated": "2026-09-19",
+    "source_method": "Official CR platform renumbering notice (former Platform 5)",
+    "source_reference": "Central Railway Press Release Ref: CR/BB/2023/12/03",
+    "source_access_date": "2026-09-19",
+    "notes": "Accommodates 24-coach long-distance Express and terminating suburban trains. Renumbered from Old Platform 5 on Dec 9, 2023.",
+    "confidence_level": "high"
   },
   {
-    "facility_id": "dadar_pf_02",
+    "facility_id": "dadar_pf_08",
     "station_id": "dadar",
     "station_name": "Dadar Central",
     "station_code": "DR",
-    "name": "Platform 2 (Central Slow Southbound to CSMT)",
+    "name": "Platform 8 (Central Slow Northbound / Main Suburban)",
     "category": "platform",
     "floor_level": "Platform Level",
-    "svg_coords": { "x": 270, "y": 330 },
-    "node_id": "node_pf2",
+    "svg_coords": {
+      "x": 255,
+      "y": 330
+    },
+    "node_id": "node_pf8",
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
-    "source_method": "Official railway track layout & OSM alignment",
-    "notes": "Slow local trains to CSMT stopping at Currey Road, Chinchpokli, Byculla, Sandhurst Road, Masjid."
+    "last_updated": "2026-09-19",
+    "source_method": "Official CR platform renumbering notice (former Platform 1; Platform 2 surrendered)",
+    "source_reference": "Central Railway Press Release Ref: CR/BB/2023/12/03",
+    "source_access_date": "2026-09-19",
+    "notes": "Slow services north towards Matunga, Kurla, Thane. Widened platform after Old Platform 2 was surrendered in Dec 2023.",
+    "confidence_level": "high"
   },
   {
-    "facility_id": "dadar_pf_03",
+    "facility_id": "dadar_pf_09",
     "station_id": "dadar",
     "station_name": "Dadar Central",
     "station_code": "DR",
-    "name": "Platform 3 (Central Fast Northbound to Thane / Kalyan)",
+    "name": "Platform 9 (Central Fast Northbound to Thane / Kalyan)",
     "category": "platform",
     "floor_level": "Platform Level",
-    "svg_coords": { "x": 410, "y": 330 },
-    "node_id": "node_pf3",
+    "svg_coords": {
+      "x": 410,
+      "y": 330
+    },
+    "node_id": "node_pf9",
     "availability_status": "operational",
     "verification_status": "prototype_data",
     "is_official": false,
-    "last_updated": "2025-02-15",
-    "source_method": "Official railway track layout & OSM alignment",
-    "notes": "Fast services to Kurla, Ghatkopar, Thane, Dombivli, Kalyan."
-  },
-  {
-    "facility_id": "dadar_pf_01",
-    "station_id": "dadar",
-    "station_name": "Dadar Central",
-    "station_code": "DR",
-    "name": "Platform 1 (Central Slow Northbound)",
-    "category": "platform",
-    "floor_level": "Platform Level",
-    "svg_coords": { "x": 240, "y": 330 },
-    "node_id": "node_pf1",
-    "availability_status": "operational",
-    "verification_status": "prototype_data",
-    "is_official": false,
-    "last_updated": "2025-02-15",
-    "source_method": "Official railway track layout & OSM alignment",
-    "notes": "Slow services north towards Matunga and Sion."
+    "last_updated": "2026-09-19",
+    "source_method": "Official CR platform renumbering notice (former Platform 3)",
+    "source_reference": "Central Railway Press Release Ref: CR/BB/2023/12/03",
+    "source_access_date": "2026-09-19",
+    "notes": "Fast services to Kurla, Ghatkopar, Thane, Dombivli, Kalyan. Renumbered from Old Platform 3 on Dec 9, 2023.",
+    "confidence_level": "high"
   }
 ]

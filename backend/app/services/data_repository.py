@@ -48,8 +48,10 @@ class JsonStationRepository(StationRepository):
                     station = Station(**item)
                     self._stations[station.station_id] = station
 
+        station_ids = ["dadar", "csmt", "byculla", "ghatkopar", "thane", "kalyan"]
+
         # Load facilities for all stations
-        for station_id in ["dadar", "csmt", "byculla", "ghatkopar", "thane", "kalyan"]:
+        for station_id in station_ids:
             fac_path = self.data_dir / f"facilities_{station_id}.json"
             if fac_path.exists():
                 with open(fac_path, "r", encoding="utf-8") as f:
@@ -58,20 +60,27 @@ class JsonStationRepository(StationRepository):
             else:
                 self._facilities[station_id] = []
 
-        # Load graph for dadar
-        graph_path = self.data_dir / "graph_dadar.json"
-        if graph_path.exists():
-            with open(graph_path, "r", encoding="utf-8") as f:
-                g_data = json.load(f)
-                nodes_dict = {
-                    nid: GraphNode(**nval) for nid, nval in g_data.get("nodes", {}).items()
-                }
-                edges_list = [GraphEdge(**eval_) for eval_ in g_data.get("edges", [])]
-                self._graphs["dadar"] = StationGraph(
-                    station_id="dadar",
-                    nodes=nodes_dict,
-                    edges=edges_list
-                )
+        # Load graphs for all stations
+        for station_id in station_ids:
+            graph_path = self.data_dir / f"graph_{station_id}.json"
+            if graph_path.exists():
+                with open(graph_path, "r", encoding="utf-8") as f:
+                    g_data = json.load(f)
+                    nodes_dict = {
+                        nid: GraphNode(**nval) for nid, nval in g_data.get("nodes", {}).items()
+                    }
+                    edges_list = [GraphEdge(**eval_) for eval_ in g_data.get("edges", [])]
+                    self._graphs[station_id] = StationGraph(
+                        station_id=station_id,
+                        verification_status=g_data.get("verification_status", "publicly_sourced"),
+                        source_method=g_data.get("source_method"),
+                        source_reference=g_data.get("source_reference"),
+                        source_access_date=g_data.get("source_access_date"),
+                        last_updated=g_data.get("last_updated"),
+                        is_official=g_data.get("is_official", False),
+                        nodes=nodes_dict,
+                        edges=edges_list
+                    )
 
     def get_all_stations(self) -> List[Station]:
         return list(self._stations.values())

@@ -19,16 +19,16 @@ StationSathi addresses this by combining **2D indoor SVG mapping**, **Dijkstra g
 
 ## 2. Key Features
 
-- **Interactive 2D Station Map (Dadar Central Prototype)**: Custom vector map supporting pan, zoom, clickable facility markers, platform safety lines, and animated route visualization.
-- **Indoor Graph Navigation**: Graph model consisting of concourse nodes, FOB junctions, stairways, and elevators connected by weighted walkable edges.
+- **Interactive 2D Station Map**: Custom vector map supporting pan, zoom, clickable facility markers, platform safety lines, and animated route visualization with transparent Map Accuracy indicators (`prototype` vs `schematic`).
+- **Indoor Graph Navigation**: Graph models consisting of concourse nodes, FOB junctions, stairways, and elevators connected by weighted walkable edges across all 6 stations.
 - **Accessibility-Aware Routing**: Dedicated modes including *Avoid stairs* and *Prefer elevator* that enforce step-free paths for passengers with mobility limitations or luggage.
 - **Transparent Data Verification Model**: Every facility record maintains explicit provenance metadata (`prototype_data`, `needs_verification`, `publicly_sourced`) with last-updated timestamps.
-- **Grounded Assistant**: Natural language query interpreter understanding commuter inquiries (*"Where can I polish my shoes?"*, *"Reach Platform 4 without stairs"*) without hallucinations.
+- **Grounded Assistant**: Natural language query interpreter understanding commuter inquiries (*"Where can I polish my shoes?"*, *"Reach Platform 10 without stairs"*) without hallucinations.
 - **Six Station Coverage Model**:
-  - **Dadar Central (DR)**: Detailed interactive prototype with walkable graph and facilities.
-  - **CSMT, Byculla, Ghatkopar, Thane, Kalyan**: Verified basic station overviews, entrance directories, and facility records with distinct coverage labeling.
-- **Resilient Dual-Mode Design**: Authoritative FastAPI backend with automatic client-side fallback mode ensuring a reliable hackathon presentation.
-- **Built-in Demo Controller**: Pre-configured scenario launchers and instantaneous demo reset state.
+  - **Dadar Central (DR)**: Detailed interactive prototype with walkable graph and renumbered platforms (CR Platforms 8 to 14 effective Dec 9, 2023).
+  - **CSMT, Byculla, Ghatkopar, Thane, Kalyan**: Topological routing graphs and custom schematic maps modeling buffer concourses, Metro 1 transfer decks, SATIS bus decks, and accessible ramps.
+- **Resilient Dual-Mode Design**: Authoritative FastAPI backend with automatic client-side fallback mode ensuring a reliable demonstration.
+- **Built-in Demo Controller**: Pre-configured multi-station scenario launchers and instantaneous demo reset state.
 
 ---
 
@@ -130,7 +130,7 @@ User Query ("Where can I polish my shoes?")
 [Domain Intent Classifier] ──► Intent: facility_search, Category: shoepolish
    │
    ▼
-[Database Lookup] ──────────► Mapped Kiosks at Dadar East Concourse & Platform 2
+[Database Lookup] ──────────► Mapped Kiosks at Dadar East Concourse & Platform 8
    │
    ▼
 [Structured Response] ──────► Grounded text + One-click map highlight & navigation
@@ -151,8 +151,11 @@ StationSathi/
 │   │   ├── models/          # Pydantic schemas
 │   │   ├── services/        # Dijkstra graph engine, NLP interpreter, repository layer
 │   │   └── main.py          # FastAPI application entrypoint
+│   ├── scripts/
+│   │   ├── validate_station_data.py  # Automated data validation suite
+│   │   └── generate_fallback_data.py # Client fallback builder
 │   ├── tests/
-│   │   └── test_api.py      # Pytest automated API and graph tests
+│   │   └── test_api.py      # Pytest automated API and graph tests (17 tests)
 │   └── requirements.txt     # Python dependencies
 ├── frontend/
 │   ├── public/              # Static icons and assets
@@ -166,6 +169,13 @@ StationSathi/
 │   └── vite.config.js
 ├── docs/
 │   ├── ARCHITECTURE.md      # System architecture and flow diagrams
+│   ├── DADAR_DATA_MIGRATION.md # Platform renumbering audit & migration
+│   ├── STATION_DATA_AUDIT.md   # Detailed audit across all 6 stations
+│   ├── STATION_DATA_SOURCES.md # Authoritative source register
+│   ├── FIELD_SURVEY_TEMPLATE.md# Physical on-site auditing protocol
+│   ├── STATION_COVERAGE.md  # Coverage tiers and expansion roadmap
+│   ├── VALIDATION_REPORT.md # Validation suite and test output
+│   ├── IMPLEMENTATION_COMPLETION_REPORT.md # 22-item implementation report
 │   ├── DATA_MODEL.md        # Schema definitions and PostgreSQL migration guide
 │   ├── DEMO_SCRIPT.md       # 5–7 minute live presentation guide
 │   └── API_DOCUMENTATION.md # REST API endpoint reference
@@ -220,27 +230,36 @@ cmd.exe /c npm.cmd run dev
 
 ---
 
-## 13. Running Automated Tests
+## 13. Running Automated Tests & Validation
 
-Execute the full suite of backend and navigation tests:
+### Validate Station Data Integrity
+```powershell
+python backend/scripts/validate_station_data.py
+```
+*Executes comprehensive checks across all 6 stations: metadata schema, platform renumbering audit, edge referential integrity, facility mapping, and coordinate sanity.*
+
+### Execute Full Pytest Suite
 ```powershell
 python -m pytest backend/tests/test_api.py -v
 ```
-All 9 test suites validate station coverage, facility search, Dijkstra shortest routes, stair avoidance elevator paths, and NLP queries.
+*All 17 tests validate station coverage, facility search, Dijkstra shortest routes, stair avoidance elevator paths, step-free verification, and NLP intent extraction.*
 
 ---
 
-## 14. Live Demonstration Scenarios (Module 13)
+## 14. Live Demonstration Scenarios
 
 The application includes an interactive **Demo Controller** accessible via the "Demo Scenarios" button in the header:
 
-| Scenario | Objective | Expected Interaction & Result |
-|---|---|---|
-| **Scenario 1** | Facility Discovery | Dadar selected -> Search `"washroom"` -> East Concourse Washroom Complex highlighted on map with Divyangjan verification details. |
-| **Scenario 2** | Shoe-Polishing Service | Ask *"Where can I polish my shoes?"* -> NLP detects `shoepolish` -> Licensed kiosk displayed with pricing notes. |
-| **Scenario 3** | Indoor Navigation | Origin: *East Entrance*, Destination: *Platform 5*, Preference: *Shortest* -> Dijkstra path (127m, ~169 steps) rendered with turn-by-turn guidance. |
-| **Scenario 4** | Accessibility Route | Query *"Platform 4 without stairs"* -> Strict stair-free route calculated through Central FOB elevator and Platform 4 lift. |
-| **Scenario 5** | Station Switching | Switch station to *Thane* -> Coverage status updates to *Basic station information* with entrance and platform directories. |
+| Scenario | Station | Objective | Expected Interaction & Result |
+|---|---|---|---|
+| **Scenario 1** | Dadar Central | Facility Discovery | Dadar selected -> Search `"washroom"` -> East Concourse Washroom Complex highlighted on map with Divyangjan verification details. |
+| **Scenario 2** | Dadar Central | Shoe-Polishing Service | Ask *"Where can I polish my shoes?"* -> NLP detects `shoepolish` -> Licensed kiosk on Platform 8 displayed with pricing notes. |
+| **Scenario 3** | Dadar Central | Indoor Navigation | Origin: *East Entrance*, Destination: *Platform 11*, Preference: *Shortest* -> Dijkstra path (127m, ~169 steps) rendered with turn-by-turn guidance. |
+| **Scenario 4** | Dadar Central | Accessibility Route | Query *"Platform 10 without stairs"* -> Strict stair-free route calculated through Central FOB elevator and Platform 10 lift. |
+| **CSMT** | CSMT | Suburban Buffer Navigation | Origin: *Walchand Hirachand Marg Gate*, Destination: *Platform 4* -> Step-free buffer stop apron concourse route. |
+| **Ghatkopar**| Ghatkopar | Metro 1 Transfer Deck | Origin: *Metro Gate*, Destination: *Platform 1* -> Step-free elevator connection between Metro and Railway. |
+| **Thane** | Thane | SATIS Bus Deck to Platform | Origin: *SATIS Bus Deck*, Destination: *Platform 1* -> Accessible connecting ramp and bridge navigation. |
+| **Kalyan** | Kalyan | West Bus Depot to Express | Origin: *West Bus Depot*, Destination: *Platform 4* -> South FOB navigation to outstation express platform. |
 
 For the full spoken presentation script, refer to [`docs/DEMO_SCRIPT.md`](docs/DEMO_SCRIPT.md).
 
@@ -248,7 +267,7 @@ For the full spoken presentation script, refer to [`docs/DEMO_SCRIPT.md`](docs/D
 
 ## 15. Known Limitations
 
-1. **Station Mapping Breadth**: Full 2D SVG indoor topology and Dijkstra navigation graphs are currently active for Dadar Central (DR). The remaining five stations feature verified basic records.
+1. **Station Mapping Breadth**: Full sub-meter detailed prototype mapping is active for Dadar Central (DR). CSMT, Byculla, Ghatkopar, Thane, and Kalyan feature topological routing graphs and custom schematic maps.
 2. **Dynamic Train Tracking**: Real-time train arrival times and sudden platform changes are intentionally omitted to prevent misleading passengers with unverified data.
 3. **Indoor Positioning**: Automated indoor positioning (BLE beacons / Wi-Fi RTT) is not implemented; manual landmark selection is used for reliable origin setting.
 

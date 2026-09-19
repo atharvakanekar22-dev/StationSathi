@@ -7,27 +7,66 @@
     "name": "East Concourse Booking Office (Kopri Side)",
     "category": "ticket_counter",
     "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 820,
+      "y": 220
+    },
+    "node_id": "node_thane_ticket_east",
     "availability_status": "operational",
     "verification_status": "publicly_sourced",
     "is_official": false,
-    "last_updated": "2025-01-05",
+    "last_updated": "2026-09-19",
+    "source_method": "OSM public tags & Central Railway directory",
+    "source_reference": "OSM Node: Thane East UTS #3829108",
+    "source_access_date": "2026-09-19",
+    "notes": "Near CIDCO bus stop and auto-rickshaw terminal with 6 ATVMs.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "thane_ticket_02",
+    "station_id": "thane",
+    "station_name": "Thane",
+    "station_code": "TNA",
+    "name": "West Gokhale Road UTS Windows & ATVMs",
+    "category": "ticket_counter",
+    "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 160,
+      "y": 350
+    },
+    "node_id": "node_thane_ticket_west",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
     "source_method": "OSM public tags",
-    "notes": "Near CIDCO bus stop and auto-rickshaw terminal."
+    "source_reference": "OSM Node: Thane West UTS #3829112",
+    "source_access_date": "2026-09-19",
+    "notes": "Main ticket counter hall on West side facing Gokhale Road.",
+    "confidence_level": "medium"
   },
   {
     "facility_id": "thane_washroom_01",
     "station_id": "thane",
     "station_name": "Thane",
     "station_code": "TNA",
-    "name": "Platform 2/3 Island Washroom",
+    "name": "Platform 2/3 Island Washroom Complex",
     "category": "washroom",
     "floor_level": "Platform Level",
+    "svg_coords": {
+      "x": 340,
+      "y": 380
+    },
+    "node_id": "node_thane_washroom_pf2",
     "availability_status": "operational",
     "verification_status": "publicly_sourced",
     "is_official": false,
-    "last_updated": "2025-01-05",
+    "last_updated": "2026-09-19",
     "source_method": "OSM public tags",
-    "notes": "Located on Slow local platform."
+    "source_reference": "OSM Amenity: Toilets #3829120",
+    "source_access_date": "2026-09-19",
+    "notes": "Located on Slow local platform 2/3 mid-section.",
+    "confidence_level": "medium"
   },
   {
     "facility_id": "thane_helpdesk_01",
@@ -37,11 +76,111 @@
     "name": "Central Railway Sahayata Help Desk (West Gate)",
     "category": "help_desk",
     "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 160,
+      "y": 220
+    },
+    "node_id": "node_thane_helpdesk_west",
     "availability_status": "operational",
     "verification_status": "publicly_sourced",
     "is_official": false,
-    "last_updated": "2025-01-05",
+    "last_updated": "2026-09-19",
     "source_method": "Central Railway public document",
-    "notes": "Information & assistance near Gokhale Road entrance."
+    "source_reference": "CR Mumbai Division Thane station passenger guide",
+    "source_access_date": "2026-09-19",
+    "notes": "Information, wheelchair assistance, and passenger grievance desk near Gokhale Road entrance.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "thane_entrance_01",
+    "station_id": "thane",
+    "station_name": "Thane",
+    "station_code": "TNA",
+    "name": "West Entrance (Gokhale Road / Talao Pali side)",
+    "category": "entrance_exit",
+    "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 80,
+      "y": 280
+    },
+    "node_id": "node_thane_gate_west",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "OSM Station Entrance Node",
+    "source_reference": "OSM Node #3829104",
+    "source_access_date": "2026-09-19",
+    "notes": "Primary West entrance with access to city markets and Talao Pali.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "thane_entrance_02",
+    "station_id": "thane",
+    "station_name": "Thane",
+    "station_code": "TNA",
+    "name": "Elevated SATIS Deck Bus Terminal Entrance",
+    "category": "entrance_exit",
+    "floor_level": "Elevated SATIS Deck",
+    "svg_coords": {
+      "x": 80,
+      "y": 160
+    },
+    "node_id": "node_thane_gate_satis",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "TMC SATIS Infrastructure Project Report",
+    "source_reference": "Thane Municipal Corporation Station Area Traffic Improvement Scheme",
+    "source_access_date": "2026-09-19",
+    "notes": "Elevated bus concourse with direct ramp connecting TMT buses to railway overbridge.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "thane_pf_01",
+    "station_id": "thane",
+    "station_name": "Thane",
+    "station_code": "TNA",
+    "name": "Platform 1 (Slow Northbound to Kalva/Dombivli/Kalyan)",
+    "category": "platform",
+    "floor_level": "Platform Level",
+    "svg_coords": {
+      "x": 370,
+      "y": 280
+    },
+    "node_id": "node_thane_pf1",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "Central Railway Suburban Timetable",
+    "source_reference": "CR Suburban track directory",
+    "source_access_date": "2026-09-19",
+    "notes": "Slow services north towards Kalyan.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "thane_pf_09",
+    "station_id": "thane",
+    "station_name": "Thane",
+    "station_code": "TNA",
+    "name": "Platform 9 (Trans-Harbour to Vashi/Nerul/Panvel)",
+    "category": "platform",
+    "floor_level": "Platform Level",
+    "svg_coords": {
+      "x": 660,
+      "y": 280
+    },
+    "node_id": "node_thane_pf9",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "Central Railway Trans-Harbour Line Layout",
+    "source_reference": "CR Trans-Harbour timetable",
+    "source_access_date": "2026-09-19",
+    "notes": "Dedicated terminal platform for Trans-Harbour local trains to Navi Mumbai.",
+    "confidence_level": "medium"
   }
 ]

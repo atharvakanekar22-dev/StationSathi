@@ -42,7 +42,7 @@ This script guides presenters through an end-to-end hackathon demonstration of S
    > "Notice the verification badge: *Prototype Data*. We do not claim official railway endorsement. Every facility record specifies the level, availability status, and provenance notes—including Divyangjan accessible stalls."
 3. **Action (Scenario 2)**:
    - In the search bar or category pills, click **Shoe Polish** (or open Demo Scenarios and click Scenario 2).
-   - Point to the traditional shoe-polishing kiosk located under the East FOB staircase and on Platform 2.
+   - Point to the traditional shoe-polishing kiosk located under the East FOB staircase and on Platform 8 (former Platform 1/2 island).
    > "StationSathi maps micro-amenities that regular transit apps overlook: licensed shoe-shine stands, potable water vending machines, and RPF help desks."
 
 ---
@@ -50,18 +50,18 @@ This script guides presenters through an end-to-end hackathon demonstration of S
 ### Minute 3:00 – 4:15: Graph Navigation & Accessibility-Aware Routing (Scenarios 3 & 4)
 1. **Action (Scenario 3 - Shortest Route)**:
    - In the Route Planner:
-     - Select current landmark: **East Entrance (Dadar TT)**.
-     - Select destination: **Platform 5 (Mainline & Express)**.
+     - Select current landmark: **East Entrance (Ground Concourse)**.
+     - Select destination: **Platform 11 (Mainline & Express Terminal)**.
      - Select preference: **Shortest route**.
-   - Click **Calculate Indoor Route**.
+   - Click **Calculate Indoor Route** (or select Scenario 3 in Demo Controller).
 2. **Talking Points**:
-   > "Notice the path drawn dynamically using Dijkstra's algorithm. It guides the passenger from the East Entrance, up the Central FOB staircase, across the span, and down to Platform 5. Total distance: 127 meters, approximately 169 steps (~0.75m/stride), taking ~115 seconds. Notice the warning badge: *Involves flight of stairs*."
+   > "Notice the path drawn dynamically using Dijkstra's algorithm. It guides the passenger from the East Entrance, up the Central FOB staircase, across the span, and down to Platform 11. Total distance: 127 meters, approximately 169 steps (~0.75m/stride), taking ~115 seconds. Notice the warning badge: *Involves flight of stairs*."
 3. **Action (Scenario 4 - Accessibility Route)**:
-   - Change Destination to **Platform 4 (Central Fast Southbound)**.
+   - Change Destination to **Platform 10 (Central Fast Southbound)**.
    - Change Preference to **Avoid stairs** (or click Scenario 4 in the Demo Controller).
    - Click **Calculate Indoor Route**.
 4. **Talking Points**:
-   > "Look at what happened to the route: The engine strictly excluded all stairwells. Instead of climbing stairs, it routes the passenger into the Central FOB Accessible Elevator, across the bridge deck, and down via the Platform 4 Elevator! Notice the Step-Free verified badge."
+   > "Look at what happened to the route: The engine strictly excluded all stairwells. Instead of climbing stairs, it routes the passenger into the Central FOB Accessible Elevator, across the bridge deck, and down via the Platform 10 Elevator! Notice the Step-Free verified badge and 100% elevator connectivity."
 
 ---
 
@@ -74,20 +74,28 @@ This script guides presenters through an end-to-end hackathon demonstration of S
    > - Category: `shoepolish`
    > - Station: `Dadar`
    > - Action: `Show mapped facilities`
-   > It immediately locates the two licensed kiosks at Dadar."
-4. **Action**: Try: *"Reach Platform 4 without using stairs"*.
-   > "The assistant detects the target platform AND the stair-avoidance constraint, and offers one-click navigation directly onto the map."
+   > It immediately locates the licensed kiosks at Dadar."
+4. **Action**: Try: *"Reach Platform 10 without using stairs"*.
+   > "The assistant detects the target platform (Platform 10) AND the stair-avoidance constraint, and offers one-click navigation directly onto the map."
+5. **Action**: Try: *"Where is the nearest washroom?"*.
+   > "Notice that the assistant asks for your current landmark! In an indoor station without GPS, 'nearest' is mathematically undefined unless your starting point is known."
 
 ---
 
-### Minute 5:30 – 6:30: Station Switching & Coverage Transparency (Scenario 5)
-1. **Action**: Use the header station dropdown to switch from **Dadar** to **Thane**.
+### Minute 5:30 – 6:30: Multi-Station Navigation & Map Accuracy Transparency
+1. **Action**: Use the header station dropdown to switch from **Dadar** to **Ghatkopar**, **Thane**, or **CSMT**.
 2. **Talking Points**:
-   > "Notice the interface changes cleanly. The coverage badge now reads: *Basic station information*. We don't pretend to have indoor navigation graphs for stations we haven't surveyed yet. We provide verified entrance/exit directories, platform counts, and public facility records for Byculla, CSMT, Ghatkopar, Thane, and Kalyan."
+   > "StationSathi supports all six core Central Railway stations with full topological graphs, custom schematic SVG maps, and turn-by-turn routing:
+   > - Notice the **Map Accuracy** badge changes from *prototype* to *schematic*.
+   > - In **Ghatkopar**, we model the Metro Line 1 elevated transfer deck and its direct accessible elevator down to Platform 1.
+   > - In **Thane**, we model the elevated SATIS bus deck and its accessible pedestrian ramp connecting to the Central FOB.
+   > - In **CSMT**, we model the step-free buffer apron concourse leading directly to Platforms 1 through 7 without stairs.
+   > - In **Kalyan**, we model the West bus depot entrance ramp and South FOB."
+3. **Action**: Click the **Station Factsheet** button in the header strip to display the complete station directory and platform summary.
 
 ---
 
 ### Minute 6:30 – 7:00: Architecture & Wrap-Up
 1. **Talking Points**:
-   > "To recap the architecture: A FastAPI Python backend running authoritative Dijkstra graph routing and intent classification, coupled with a responsive React frontend and a clean JSON repository ready for PostgreSQL/PostGIS. If the network drops, the app features an offline prototype fallback so commuters are never stranded."
+   > "To recap the architecture: A FastAPI Python backend running authoritative Dijkstra graph routing and deterministic intent parsing, coupled with a responsive React 19 frontend and a clean JSON repository ready for PostgreSQL/PostGIS. If network connectivity drops, the app features an offline prototype fallback so commuters are never stranded."
    > "Thank you! We welcome any questions on StationSathi."

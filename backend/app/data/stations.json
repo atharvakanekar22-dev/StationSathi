@@ -4,22 +4,32 @@
     "name": "Dadar Central",
     "code": "DR",
     "network": "Central Railway",
-    "description": "Critical multimodal interchange in central Mumbai bridging Central Railway (Suburban & Outstation) and Western Railway. High footfall station featuring three major Foot Overbridges (North, Central, South), dedicated elevated escalators, accessible elevators, and multiple concourses.",
+    "railway_zone": "Central Railway",
+    "division": "Mumbai",
+    "station_type": "Multimodal Interchange Hub",
+    "description": "Critical multimodal interchange in central Mumbai bridging Central Railway (Suburban & Outstation) and Western Railway. High-footfall station featuring three major Foot Overbridges (North, Central, South), accessible elevators, and multiple concourses.",
     "coverage": "detailed_prototype",
     "coverage_label": "Detailed navigation prototype",
     "map_type": "interactive_svg",
-    "platforms_count": 8,
+    "map_accuracy": "prototype",
+    "platforms_count": 7,
+    "platform_information": "7 active Central Railway platforms (renumbered 8 to 14 effective 9 Dec 2023). Western Railway operates platforms 1 to 7 separately. Former CR Platform 2 was surrendered and track dismantled to widen Platform 8.",
     "entrances": [
       "East Entrance (Swami Gyan Jivandas Marg / Dadar TT)",
       "West Entrance (Senapati Bapat Marg / Flower Market)",
       "North Foot Overbridge Direct Access (Kabutarkhana Side)",
       "Central Foot Overbridge Concourse Gate"
     ],
+    "exits": [
+      "East Exit (Dadar TT Circle / BEST Bus Stop)",
+      "West Exit (Senapati Bapat Marg / Flower Market)",
+      "Central FOB Pedestrian Bridge Exit"
+    ],
     "facilities_summary": [
-      "8 Platforms (Suburban & Express)",
-      "Central Accessible Elevators (Concourse to Platforms)",
-      "Divyangjan Accessible Washrooms",
-      "Shoe-Polishing Kiosks (East Concourse & Platform 2)",
+      "7 CR Platforms (8-14, Suburban Slow/Fast & Express Terminus)",
+      "Central Accessible Elevators (East Concourse, Platform 10, Platform 11)",
+      "Divyangjan Accessible Washrooms (East Concourse)",
+      "Shoe-Polishing Kiosks (East Concourse & Platform 8)",
       "Water Vending Units & Potable Taps",
       "IRCTC Ahaar Food Counters",
       "RPF & Station Sahayata Help Desks",
@@ -27,138 +37,210 @@
     ],
     "verification_status": "prototype_data",
     "is_official": false,
-    "source_method": "Prototype mapping based on OpenStreetMap nodes and surveyed concourse layout",
-    "last_updated": "2025-02-15"
+    "source_method": "Central Railway station layout renumbering notice (Dec 2023) & surveyed concourse layout",
+    "source_reference": "Central Railway Press Release Ref: CR/BB/2023/12/03 & OSM Dadar node dataset",
+    "source_access_date": "2026-09-19",
+    "last_updated": "2026-09-19",
+    "confidence_level": "high"
   },
   {
     "station_id": "csmt",
     "name": "Chhatrapati Shivaji Maharaj Terminus",
     "code": "CSMT",
     "network": "Central Railway",
-    "description": "Historic UNESCO World Heritage railway terminus serving Central Railway suburban harbor/main line and long-distance outstation trains. Station features Star concourse, suburban concourses, and extensive heritage corridors.",
-    "coverage": "basic_station_info",
-    "coverage_label": "Basic station information",
-    "map_type": "schematic_overview",
+    "railway_zone": "Central Railway",
+    "division": "Mumbai",
+    "station_type": "Historic World Heritage Terminus",
+    "description": "Historic UNESCO World Heritage railway terminus serving Central Railway suburban (Harbour & Main line) and long-distance outstation trains. Station features Star concourse, heritage concourse, buffer stop stub platforms, and extensive pedestrian corridors.",
+    "coverage": "schematic_navigation",
+    "coverage_label": "Schematic navigation active",
+    "map_type": "interactive_svg",
+    "map_accuracy": "schematic",
     "platforms_count": 18,
+    "platform_information": "18 terminal platforms (Suburban Platforms 1 to 7 serving Harbour and Mainline local services; Mainline Platforms 8 to 18 serving long-distance outstation express trains). Buffer stop stub terminus layout.",
     "entrances": [
       "Main Heritage Concourse Gate (Dr. D.N. Road)",
       "Suburban Concourse Gate (Walchand Hirachand Marg)",
       "Subway Link to Fort Commercial District",
       "P. D'Mello Road East Gate"
     ],
+    "exits": [
+      "Dr. D.N. Road Main Heritage Exit",
+      "Walchand Hirachand Marg Exit",
+      "Fort Pedestrian Subway Exit",
+      "P. D'Mello Road East Exit"
+    ],
     "facilities_summary": [
-      "Suburban Platforms 1-7 (Slow, Fast, Harbour)",
+      "Suburban Platforms 1-7 (Slow, Fast, Harbour Line buffers)",
       "Mainline Terminus Platforms 8-18",
-      "Tourist & Commuter Help Desk",
+      "Tourist & Commuter Facilitation Centre",
       "Executive Waiting Lounges & Cloak Rooms",
-      "Suburban Booking Offices & Digital ATVMs"
+      "Suburban Booking Offices & Digital ATVMs",
+      "IRCTC Ahaar Food Court & Buffer Dining",
+      "Potable RO Drinking Water Stations"
     ],
     "verification_status": "publicly_sourced",
     "is_official": false,
     "source_method": "Government open-data portal & OpenStreetMap public infrastructure tags",
-    "last_updated": "2025-01-20"
+    "source_reference": "OSM Station Relation CSMT (Way #4392019) & Central Railway Mumbai Division Guide",
+    "source_access_date": "2026-09-19",
+    "last_updated": "2026-09-19",
+    "confidence_level": "medium"
   },
   {
     "station_id": "byculla",
     "name": "Byculla",
     "code": "BY",
     "network": "Central Railway",
-    "description": "Heritage suburban station on the Central Line serving South-Central Mumbai, the Jijamata Udyan (Byculla Zoo), and textile mill residential redevelopment corridors.",
-    "coverage": "basic_station_info",
-    "coverage_label": "Basic station information",
-    "map_type": "schematic_overview",
+    "railway_zone": "Central Railway",
+    "division": "Mumbai",
+    "station_type": "Suburban Heritage Station",
+    "description": "Historic suburban station on the Central Line serving South-Central Mumbai, Jijamata Udyan (Byculla Zoo), and textile mill residential redevelopment corridors. Features an award-winning restored Victorian booking hall.",
+    "coverage": "schematic_navigation",
+    "coverage_label": "Schematic navigation active",
+    "map_type": "interactive_svg",
+    "map_accuracy": "schematic",
     "platforms_count": 4,
+    "platform_information": "4 suburban mainline platforms (Platforms 1 & 2 for Slow corridor, Platforms 3 & 4 for Fast corridor). Restored Victorian-era heritage concourse.",
     "entrances": [
       "East Entrance (Dr. Babasaheb Ambedkar Road)",
       "West Entrance (Jijamata Udyan / Khada Parsi Side)"
     ],
+    "exits": [
+      "Dr. Ambedkar Road East Exit",
+      "Khada Parsi West Exit"
+    ],
     "facilities_summary": [
-      "Platforms 1-4 (Central Mainline Suburban)",
-      "Heritage Concourse Booking Windows",
-      "Passenger Foot Overbridges with Stairways",
-      "Public Conveniences & Drinking Water Points"
+      "Platforms 1-4 (Central Mainline Suburban Slow & Fast)",
+      "Heritage Concourse Booking Windows & ATVMs",
+      "Central Foot Overbridge with Platform Stairways",
+      "Platform 1 Public Conveniences & Drinking Water Points"
     ],
     "verification_status": "publicly_sourced",
     "is_official": false,
     "source_method": "Public railway timetables & OpenStreetMap station boundaries",
-    "last_updated": "2025-01-15"
+    "source_reference": "OSM Station Relation Byculla (Node #245892) & Mumbai Suburban network guide",
+    "source_access_date": "2026-09-19",
+    "last_updated": "2026-09-19",
+    "confidence_level": "medium"
   },
   {
     "station_id": "ghatkopar",
     "name": "Ghatkopar",
     "code": "GC",
     "network": "Central Railway",
-    "description": "Major multimodal transit hub providing direct elevated concourse interchange between Central Railway suburban trains and Mumbai Metro Line 1 (Versova-Andheri-Ghatkopar).",
-    "coverage": "basic_station_info",
-    "coverage_label": "Basic station information",
-    "map_type": "schematic_overview",
-    "platforms_count": 5,
+    "railway_zone": "Central Railway",
+    "division": "Mumbai",
+    "station_type": "Multimodal Metro-Rail Transit Hub",
+    "description": "Major multimodal transit hub providing direct elevated concourse interchange between Central Railway suburban trains and Mumbai Metro Line 1 (Versova-Andheri-Ghatkopar). High commuter transfer volume.",
+    "coverage": "schematic_navigation",
+    "coverage_label": "Schematic navigation active",
+    "map_type": "interactive_svg",
+    "map_accuracy": "schematic",
+    "platforms_count": 4,
+    "platform_information": "4 suburban mainline platforms (Platforms 1 & 2 for Slow lines, Platforms 3 & 4 for Fast lines). Multimodal elevated concourse provides direct interchange with Mumbai Metro Line 1.",
     "entrances": [
-      "West Concourse Link (Direct Metro 1 Interchange)",
-      "East Entrance (LBS Marg / Station Road)",
-      "Skywalk Concourse"
+      "Metro Line 1 Elevated Concourse Gate",
+      "West Skywalk Pedestrian Link",
+      "East Entrance (LBS Marg / Station Road)"
+    ],
+    "exits": [
+      "Metro Line 1 Direct Turnstile Exit",
+      "Station Road East Exit",
+      "Skywalk Concourse Exit"
     ],
     "facilities_summary": [
-      "Platforms 1-5 (Suburban Slow & Fast lines)",
-      "Direct Metro Line 1 Turnstiles and Skywalk",
+      "Platforms 1-4 (Suburban Slow & Fast lines)",
+      "Direct Metro Line 1 Turnstiles & Elevated Transfer Deck",
+      "Metro Transfer Accessible Elevator to Platform 1",
       "UTS Booking Windows & ATVM kiosks",
-      "High-capacity Foot Overbridges and Escalators"
+      "High-capacity Foot Overbridges & Skywalk Concourse"
     ],
     "verification_status": "publicly_sourced",
     "is_official": false,
-    "source_method": "OpenStreetMap public tags & Mumbai Metro transit maps",
-    "last_updated": "2025-01-10"
+    "source_method": "OpenStreetMap public tags & Mumbai Metro Line 1 transit maps",
+    "source_reference": "OSM Relation #3910291 & MMRDA Line 1 Transit Guide",
+    "source_access_date": "2026-09-19",
+    "last_updated": "2026-09-19",
+    "confidence_level": "medium"
   },
   {
     "station_id": "thane",
     "name": "Thane",
     "code": "TNA",
     "network": "Central Railway",
-    "description": "One of Indian Railways' highest-footfall junction stations, serving suburban main line, trans-harbour link to Navi Mumbai, and long-distance trains.",
-    "coverage": "basic_station_info",
-    "coverage_label": "Basic station information",
-    "map_type": "schematic_overview",
+    "railway_zone": "Central Railway",
+    "division": "Mumbai",
+    "station_type": "High-Footfall Suburban & Junction Hub",
+    "description": "One of Indian Railways' highest-footfall junction stations, serving suburban main line, Trans-Harbour link to Navi Mumbai, and long-distance trains. Features the elevated SATIS bus concourse on the West.",
+    "coverage": "schematic_navigation",
+    "coverage_label": "Schematic navigation active",
+    "map_type": "interactive_svg",
+    "map_accuracy": "schematic",
     "platforms_count": 10,
+    "platform_information": "10 active platforms (Platforms 1 to 4 Mainline suburban slow/fast, Platforms 5 to 8 Express through services, Platforms 9 & 10 Trans-Harbour to Navi Mumbai). Elevated SATIS bus deck on West side.",
     "entrances": [
-      "East Entrance (Kopri / CIDCO Bus Terminal side)",
       "West Entrance (Gokhale Road / Talao Pali side)",
-      "Elevated SATIS Deck Entrance"
+      "Elevated SATIS Deck Entrance (TMT Bus Terminal)",
+      "East Entrance (Kopri / CIDCO Bus Terminal side)"
+    ],
+    "exits": [
+      "Gokhale Road West Exit",
+      "SATIS Deck Elevated Bus Exit",
+      "Kopri East CIDCO Bus Exit"
     ],
     "facilities_summary": [
       "Platforms 1-10 (Mainline, Trans-Harbour & Express)",
-      "Elevated Bus-Terminal Deck (SATIS system)",
-      "Multiple North, Central, South Overbridges",
-      "Passenger Refreshment Counters & Waiting Rooms"
+      "Elevated Bus-Terminal Deck (SATIS system with accessible ramp)",
+      "Central Foot Overbridge with multiple platform landings",
+      "Platform 2/3 Island Washrooms & Drinking Water",
+      "CR Sahayata Help Desk & Digital Booking Counters"
     ],
     "verification_status": "publicly_sourced",
     "is_official": false,
     "source_method": "OpenRailwayMap & Central Railway public documents",
-    "last_updated": "2025-01-05"
+    "source_reference": "TMC SATIS Infrastructure Project Report & OSM Station Relation #348210",
+    "source_access_date": "2026-09-19",
+    "last_updated": "2026-09-19",
+    "confidence_level": "medium"
   },
   {
     "station_id": "kalyan",
     "name": "Kalyan Junction",
     "code": "KYN",
     "network": "Central Railway",
-    "description": "Crucial junction where Central Railway splits into the northeastern line (to Kasara, Nashik, North/East India) and southeastern line (to Karjat, Pune, South India).",
-    "coverage": "basic_station_info",
-    "coverage_label": "Basic station information",
-    "map_type": "schematic_overview",
+    "railway_zone": "Central Railway",
+    "division": "Mumbai",
+    "station_type": "Bifurcation Junction & Terminus",
+    "description": "Crucial railway junction where Central Railway splits into the northeastern line (to Kasara, Nashik, North/East India) and southeastern line (to Karjat, Pune, South India). Heavy suburban terminus and junction traffic.",
+    "coverage": "schematic_navigation",
+    "coverage_label": "Schematic navigation active",
+    "map_type": "interactive_svg",
+    "map_accuracy": "schematic",
     "platforms_count": 8,
+    "platform_information": "8 active junction platforms (Crucial rail bifurcation point where CR splits towards Kasara/Nashik and Karjat/Pune). Ongoing remodelling yard infrastructure under construction.",
     "entrances": [
-      "West Entrance (Kalyan Bus Depot / Market area)",
-      "East Entrance (Waldhuni / Kolsewadi side)",
-      "South Concourse Foot Overbridge Gate"
+      "West Entrance (Kalyan Bus Depot & Market area)",
+      "East Entrance (Kolsewadi / Waldhuni side)",
+      "West Accessible Divyangjan Ramp Entrance"
+    ],
+    "exits": [
+      "West Bus Depot & Market Exit",
+      "Kolsewadi East Exit"
     ],
     "facilities_summary": [
       "Platforms 1-8 (Suburban Terminal & Express Junction)",
-      "Extensive Concourse with IRCTC Food Court",
-      "Express Rake Water and Parcel Facilities",
-      "Waiting Rooms & Divyangjan Ramps"
+      "West Divyangjan Accessible Ramp to South FOB",
+      "West Main Concourse Booking Windows & ATVMs",
+      "Platform 4/5 Waiting Hall Washrooms",
+      "Potable Water Stations & Station Master / RPF Post"
     ],
     "verification_status": "publicly_sourced",
     "is_official": false,
     "source_method": "OpenRailwayMap & Central Railway public portal",
-    "last_updated": "2025-01-05"
+    "source_reference": "Central Railway Kalyan Junction Station Layout Plan & OSM Relation #384910",
+    "source_access_date": "2026-09-19",
+    "last_updated": "2026-09-19",
+    "confidence_level": "medium"
   }
 ]

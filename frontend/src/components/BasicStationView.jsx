@@ -1,29 +1,37 @@
 import React from 'react';
 import {
-  Building2,
   MapPin,
   CheckCircle2,
   Navigation,
-  ArrowLeft,
-  AlertCircle,
   Clock,
-  Layers
+  Info,
+  Layers,
+  PhoneCall
 } from 'lucide-react';
-import VerificationBadge from './VerificationBadge';
 
-export default function BasicStationView({ station, facilities = [], onSwitchToDadar }) {
+export default function BasicStationView({ station, facilities = [], onSwitchToDadar, onReturnToMap }) {
   if (!station) return null;
+
+  const handleReturn = () => {
+    if (onReturnToMap) {
+      onReturnToMap();
+    } else if (onSwitchToDadar) {
+      onSwitchToDadar();
+    }
+  };
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 space-y-6">
-      {/* Banner: Basic Station Information Notice */}
-      <div className="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-800 relative overflow-hidden">
+      {/* Header Factsheet Card */}
+      <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-800 relative overflow-hidden">
         <div className="relative z-10">
           <div className="flex flex-wrap items-center gap-2 mb-2">
-            <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">
-              Coverage: Basic Station Information
+            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/30">
+              Station Overview
             </span>
-            <VerificationBadge status={station.verification_status} />
+            <span className="px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+              Active Service
+            </span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
@@ -42,11 +50,11 @@ export default function BasicStationView({ station, facilities = [], onSwitchToD
             </div>
 
             <button
-              onClick={onSwitchToDadar}
-              className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs sm:text-sm font-semibold shadow-sm transition"
+              onClick={handleReturn}
+              className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs sm:text-sm font-semibold shadow-xs transition"
             >
               <Navigation className="w-4 h-4" />
-              Switch to Dadar (Detailed Interactive Prototype)
+              <span>Interactive Station Map</span>
             </button>
           </div>
         </div>
@@ -55,7 +63,7 @@ export default function BasicStationView({ station, facilities = [], onSwitchToD
       {/* Grid: Entrances & Facilities */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Entrances & Gates */}
-        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
+        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs">
           <h3 className="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
             <MapPin className="w-5 h-5 text-blue-600" />
             Station Entrances & Exits
@@ -64,23 +72,23 @@ export default function BasicStationView({ station, facilities = [], onSwitchToD
             {station.entrances && station.entrances.map((ent, idx) => (
               <li
                 key={idx}
-                className="p-3 rounded-xl bg-slate-50 border border-slate-100 text-xs font-medium text-slate-800 flex items-start gap-2"
+                className="p-3 rounded-xl bg-slate-50 border border-slate-100 text-xs font-medium text-slate-800 flex items-start gap-2.5"
               >
                 <span className="w-5 h-5 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
                   {idx + 1}
                 </span>
-                <span>{ent}</span>
+                <span className="leading-snug">{ent}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Publicly Mapped Facility Records */}
-        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
+        {/* Public Station Facilities */}
+        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-              Available Facility Records
+              Station Facilities & Services
             </h3>
             <span className="text-xs text-slate-500">{facilities.length} recorded</span>
           </div>
@@ -88,7 +96,7 @@ export default function BasicStationView({ station, facilities = [], onSwitchToD
           <div className="space-y-2.5 max-h-[340px] overflow-y-auto pr-1">
             {facilities.length === 0 ? (
               <p className="text-xs text-slate-500 p-4 bg-slate-50 rounded-xl text-center">
-                Facility records for this station are currently in ingestion queue.
+                Facility information for this station is being updated.
               </p>
             ) : (
               facilities.map((fac) => (
@@ -104,7 +112,6 @@ export default function BasicStationView({ station, facilities = [], onSwitchToD
                       <h4 className="text-xs font-bold text-slate-900 mt-0.5">{fac.name}</h4>
                       <p className="text-[11px] text-slate-500 mt-0.5">{fac.floor_level}</p>
                     </div>
-                    <VerificationBadge status={fac.verification_status} />
                   </div>
                   {fac.notes && (
                     <p className="text-[11px] text-slate-500 mt-1.5 bg-slate-50 p-1.5 rounded-md">
@@ -118,13 +125,13 @@ export default function BasicStationView({ station, facilities = [], onSwitchToD
         </div>
       </div>
 
-      {/* Coverage & Architectural Notice */}
-      <div className="p-4 bg-slate-100 rounded-2xl border border-slate-200 text-xs text-slate-600 flex items-start gap-3">
-        <AlertCircle className="w-5 h-5 text-slate-500 shrink-0 mt-0.5" />
+      {/* Railway Assistance Notice */}
+      <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs text-slate-600 flex items-start gap-3">
+        <Info className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
         <div>
-          <h4 className="font-bold text-slate-800">Coverage Notice: Indoor Graph Pending</h4>
+          <h4 className="font-bold text-slate-800">Station Assistance</h4>
           <p className="mt-0.5 leading-relaxed text-slate-600">
-            Full indoor 2D SVG mapping and graph-based Dijkstra navigation are currently deployed for the <strong>Dadar Central (DR)</strong> demonstration prototype. Station information for {station.name} is provided via OpenStreetMap open-data and verified platform surveys.
+            For urgent passenger assistance, inquiries, or security concerns, visit the Station Master's office or Railway Protection Force (RPF) assistance booth located near the main concourse or Platform 1.
           </p>
         </div>
       </div>

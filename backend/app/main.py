@@ -6,6 +6,7 @@ from backend.app.api.stations import router as stations_router
 from backend.app.api.facilities import router as facilities_router
 from backend.app.api.navigation import router as navigation_router
 from backend.app.api.assistant import router as assistant_router
+from backend.app.api.feedback import router as feedback_router
 
 app = FastAPI(
     title="StationSathi API",
@@ -26,6 +27,7 @@ app.include_router(stations_router, prefix="/api")
 app.include_router(facilities_router, prefix="/api")
 app.include_router(navigation_router, prefix="/api")
 app.include_router(assistant_router, prefix="/api")
+app.include_router(feedback_router, prefix="/api")
 
 @app.get("/api/health")
 def health_check():

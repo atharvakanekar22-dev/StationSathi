@@ -7,12 +7,43 @@
     "name": "Suburban Star Concourse Booking Windows",
     "category": "ticket_counter",
     "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 240,
+      "y": 110
+    },
+    "node_id": "node_csmt_ticket_star",
     "availability_status": "operational",
     "verification_status": "publicly_sourced",
     "is_official": false,
-    "last_updated": "2025-01-20",
-    "source_method": "Public railway portal data",
-    "notes": "Main ticket hall facing DN Road and Suburban entrance."
+    "last_updated": "2026-09-19",
+    "source_method": "Central Railway public station guide & OSM Overpass data",
+    "source_reference": "CR Mumbai Division Commercial Department directory",
+    "source_access_date": "2026-09-19",
+    "notes": "Main ticket hall facing DN Road and Suburban entrance with 6 ATVMs.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "csmt_ticket_02",
+    "station_id": "csmt",
+    "station_name": "Chhatrapati Shivaji Maharaj Terminus",
+    "station_code": "CSMT",
+    "name": "P. D'Mello UTS & Reservation Counter",
+    "category": "ticket_counter",
+    "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 220,
+      "y": 490
+    },
+    "node_id": "node_csmt_ticket_pdmello",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "Central Railway station guide",
+    "source_reference": "CR East Concourse booking facility listing",
+    "source_access_date": "2026-09-19",
+    "notes": "Dedicated booking windows for Eastern outstation passengers on P. D'Mello Road side.",
+    "confidence_level": "medium"
   },
   {
     "facility_id": "csmt_helpdesk_01",
@@ -22,12 +53,20 @@
     "name": "Tourist & Commuter Facilitation Centre",
     "category": "help_desk",
     "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 290,
+      "y": 240
+    },
+    "node_id": "node_csmt_helpdesk_tourist",
     "availability_status": "operational",
     "verification_status": "publicly_sourced",
     "is_official": false,
-    "last_updated": "2025-01-20",
-    "source_method": "Heritage station documentation",
-    "notes": "General enquiry, tourist guides, and lost luggage support."
+    "last_updated": "2026-09-19",
+    "source_method": "Heritage station documentation & CR enquiry post",
+    "source_reference": "CR Mumbai Division Sahayata desk directory",
+    "source_access_date": "2026-09-19",
+    "notes": "General enquiry, tourist guides, wheelchair assistance, and lost luggage support.",
+    "confidence_level": "medium"
   },
   {
     "facility_id": "csmt_washroom_01",
@@ -37,12 +76,89 @@
     "name": "Platform 1 Suburban Concourse Restrooms",
     "category": "washroom",
     "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 380,
+      "y": 110
+    },
+    "node_id": "node_csmt_washroom_suburban",
     "availability_status": "operational",
     "verification_status": "publicly_sourced",
     "is_official": false,
-    "last_updated": "2025-01-20",
+    "last_updated": "2026-09-19",
     "source_method": "OSM public tags",
-    "notes": "Restrooms located adjacent to Harbor Line buffer buffers."
+    "source_reference": "OSM Amenity: Toilets #4829101",
+    "source_access_date": "2026-09-19",
+    "notes": "Restrooms located adjacent to Harbour Line buffer stop.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "csmt_washroom_02",
+    "station_id": "csmt",
+    "station_name": "Chhatrapati Shivaji Maharaj Terminus",
+    "station_code": "CSMT",
+    "name": "Mainline Waiting Hall Executive Restrooms",
+    "category": "washroom",
+    "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 380,
+      "y": 490
+    },
+    "node_id": "node_csmt_washroom_mainline",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "OSM public infrastructure tags",
+    "source_reference": "OSM Node #4829108",
+    "source_access_date": "2026-09-19",
+    "notes": "Executive and general waiting lounge restrooms on mainline flank.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "csmt_water_01",
+    "station_id": "csmt",
+    "station_name": "Chhatrapati Shivaji Maharaj Terminus",
+    "station_code": "CSMT",
+    "name": "Potable Drinking Water Station (Star Concourse)",
+    "category": "drinking_water",
+    "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 330,
+      "y": 120
+    },
+    "node_id": "node_csmt_water_star",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "Station passenger amenities register",
+    "source_reference": "CR passenger amenity survey",
+    "source_access_date": "2026-09-19",
+    "notes": "Municipal RO-purified free drinking water taps.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "csmt_food_01",
+    "station_id": "csmt",
+    "station_name": "Chhatrapati Shivaji Maharaj Terminus",
+    "station_code": "CSMT",
+    "name": "IRCTC Ahaar Food Court (Mainline Buffer)",
+    "category": "food_stall",
+    "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 330,
+      "y": 380
+    },
+    "node_id": "node_csmt_food_mainline",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "IRCTC catering registry",
+    "source_reference": "IRCTC West Zone retail outlets",
+    "source_access_date": "2026-09-19",
+    "notes": "Meals, breakfast snacks, tea/coffee, and packaged water.",
+    "confidence_level": "medium"
   },
   {
     "facility_id": "csmt_shoepolish_01",
@@ -52,11 +168,134 @@
     "name": "Mainline Concourse Shoe-Polishing Kiosk",
     "category": "shoepolish",
     "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 290,
+      "y": 340
+    },
+    "node_id": "node_csmt_shoepolish_mainline",
     "availability_status": "operational",
     "verification_status": "needs_verification",
     "is_official": false,
-    "last_updated": "2025-01-15",
-    "source_method": "Passenger report",
-    "notes": "Near outstation reservation enquiry counter."
+    "last_updated": "2026-09-19",
+    "source_method": "Passenger observation report",
+    "source_reference": "Field commuter report cross-check required",
+    "source_access_date": "2026-09-19",
+    "notes": "Traditional station shoe-shine stand near outstation waiting area.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "csmt_entrance_01",
+    "station_id": "csmt",
+    "station_name": "Chhatrapati Shivaji Maharaj Terminus",
+    "station_code": "CSMT",
+    "name": "Dr. D.N. Road Heritage Gate (Main Entrance)",
+    "category": "entrance_exit",
+    "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 120,
+      "y": 280
+    },
+    "node_id": "node_csmt_gate_heritage",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "OSM Station Entrance Node",
+    "source_reference": "OSM Node #2847190",
+    "source_access_date": "2026-09-19",
+    "notes": "Grand entrance facing BMC Headquarters and Dr. D.N. Road.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "csmt_entrance_02",
+    "station_id": "csmt",
+    "station_name": "Chhatrapati Shivaji Maharaj Terminus",
+    "station_code": "CSMT",
+    "name": "Walchand Hirachand Marg Suburban Gate",
+    "category": "entrance_exit",
+    "floor_level": "Ground Concourse",
+    "svg_coords": {
+      "x": 120,
+      "y": 140
+    },
+    "node_id": "node_csmt_gate_suburban",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "OSM Station Entrance Node",
+    "source_reference": "OSM Node #2847195",
+    "source_access_date": "2026-09-19",
+    "notes": "Direct street access to Suburban Star concourse and Harbour lines.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "csmt_pf_01",
+    "station_id": "csmt",
+    "station_name": "Chhatrapati Shivaji Maharaj Terminus",
+    "station_code": "CSMT",
+    "name": "Platform 1 (Suburban Harbour Line Buffer)",
+    "category": "platform",
+    "floor_level": "Platform Level",
+    "svg_coords": {
+      "x": 480,
+      "y": 130
+    },
+    "node_id": "node_csmt_pf1",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "Central Railway Suburban Timetable & OSM Track alignment",
+    "source_reference": "CR Suburban Harbor Line Platform Allocation",
+    "source_access_date": "2026-09-19",
+    "notes": "Suburban trains towards Vadala Road, Chembur, Vashi, and Panvel.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "csmt_pf_04",
+    "station_id": "csmt",
+    "station_name": "Chhatrapati Shivaji Maharaj Terminus",
+    "station_code": "CSMT",
+    "name": "Platform 4 (Suburban Main Line Buffer)",
+    "category": "platform",
+    "floor_level": "Platform Level",
+    "svg_coords": {
+      "x": 480,
+      "y": 200
+    },
+    "node_id": "node_csmt_pf4",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "Central Railway Suburban Timetable",
+    "source_reference": "CR Suburban Mainline Platform Allocation",
+    "source_access_date": "2026-09-19",
+    "notes": "Suburban Slow/Fast trains towards Dadar, Kurla, Thane, and Kalyan.",
+    "confidence_level": "medium"
+  },
+  {
+    "facility_id": "csmt_pf_08",
+    "station_id": "csmt",
+    "station_name": "Chhatrapati Shivaji Maharaj Terminus",
+    "station_code": "CSMT",
+    "name": "Platform 8 (Mainline Outstation Buffer)",
+    "category": "platform",
+    "floor_level": "Platform Level",
+    "svg_coords": {
+      "x": 480,
+      "y": 350
+    },
+    "node_id": "node_csmt_pf8",
+    "availability_status": "operational",
+    "verification_status": "publicly_sourced",
+    "is_official": false,
+    "last_updated": "2026-09-19",
+    "source_method": "Central Railway Long-Distance Terminal Plan",
+    "source_reference": "CR Mumbai Division Outstation Platform Directory",
+    "source_access_date": "2026-09-19",
+    "notes": "Dedicated long-distance Express terminus platform.",
+    "confidence_level": "medium"
   }
 ]

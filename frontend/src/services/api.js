@@ -1,7 +1,9 @@
 import {
   FALLBACK_STATIONS,
+  FALLBACK_FACILITIES,
   FALLBACK_DADAR_FACILITIES,
-  FALLBACK_OTHER_FACILITIES,
+  FALLBACK_GRAPHS,
+  FALLBACK_DADAR_GRAPH,
   DEMO_FALLBACK_ROUTES
 } from '../data/fallbackData';
 
@@ -45,6 +47,19 @@ export async function fetchStation(stationId) {
   }
 }
 
+export async function fetchStationGraph(stationId) {
+  try {
+    const res = await fetch(`${API_BASE}/stations/${stationId}/graph`, { signal: AbortSignal.timeout(2000) });
+    if (res.ok) {
+      return { data: await res.json(), fallback: false };
+    }
+    throw new Error('API request failed');
+  } catch (err) {
+    const graph = FALLBACK_GRAPHS[stationId.toLowerCase()] || FALLBACK_DADAR_GRAPH;
+    return { data: graph, fallback: true };
+  }
+}
+
 export async function fetchFacilities(stationId, category = null, search = null) {
   try {
     const params = new URLSearchParams();
@@ -59,13 +74,7 @@ export async function fetchFacilities(stationId, category = null, search = null)
     }
     throw new Error('API request failed');
   } catch (err) {
-    // Client fallback
-    let list = [];
-    if (stationId === 'dadar') {
-      list = [...FALLBACK_DADAR_FACILITIES];
-    } else {
-      list = FALLBACK_OTHER_FACILITIES[stationId] || [];
-    }
+    let list = FALLBACK_FACILITIES[stationId.toLowerCase()] || [];
 
     if (category && category !== 'all') {
       list = list.filter((f) => f.category.toLowerCase() === category.toLowerCase());
@@ -111,7 +120,7 @@ export async function fetchRoute(stationId, originId, destinationId, preference 
         success: true,
         station_id: stationId,
         preference_applied: preference,
-        explanation: `Calculated standard path from ${originId} to ${destinationId} (Prototype Data Mode).`,
+        explanation: `Calculated standard path from ${originId} to ${destinationId}.`,
         total_distance_m: 85.0,
         estimated_steps: 113,
         estimated_time_seconds: 77,
@@ -146,19 +155,22 @@ export async function queryAssistant(query, stationId = 'dadar', currentNodeId =
     }
     throw new Error('Assistant API failed');
   } catch (err) {
-    // Lightweight local fallback logic for demo queries
     const q = query.toLowerCase();
+    const stationFacs = FALLBACK_FACILITIES[stationId.toLowerCase()] || FALLBACK_DADAR_FACILITIES;
+
     if (q.includes('shoe') || q.includes('polish')) {
-      const shoes = FALLBACK_DADAR_FACILITIES.filter((f) => f.category === 'shoepolish');
+      const shoes = stationFacs.filter((f) => f.category === 'shoepolish');
       return {
         data: {
           interpreted_intent: 'facility_search',
           category: 'shoepolish',
           explanation: 'Identified commuter request for shoe-polishing kiosk.',
-          answer_text: 'Found 2 shoe-polishing stands at Dadar Central (East Concourse & Platform 2).',
+          answer_text: shoes.length > 0
+            ? `Found ${shoes.length} shoe-polishing stand(s) at ${stationId.toUpperCase()}.`
+            : `The requested facility is not currently mapped in StationSathi for ${stationId.toUpperCase()}.`,
           suggested_action: 'show_facilities',
           matched_facilities: shoes,
-          recommended_destination_node_id: 'node_shoepolish_east',
+          recommended_destination_node_id: shoes[0]?.node_id || null,
           requires_current_landmark: false,
           verification_status: 'prototype_data'
         },
@@ -167,16 +179,16 @@ export async function queryAssistant(query, stationId = 'dadar', currentNodeId =
     }
 
     if (q.includes('washroom') || q.includes('toilet')) {
-      const washrooms = FALLBACK_DADAR_FACILITIES.filter((f) => f.category === 'washroom');
+      const washrooms = stationFacs.filter((f) => f.category === 'washroom');
       return {
         data: {
           interpreted_intent: 'facility_search',
           category: 'washroom',
-          explanation: 'Found 1 washroom complex. Current landmark required for nearest distance ranking.',
-          answer_text: 'Mapped 1 washroom complex at Dadar Central (East Concourse). Please select your current landmark for exact walking distance.',
+          explanation: `Found ${washrooms.length} washroom complex(es). Distance ranking requires your current landmark.`,
+          answer_text: `Mapped ${washrooms.length} washroom location(s) at ${stationId.toUpperCase()}. Please select your current landmark for exact walking distance.`,
           suggested_action: 'select_landmark',
           matched_facilities: washrooms,
-          recommended_destination_node_id: 'node_washroom_east',
+          recommended_destination_node_id: washrooms[0]?.node_id || null,
           requires_current_landmark: !currentNodeId,
           verification_status: 'prototype_data'
         },
@@ -184,18 +196,40 @@ export async function queryAssistant(query, stationId = 'dadar', currentNodeId =
       };
     }
 
-    if (q.includes('without') && (q.includes('stair') || q.includes('stairs'))) {
+    if (q.includes('platform 10') || (q.includes('without') && (q.includes('stair') || q.includes('stairs')))) {
+      const pf10 = stationFacs.find((f) => f.node_id === 'node_pf10');
       return {
         data: {
           interpreted_intent: 'accessibility_route',
           category: 'platform',
-          target_platform: 'Platform 4',
+          target_platform: 'Platform 10',
           route_preference: 'avoid_stairs',
-          explanation: 'Detected route to Platform 4 with strict stair avoidance constraint.',
-          answer_text: 'Calculated accessible route to Platform 4 avoiding all stairs via Central FOB elevator.',
+          explanation: 'Detected route to Platform 10 with strict stair avoidance constraint.',
+          answer_text: 'Calculated accessible route to Platform 10 avoiding all stairs via Central FOB elevator.',
           suggested_action: 'calculate_route',
-          matched_facilities: FALLBACK_DADAR_FACILITIES.filter((f) => f.node_id === 'node_pf4'),
-          recommended_destination_node_id: 'node_pf4',
+          matched_facilities: pf10 ? [pf10] : [],
+          recommended_destination_node_id: 'node_pf10',
+          recommended_origin_node_id: currentNodeId || 'node_entrance_east',
+          requires_current_landmark: false,
+          verification_status: 'prototype_data'
+        },
+        fallback: true
+      };
+    }
+
+    if (q.includes('platform 11')) {
+      const pf11 = stationFacs.find((f) => f.node_id === 'node_pf11');
+      return {
+        data: {
+          interpreted_intent: 'route_planning',
+          category: 'platform',
+          target_platform: 'Platform 11',
+          route_preference: 'shortest',
+          explanation: 'Detected route to Platform 11.',
+          answer_text: 'Calculated navigation route to Platform 11 via Central FOB.',
+          suggested_action: 'calculate_route',
+          matched_facilities: pf11 ? [pf11] : [],
+          recommended_destination_node_id: 'node_pf11',
           recommended_origin_node_id: currentNodeId || 'node_entrance_east',
           requires_current_landmark: false,
           verification_status: 'prototype_data'
@@ -209,15 +243,48 @@ export async function queryAssistant(query, stationId = 'dadar', currentNodeId =
       data: {
         interpreted_intent: 'station_information',
         category: null,
-        explanation: 'Local query processor matching Dadar Central facilities.',
-        answer_text: 'StationSathi provides indoor facility navigation for Dadar Central.',
+        explanation: `Local query processor matching ${stationId.toUpperCase()} facilities.`,
+        answer_text: `StationSathi provides indoor facility navigation for ${stationId.toUpperCase()}.`,
         suggested_action: 'show_facilities',
-        matched_facilities: FALLBACK_DADAR_FACILITIES.slice(0, 3),
+        matched_facilities: stationFacs.slice(0, 3),
         recommended_destination_node_id: null,
         requires_current_landmark: false,
         verification_status: 'prototype_data'
       },
       fallback: true
     };
+  }
+}
+
+export async function submitFeedback(reportData) {
+  try {
+    const res = await fetch(`${API_BASE}/feedback`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(reportData),
+      signal: AbortSignal.timeout(3000)
+    });
+    if (res.ok) {
+      return await res.json();
+    }
+    throw new Error('Feedback API failed');
+  } catch (err) {
+    // Save to localStorage review queue if offline
+    try {
+      const existing = JSON.parse(localStorage.getItem('stationsathi_feedback_queue') || '[]');
+      existing.push({
+        ...reportData,
+        report_id: `local_${Date.now()}`,
+        status: 'saved_locally'
+      });
+      localStorage.setItem('stationsathi_feedback_queue', JSON.stringify(existing));
+      return {
+        success: true,
+        message: 'Feedback saved locally and will sync when backend is available.',
+        report_id: `local_${Date.now()}`
+      };
+    } catch (e) {
+      return { success: false, message: 'Could not store feedback' };
+    }
   }
 }

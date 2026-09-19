@@ -7,7 +7,7 @@ import {
   ArrowUpDown,
   RotateCcw,
   Footprints,
-  ShieldCheck
+  Zap
 } from 'lucide-react';
 
 export default function RoutePlanner({
@@ -32,10 +32,10 @@ export default function RoutePlanner({
   const facilities = nodes.filter((n) => n.type === 'facility' || n.type === 'elevator');
 
   const preferences = [
-    { id: 'shortest', label: 'Shortest route', desc: 'Minimal metric walking distance' },
+    { id: 'shortest', label: 'Fastest', desc: 'Minimal walking distance' },
     { id: 'avoid_stairs', label: 'Avoid stairs', desc: 'Step-free elevators & ramps only' },
-    { id: 'prefer_elevator', label: 'Prefer elevator', desc: 'Elevators prioritized over stairs' },
-    { id: 'accessible_route', label: 'Accessible route', desc: 'Wheelchair & heavy luggage path' }
+    { id: 'prefer_elevator', label: 'Prefer elevators', desc: 'Elevators prioritized over stairs' },
+    { id: 'accessible_route', label: 'Accessible route', desc: 'Wheelchair & luggage path' }
   ];
 
   const handleSwap = () => {
@@ -47,34 +47,30 @@ export default function RoutePlanner({
   };
 
   return (
-    <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-sm flex flex-col gap-3.5">
+    <div className="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-xs flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="text-base font-bold text-slate-900 tracking-tight">Indoor Wayfinding</h3>
-          <p className="text-xs text-slate-500">Calculate indoor station routes with accessibility filters</p>
+          <h3 className="text-base font-extrabold text-slate-950 tracking-tight">Indoor Wayfinding</h3>
+          <p className="text-xs text-slate-500">Step-by-step directions inside the station</p>
         </div>
-        <span className="text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 rounded-md">
-          Dijkstra Engine
-        </span>
       </div>
 
       {/* Origin & Destination Controls */}
-      <div className="space-y-2.5 relative">
+      <div className="space-y-3 relative">
         {/* Origin Selector */}
         <div>
           <label className="block text-xs font-semibold text-slate-700 mb-1 flex items-center justify-between">
             <span className="flex items-center gap-1.5 text-emerald-700">
               <span className="w-2 h-2 rounded-full bg-emerald-500" />
-              Select your current landmark:
+              From: Current location
             </span>
-            <span className="text-[10px] text-slate-400 font-normal">Manual landmark selection</span>
           </label>
           <select
             value={originNodeId}
             onChange={(e) => onOriginChange(e.target.value)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm text-slate-900 font-medium focus:ring-2 focus:ring-blue-500 focus:bg-white focus:outline-none transition"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 font-medium focus:ring-2 focus:ring-slate-400 focus:bg-white focus:outline-none transition cursor-pointer"
           >
-            <option value="">-- Choose your current location --</option>
+            <option value="">-- Select starting landmark --</option>
             <optgroup label="Entrances & Gates">
               {entrances.map((n) => (
                 <option key={n.id} value={n.id}>{n.name} ({n.level})</option>
@@ -108,7 +104,7 @@ export default function RoutePlanner({
           <button
             onClick={handleSwap}
             disabled={!originNodeId || !destinationNodeId}
-            className="p-1 rounded-full text-slate-400 hover:text-blue-600 hover:bg-slate-100 disabled:opacity-30 transition"
+            className="p-1.5 rounded-full text-slate-400 hover:text-slate-900 hover:bg-slate-100 disabled:opacity-30 transition"
             title="Swap Origin and Destination"
           >
             <ArrowUpDown className="w-3.5 h-3.5" />
@@ -119,14 +115,14 @@ export default function RoutePlanner({
         <div>
           <label className="block text-xs font-semibold text-slate-700 mb-1 flex items-center gap-1.5 text-rose-700">
             <span className="w-2 h-2 rounded-full bg-rose-500" />
-            Destination:
+            To: Destination
           </label>
           <select
             value={destinationNodeId}
             onChange={(e) => onDestinationChange(e.target.value)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm text-slate-900 font-medium focus:ring-2 focus:ring-blue-500 focus:bg-white focus:outline-none transition"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 font-medium focus:ring-2 focus:ring-slate-400 focus:bg-white focus:outline-none transition cursor-pointer"
           >
-            <option value="">-- Choose destination landmark or platform --</option>
+            <option value="">-- Select destination platform or facility --</option>
             <optgroup label="Platforms">
               {platforms.map((n) => (
                 <option key={n.id} value={n.id}>{n.name}</option>
@@ -153,18 +149,18 @@ export default function RoutePlanner({
 
       {/* Route Preference Selection */}
       <div>
-        <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-          Route Preference:
+        <label className="block text-xs font-semibold text-slate-700 mb-2">
+          Route Preference
         </label>
-        <div className="grid grid-cols-2 gap-1.5">
+        <div className="grid grid-cols-2 gap-2">
           {preferences.map((pref) => (
             <button
               key={pref.id}
               type="button"
               onClick={() => onPreferenceChange(pref.id)}
-              className={`p-2 rounded-xl text-left border text-xs transition ${
+              className={`p-2.5 rounded-xl text-left border text-xs transition ${
                 routePreference === pref.id
-                  ? 'border-blue-600 bg-blue-50/60 font-semibold text-blue-900 ring-1 ring-blue-500'
+                  ? 'border-slate-900 bg-slate-50 font-semibold text-slate-950 ring-1 ring-slate-900'
                   : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
               }`}
             >
@@ -173,8 +169,10 @@ export default function RoutePlanner({
                   <Accessibility className="w-3.5 h-3.5 text-purple-600 shrink-0" />
                 ) : pref.id === 'prefer_elevator' ? (
                   <ArrowUpDown className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                ) : pref.id === 'accessible_route' ? (
+                  <Accessibility className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                 ) : (
-                  <Footprints className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                  <Zap className="w-3.5 h-3.5 text-slate-900 shrink-0" />
                 )}
                 <span className="truncate">{pref.label}</span>
               </div>
@@ -189,15 +187,15 @@ export default function RoutePlanner({
         <button
           onClick={onCalculateRoute}
           disabled={!originNodeId || !destinationNodeId || isCalculating}
-          className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-500 disabled:bg-slate-200 disabled:text-slate-400 text-white rounded-xl text-xs sm:text-sm font-semibold shadow-sm transition"
+          className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-slate-950 hover:bg-blue-600 disabled:bg-slate-200 disabled:text-slate-400 text-white rounded-full text-xs sm:text-sm font-semibold shadow-md shadow-slate-300/30 transition"
         >
           <Navigation className="w-4 h-4" />
-          {isCalculating ? 'Calculating Route...' : 'Calculate Indoor Route'}
+          {isCalculating ? 'Finding Best Route...' : 'Get Directions'}
         </button>
 
         <button
           onClick={onClearRoute}
-          className="p-2.5 rounded-xl border border-slate-200 text-slate-500 hover:text-slate-700 hover:bg-slate-100 transition"
+          className="p-3 rounded-full border border-slate-200 text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition"
           title="Clear Route"
         >
           <RotateCcw className="w-4 h-4" />

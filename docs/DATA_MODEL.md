@@ -32,17 +32,25 @@ OpenRailwayMap Tags  ──────┘                                      
   "name": "Dadar Central",
   "code": "DR",
   "network": "Central Railway",
+  "railway_zone": "Central Railway",
+  "division": "Mumbai",
+  "station_type": "Multimodal Interchange Hub",
   "description": "Major suburban and outstation multimodal terminal...",
   "coverage": "detailed_prototype",
   "coverage_label": "Detailed navigation prototype",
   "map_type": "interactive_svg",
-  "platforms_count": 8,
+  "map_accuracy": "prototype",
+  "platforms_count": 7,
+  "platform_information": "7 active Central Railway platforms (renumbered 8 to 14 effective 9 Dec 2023). Western Railway operates platforms 1 to 7 separately.",
   "entrances": ["East Entrance (Dadar TT)", "West Entrance (Senapati Bapat Marg)"],
-  "facilities_summary": ["8 Platforms", "Central Accessible Elevators", "Washrooms", "Shoe-Polishing Kiosks"],
+  "exits": ["East Exit", "West Exit", "Central FOB Exit"],
+  "facilities_summary": ["7 CR Platforms (8-14)", "Central Accessible Elevators", "Washrooms", "Shoe-Polishing Kiosks"],
   "verification_status": "prototype_data",
   "is_official": false,
-  "source_method": "OSM extraction and surveyed concourse layout",
-  "last_updated": "2025-02-15"
+  "source_method": "Central Railway station layout renumbering notice (Dec 2023) & surveyed concourse layout",
+  "source_reference": "Central Railway Press Release Ref: CR/BB/2023/12/03",
+  "source_access_date": "2026-09-19",
+  "last_updated": "2026-09-19"
 }
 ```
 
@@ -62,8 +70,10 @@ OpenRailwayMap Tags  ──────┘                                      
   "availability_status": "operational",
   "verification_status": "prototype_data",
   "is_official": false,
-  "last_updated": "2025-02-15",
+  "last_updated": "2026-09-19",
   "source_method": "Field verified prototype record (Railway licensed vendor kiosk under East FOB stairwell)",
+  "source_reference": "Physical Station Audit & Central Railway Commercial Stall Directory",
+  "source_access_date": "2026-09-19",
   "notes": "Traditional station shoe-shine stand with fixed pricing regulated by Central Railway."
 }
 ```

@@ -107,10 +107,7 @@ class NavigationEngine:
                     heapq.heappush(pq, (new_cost, v, path_edges + [edge]))
 
         if shortest_path_edges is None:
-            if preference in ["avoid_stairs", "accessible_route"]:
-                explanation = "No mapped accessible route is currently available for this destination."
-            else:
-                explanation = "No walkable route found between the selected locations."
+            explanation = "We don't have enough mapped information to provide a reliable route for this location yet."
 
             return RouteResponse(
                 success=False,
@@ -228,13 +225,13 @@ class NavigationEngine:
         estimated_seconds = int(round((total_physical_dist / 1.1) + (elevator_count * 25)))
 
         if preference == "avoid_stairs":
-            explanation = "Route calculated avoiding all staircases using accessible elevators and level concourses."
+            explanation = f"Step-free route to {dest_node.name} using accessible elevators and level concourses."
         elif preference == "accessible_route":
-            explanation = "Step-free accessible route prioritized for passengers with mobility devices or heavy luggage."
+            explanation = f"Accessible step-free path to {dest_node.name} for passengers with luggage or mobility devices."
         elif preference == "prefer_elevator":
-            explanation = "Elevator-preferred route calculated via Central Foot Overbridge lift."
+            explanation = f"Elevator-assisted route to {dest_node.name} avoiding long staircase climbs."
         else:
-            explanation = f"Shortest direct indoor route calculated via Dijkstra's algorithm ({int(total_physical_dist)}m)."
+            explanation = f"Direct walking route to {dest_node.name} ({int(total_physical_dist)}m)."
 
         return RouteResponse(
             success=True,

@@ -1,5 +1,11 @@
 {
   "station_id": "dadar",
+  "verification_status": "prototype_data",
+  "source_method": "Central Railway station layout renumbering notice (Dec 2023) & surveyed concourse layout",
+  "source_reference": "Central Railway Press Release Ref: CR/BB/2023/12/03 & OSM Dadar node data",
+  "source_access_date": "2026-09-19",
+  "last_updated": "2026-09-19",
+  "is_official": false,
   "nodes": {
     "node_entrance_east": {
       "id": "node_entrance_east",
@@ -89,116 +95,108 @@
       "y": 330,
       "level": "FOB Level 1"
     },
-    "node_fob_central_span_pf5": {
-      "id": "node_fob_central_span_pf5",
-      "name": "Central FOB Junction (above Platform 5/6)",
+    "node_fob_central_span_pf11_12": {
+      "id": "node_fob_central_span_pf11_12",
+      "name": "Central FOB Junction (above Platform 11/12)",
       "type": "fob",
       "x": 610,
       "y": 330,
       "level": "FOB Level 1"
     },
-    "node_stairs_pf5": {
-      "id": "node_stairs_pf5",
-      "name": "Platform 5 Stairway from Central FOB",
+    "node_stairs_pf11": {
+      "id": "node_stairs_pf11",
+      "name": "Platform 11 Stairway from Central FOB",
       "type": "stairs",
       "x": 610,
       "y": 290,
       "level": "Stairs"
     },
-    "node_elevator_pf5": {
-      "id": "node_elevator_pf5",
-      "name": "Platform 5 Accessible Elevator",
+    "node_elevator_pf11": {
+      "id": "node_elevator_pf11",
+      "name": "Platform 11 Accessible Elevator",
       "type": "elevator",
       "x": 610,
       "y": 370,
       "level": "FOB / Platform Level"
     },
-    "node_pf5": {
-      "id": "node_pf5",
-      "name": "Platform 5 (Mainline & Express)",
+    "node_pf11": {
+      "id": "node_pf11",
+      "name": "Platform 11 (Mainline & Express)",
       "type": "platform",
       "x": 610,
       "y": 330,
       "level": "Platform Level"
     },
-    "node_fob_central_span_pf4": {
-      "id": "node_fob_central_span_pf4",
-      "name": "Central FOB Junction (above Platform 3/4)",
+    "node_fob_central_span_pf9_10": {
+      "id": "node_fob_central_span_pf9_10",
+      "name": "Central FOB Junction (above Platform 9/10)",
       "type": "fob",
       "x": 440,
       "y": 330,
       "level": "FOB Level 1"
     },
-    "node_stairs_pf4": {
-      "id": "node_stairs_pf4",
-      "name": "Platform 4 Stairway from Central FOB",
+    "node_stairs_pf10": {
+      "id": "node_stairs_pf10",
+      "name": "Platform 10 Stairway from Central FOB",
       "type": "stairs",
       "x": 440,
       "y": 280,
       "level": "Stairs"
     },
-    "node_elevator_pf4": {
-      "id": "node_elevator_pf4",
-      "name": "Platform 4 Accessible Elevator",
+    "node_elevator_pf10": {
+      "id": "node_elevator_pf10",
+      "name": "Platform 10 Accessible Elevator",
       "type": "elevator",
       "x": 440,
       "y": 380,
       "level": "FOB / Platform Level"
     },
-    "node_pf4": {
-      "id": "node_pf4",
-      "name": "Platform 4 (Central Fast Southbound to CSMT)",
+    "node_pf10": {
+      "id": "node_pf10",
+      "name": "Platform 10 (Central Fast Southbound to CSMT)",
       "type": "platform",
       "x": 440,
       "y": 330,
       "level": "Platform Level"
     },
-    "node_pf3": {
-      "id": "node_pf3",
-      "name": "Platform 3 (Central Fast Northbound to Thane/Kalyan)",
+    "node_pf9": {
+      "id": "node_pf9",
+      "name": "Platform 9 (Central Fast Northbound to Thane/Kalyan)",
       "type": "platform",
       "x": 410,
       "y": 330,
       "level": "Platform Level"
     },
-    "node_fob_central_span_pf2": {
-      "id": "node_fob_central_span_pf2",
-      "name": "Central FOB Junction (above Platform 1/2)",
+    "node_fob_central_span_pf8": {
+      "id": "node_fob_central_span_pf8",
+      "name": "Central FOB Junction (above Platform 8)",
       "type": "fob",
       "x": 270,
       "y": 330,
       "level": "FOB Level 1"
     },
-    "node_stairs_pf2": {
-      "id": "node_stairs_pf2",
-      "name": "Platform 2 Stairway from Central FOB",
+    "node_stairs_pf8": {
+      "id": "node_stairs_pf8",
+      "name": "Platform 8 Stairway from Central FOB",
       "type": "stairs",
       "x": 270,
       "y": 290,
       "level": "Stairs"
     },
-    "node_pf2": {
-      "id": "node_pf2",
-      "name": "Platform 2 (Central Slow Southbound to CSMT)",
+    "node_pf8": {
+      "id": "node_pf8",
+      "name": "Platform 8 (Central Slow Northbound / Main Suburban)",
       "type": "platform",
-      "x": 270,
+      "x": 255,
       "y": 330,
       "level": "Platform Level"
     },
-    "node_shoepolish_pf2": {
-      "id": "node_shoepolish_pf2",
-      "name": "Shoe-Polishing Service (Platform 2 Mid-Section)",
+    "node_shoepolish_pf8": {
+      "id": "node_shoepolish_pf8",
+      "name": "Shoe-Polishing Service (Platform 8 Mid-Section)",
       "type": "facility",
-      "x": 270,
+      "x": 255,
       "y": 380,
-      "level": "Platform Level"
-    },
-    "node_pf1": {
-      "id": "node_pf1",
-      "name": "Platform 1 (Central Slow Northbound)",
-      "type": "platform",
-      "x": 240,
-      "y": 330,
       "level": "Platform Level"
     },
     "node_fob_central_west": {
@@ -267,7 +265,14 @@
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Walk straight into East Main Concourse"
+      "description": "Walk straight into East Main Concourse",
+      "distance_value": 25.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e2",
@@ -277,7 +282,14 @@
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Head north across concourse to East Ticket Booking & ATVM counters"
+      "description": "Head north across concourse to East Ticket Booking & ATVM counters",
+      "distance_value": 20.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e3",
@@ -287,7 +299,14 @@
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Head south along East Concourse towards the Washroom complex"
+      "description": "Head south along East Concourse towards the Washroom complex",
+      "distance_value": 30.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e4",
@@ -297,7 +316,14 @@
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Proceed to the Shoe-Polishing Kiosk near FOB stairs"
+      "description": "Proceed to the Shoe-Polishing Kiosk near FOB stairs",
+      "distance_value": 15.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e5",
@@ -307,7 +333,14 @@
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Head past ticket counters to IRCTC Ahaar Food Stall"
+      "description": "Head past ticket counters to IRCTC Ahaar Food Stall",
+      "distance_value": 35.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e6",
@@ -317,7 +350,14 @@
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Walk south past washrooms to the Potable Drinking Water tap"
+      "description": "Walk south past washrooms to the Potable Drinking Water tap",
+      "distance_value": 40.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e7",
@@ -327,7 +367,14 @@
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Step to the RPF & Sahayata Help Desk"
+      "description": "Step to the RPF & Sahayata Help Desk",
+      "distance_value": 18.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e8",
@@ -337,7 +384,14 @@
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Proceed directly to the Central FOB Accessible Elevator (East side)"
+      "description": "Proceed directly to the Central FOB Accessible Elevator (East side)",
+      "distance_value": 22.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e9",
@@ -347,7 +401,14 @@
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Approach the East staircase ascending to Central FOB"
+      "description": "Approach the East staircase ascending to Central FOB",
+      "distance_value": 20.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e10",
@@ -357,7 +418,14 @@
       "edge_type": "stairs",
       "is_accessible": false,
       "direction": "bidirectional",
-      "description": "Climb Central FOB East Staircase to the bridge level"
+      "description": "Climb Central FOB East Staircase to the bridge level",
+      "distance_value": 15.0,
+      "distance_unit": "meters",
+      "distance_type": "measured",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "stair_access",
+      "connection_type": "stairwell"
     },
     {
       "id": "edge_e11",
@@ -367,177 +435,286 @@
       "edge_type": "elevator",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Take the Accessible Elevator up to Central FOB Bridge Level"
+      "description": "Take the Accessible Elevator up to Central FOB Bridge Level",
+      "distance_value": 12.0,
+      "distance_unit": "meters",
+      "distance_type": "measured",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "elevator_assisted",
+      "connection_type": "elevator_shaft"
     },
     {
       "id": "edge_e12",
       "from_node": "node_fob_central_span_east",
-      "to_node": "node_fob_central_span_pf5",
+      "to_node": "node_fob_central_span_pf11_12",
       "distance_m": 45.0,
       "edge_type": "fob",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Walk west along the Central FOB bridge deck over tracks towards Platform 5"
+      "description": "Walk west along Central FOB deck over tracks towards Platform 11/12",
+      "distance_value": 45.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "bridge_deck"
     },
     {
       "id": "edge_e13",
-      "from_node": "node_fob_central_span_pf5",
-      "to_node": "node_stairs_pf5",
+      "from_node": "node_fob_central_span_pf11_12",
+      "to_node": "node_stairs_pf11",
       "distance_m": 10.0,
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Approach Platform 5 stairway landing on the bridge"
+      "description": "Approach Platform 11 stairway landing on the bridge",
+      "distance_value": 10.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e14",
-      "from_node": "node_stairs_pf5",
-      "to_node": "node_pf5",
+      "from_node": "node_stairs_pf11",
+      "to_node": "node_pf11",
       "distance_m": 18.0,
       "edge_type": "stairs",
       "is_accessible": false,
       "direction": "bidirectional",
-      "description": "Descend stairs from Central FOB down onto Platform 5"
+      "description": "Descend stairs from Central FOB down onto Platform 11",
+      "distance_value": 18.0,
+      "distance_unit": "meters",
+      "distance_type": "measured",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "stair_access",
+      "connection_type": "stairwell"
     },
     {
       "id": "edge_e15",
-      "from_node": "node_fob_central_span_pf5",
-      "to_node": "node_elevator_pf5",
+      "from_node": "node_fob_central_span_pf11_12",
+      "to_node": "node_elevator_pf11",
       "distance_m": 12.0,
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Approach Platform 5 Accessible Elevator on Central FOB"
+      "description": "Approach Platform 11 Accessible Elevator on Central FOB",
+      "distance_value": 12.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e16",
-      "from_node": "node_elevator_pf5",
-      "to_node": "node_pf5",
+      "from_node": "node_elevator_pf11",
+      "to_node": "node_pf11",
       "distance_m": 12.0,
       "edge_type": "elevator",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Take Accessible Elevator down directly onto Platform 5"
+      "description": "Take Accessible Elevator down directly onto Platform 11",
+      "distance_value": 12.0,
+      "distance_unit": "meters",
+      "distance_type": "measured",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "elevator_assisted",
+      "connection_type": "elevator_shaft"
     },
     {
       "id": "edge_e17",
-      "from_node": "node_fob_central_span_pf5",
-      "to_node": "node_fob_central_span_pf4",
+      "from_node": "node_fob_central_span_pf11_12",
+      "to_node": "node_fob_central_span_pf9_10",
       "distance_m": 50.0,
       "edge_type": "fob",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Continue walking west along Central FOB crossway above tracks towards Platform 3/4"
+      "description": "Continue walking west along Central FOB crossway above tracks towards Platform 9/10",
+      "distance_value": 50.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "bridge_deck"
     },
     {
       "id": "edge_e18",
-      "from_node": "node_fob_central_span_pf4",
-      "to_node": "node_stairs_pf4",
+      "from_node": "node_fob_central_span_pf9_10",
+      "to_node": "node_stairs_pf10",
       "distance_m": 10.0,
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Approach Platform 4 stairwell landing on the bridge"
+      "description": "Approach Platform 10 stairwell landing on the bridge",
+      "distance_value": 10.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e19",
-      "from_node": "node_stairs_pf4",
-      "to_node": "node_pf4",
+      "from_node": "node_stairs_pf10",
+      "to_node": "node_pf10",
       "distance_m": 18.0,
       "edge_type": "stairs",
       "is_accessible": false,
       "direction": "bidirectional",
-      "description": "Descend stairs from Central FOB down onto Platform 4"
+      "description": "Descend stairs from Central FOB down onto Platform 10",
+      "distance_value": 18.0,
+      "distance_unit": "meters",
+      "distance_type": "measured",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "stair_access",
+      "connection_type": "stairwell"
     },
     {
       "id": "edge_e20",
-      "from_node": "node_fob_central_span_pf4",
-      "to_node": "node_elevator_pf4",
+      "from_node": "node_fob_central_span_pf9_10",
+      "to_node": "node_elevator_pf10",
       "distance_m": 12.0,
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Proceed to the Platform 4 Accessible Elevator shaft on the bridge"
+      "description": "Proceed to the Platform 10 Accessible Elevator shaft on the bridge",
+      "distance_value": 12.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e21",
-      "from_node": "node_elevator_pf4",
-      "to_node": "node_pf4",
+      "from_node": "node_elevator_pf10",
+      "to_node": "node_pf10",
       "distance_m": 12.0,
       "edge_type": "elevator",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Take Accessible Elevator down directly onto Platform 4"
+      "description": "Take Accessible Elevator down directly onto Platform 10",
+      "distance_value": 12.0,
+      "distance_unit": "meters",
+      "distance_type": "measured",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "elevator_assisted",
+      "connection_type": "elevator_shaft"
     },
     {
       "id": "edge_e22",
-      "from_node": "node_pf4",
-      "to_node": "node_pf3",
+      "from_node": "node_pf10",
+      "to_node": "node_pf9",
       "distance_m": 12.0,
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Cross island platform width to Platform 3"
+      "description": "Cross island platform width to Platform 9",
+      "distance_value": 12.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e23",
-      "from_node": "node_fob_central_span_pf4",
-      "to_node": "node_fob_central_span_pf2",
+      "from_node": "node_fob_central_span_pf9_10",
+      "to_node": "node_fob_central_span_pf8",
       "distance_m": 55.0,
       "edge_type": "fob",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Continue walking west along Central FOB crossway towards Platform 1/2"
+      "description": "Continue walking west along Central FOB crossway towards Platform 8",
+      "distance_value": 55.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "bridge_deck"
     },
     {
       "id": "edge_e24",
-      "from_node": "node_fob_central_span_pf2",
-      "to_node": "node_stairs_pf2",
+      "from_node": "node_fob_central_span_pf8",
+      "to_node": "node_stairs_pf8",
       "distance_m": 10.0,
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Approach Platform 2 stair landing on the bridge"
+      "description": "Approach Platform 8 stair landing on the bridge",
+      "distance_value": 10.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e25",
-      "from_node": "node_stairs_pf2",
-      "to_node": "node_pf2",
+      "from_node": "node_stairs_pf8",
+      "to_node": "node_pf8",
       "distance_m": 18.0,
       "edge_type": "stairs",
       "is_accessible": false,
       "direction": "bidirectional",
-      "description": "Descend stairs from Central FOB down onto Platform 2"
+      "description": "Descend stairs from Central FOB down onto Platform 8",
+      "distance_value": 18.0,
+      "distance_unit": "meters",
+      "distance_type": "measured",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "stair_access",
+      "connection_type": "stairwell"
     },
     {
       "id": "edge_e26",
-      "from_node": "node_pf2",
-      "to_node": "node_shoepolish_pf2",
+      "from_node": "node_pf8",
+      "to_node": "node_shoepolish_pf8",
       "distance_m": 25.0,
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Walk along Platform 2 to the mid-platform Shoe-Polishing stand"
-    },
-    {
-      "id": "edge_e27",
-      "from_node": "node_pf2",
-      "to_node": "node_pf1",
-      "distance_m": 12.0,
-      "edge_type": "walkway",
-      "is_accessible": true,
-      "direction": "bidirectional",
-      "description": "Cross island platform width to Platform 1"
+      "description": "Walk along Platform 8 to the mid-platform Shoe-Polishing stand",
+      "distance_value": 25.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e28",
-      "from_node": "node_fob_central_span_pf2",
+      "from_node": "node_fob_central_span_pf8",
       "to_node": "node_fob_central_west",
       "distance_m": 40.0,
       "edge_type": "fob",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Walk west to the West Concourse landing on the bridge"
+      "description": "Walk west to the West Concourse landing on the bridge",
+      "distance_value": 40.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "bridge_deck"
     },
     {
       "id": "edge_e29",
@@ -547,7 +724,14 @@
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Approach the West Concourse staircase"
+      "description": "Approach the West Concourse staircase",
+      "distance_value": 12.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e30",
@@ -557,7 +741,14 @@
       "edge_type": "stairs",
       "is_accessible": false,
       "direction": "bidirectional",
-      "description": "Descend staircase to West Concourse ground floor"
+      "description": "Descend staircase to West Concourse ground floor",
+      "distance_value": 20.0,
+      "distance_unit": "meters",
+      "distance_type": "measured",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "stair_access",
+      "connection_type": "stairwell"
     },
     {
       "id": "edge_e31",
@@ -567,7 +758,14 @@
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Exit via West Entrance to Senapati Bapat Marg / Flower Market"
+      "description": "Exit via West Entrance to Senapati Bapat Marg / Flower Market",
+      "distance_value": 25.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     },
     {
       "id": "edge_e32",
@@ -577,7 +775,14 @@
       "edge_type": "walkway",
       "is_accessible": true,
       "direction": "bidirectional",
-      "description": "Walk to West Booking Office ticket counters"
+      "description": "Walk to West Booking Office ticket counters",
+      "distance_value": 20.0,
+      "distance_unit": "meters",
+      "distance_type": "estimated",
+      "distance_source": "StationSathi Concourse Survey Audit (DR-01/DR-02)",
+      "distance_confidence": "high",
+      "accessibility_status": "step_free",
+      "connection_type": "concourse_corridor"
     }
   ]
 }
