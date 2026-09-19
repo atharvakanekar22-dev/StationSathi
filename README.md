@@ -1,6 +1,5 @@
 # StationSathi: Intelligent Railway Station Assistant for Mumbai Central Railway
 
-> **"Find your way inside the station."**
 
 StationSathi is a public-transport technology web application designed to help commuters navigate complex Mumbai Central Railway stations. Unlike standard transit applications that merely provide train timetables or outdoor GPS driving routes, StationSathi models and navigates the **internal built environment** of railway terminals: platforms, foot overbridges (FOBs), concourses, ticket counters, stairs, accessible elevators, washrooms, drinking water taps, and micro-services like shoe-polishing stands.
 
