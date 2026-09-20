@@ -238,7 +238,7 @@ python backend/scripts/validate_station_data.py
 ```powershell
 python -m pytest backend/tests/test_api.py -v
 ```
-*All 17 tests validate station coverage, facility search, Dijkstra shortest routes, stair avoidance elevator paths, step-free verification, and NLP intent extraction.*
+*All 17 tests validate station coverage, facility search, Dijkstra shortest routes, stair avoidance, elevator paths, step-free verification, and NLP intent extraction.*
 
 ---
 
@@ -273,7 +273,7 @@ For the full spoken presentation script, refer to [`docs/DEMO_SCRIPT.md`](docs/D
 
 - **Indoor Positioning Integration**: Integration of Bluetooth Low Energy (BLE) beacons or QR-code wayfinding points at station pillars.
 - **Graph Expansion**: Complete indoor survey and graph generation for CSMT, Thane, Kalyan, Byculla, and Ghatkopar.
-- **PostgreSQL / PostGIS Database**: Transition from local JSON repositories to PostgreSQL database backend.
+- **PostgreSQL / PostGIS Database**: Transition from local JSON repositories to a PostgreSQL database backend.
 - **Crowd Density Integration**: Integration with historical footfall patterns to recommend less crowded foot overbridges during peak rush hours.
 
 ---
