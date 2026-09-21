@@ -33,7 +33,7 @@ StationSathi addresses this by combining **2D indoor SVG mapping**, **Dijkstra g
 
 - **Frontend**: React.js (v19), Vite (v8), Tailwind CSS (v4), Lucide React.
 - **Backend**: Python 3.14, FastAPI, Uvicorn, Pydantic v2.
-- **Testing**: Pytest, HTTPX TestClient.
+- **Testing**: Pytest, HTTPS TestClient.
 - **Navigation Engine**: Dijkstra's algorithm with weighted accessibility cost penalties.
 - **Repository Pattern**: Extensible JSON repository abstraction designed for PostgreSQL/PostGIS migration.
 
