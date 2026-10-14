@@ -1,8 +1,8 @@
 from typing import List, Optional
 from fastapi import APIRouter, HTTPException, Query
 
-from backend.app.models.schemas import Facility
-from backend.app.services.data_repository import repository
+from app.models.schemas import Facility
+from app.services.data_repository import repository
 
 router = APIRouter(prefix="/stations/{station_id}/facilities", tags=["facilities"])
 
