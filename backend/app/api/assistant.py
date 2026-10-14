@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 
-from backend.app.models.schemas import AssistantQueryRequest, AssistantQueryResponse
-from backend.app.services.data_repository import repository
-from backend.app.services.nlp_engine import DomainNLPEngine
+from app.models.schemas import AssistantQueryRequest, AssistantQueryResponse
+from app.services.data_repository import repository
+from app.services.nlp_engine import DomainNLPEngine
 
 router = APIRouter(prefix="/assistant", tags=["assistant"])
 

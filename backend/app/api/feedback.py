@@ -3,7 +3,7 @@ import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 from fastapi import APIRouter, HTTPException
-from backend.app.models.schemas import UserFeedbackReport, FeedbackResponse
+from app.models.schemas import UserFeedbackReport, FeedbackResponse
 
 router = APIRouter(prefix="/feedback", tags=["feedback"])
 

@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 from typing import List, Optional, Dict, Any
 from pathlib import Path
 
-from backend.app.models.schemas import Station, Facility, StationGraph, GraphNode, GraphEdge
+from app.models.schemas import Station, Facility, StationGraph, GraphNode, GraphEdge
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 

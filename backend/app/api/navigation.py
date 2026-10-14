@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException
 
-from backend.app.models.schemas import RouteRequest, RouteResponse
-from backend.app.services.data_repository import repository
-from backend.app.services.graph_engine import NavigationEngine
+from app.models.schemas import RouteRequest, RouteResponse
+from app.services.data_repository import repository
+from app.services.graph_engine import NavigationEngine
 
 router = APIRouter(prefix="/navigation", tags=["navigation"])
 

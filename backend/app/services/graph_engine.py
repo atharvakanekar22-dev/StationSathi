@@ -1,6 +1,6 @@
 import heapq
 from typing import Dict, List, Optional, Tuple, Set
-from backend.app.models.schemas import (
+from app.models.schemas import (
     StationGraph, GraphNode, GraphEdge, RouteResponse, RouteStep
 )
 

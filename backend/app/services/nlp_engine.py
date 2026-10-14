@@ -1,11 +1,11 @@
 import re
 from typing import Optional, List, Dict, Any
 
-from backend.app.models.schemas import (
+from app.models.schemas import (
     AssistantQueryRequest, AssistantQueryResponse, Facility
 )
-from backend.app.services.data_repository import StationRepository
-from backend.app.services.graph_engine import NavigationEngine
+from app.services.data_repository import StationRepository
+from app.services.graph_engine import NavigationEngine
 
 class DomainNLPEngine:
     def __init__(self, repository: StationRepository):
