@@ -1,8 +1,8 @@
 from typing import List
 from fastapi import APIRouter, HTTPException
 
-from backend.app.models.schemas import Station, StationGraph
-from backend.app.services.data_repository import repository
+from app.models.schemas import Station, StationGraph
+from app.services.data_repository import repository
 
 router = APIRouter(prefix="/stations", tags=["stations"])
 
