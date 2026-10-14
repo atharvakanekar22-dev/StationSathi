@@ -2,11 +2,11 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.app.api.stations import router as stations_router
-from backend.app.api.facilities import router as facilities_router
-from backend.app.api.navigation import router as navigation_router
-from backend.app.api.assistant import router as assistant_router
-from backend.app.api.feedback import router as feedback_router
+from app.api.stations import router as stations_router
+from app.api.facilities import router as facilities_router
+from app.api.navigation import router as navigation_router
+from app.api.assistant import router as assistant_router
+from app.api.feedback import router as feedback_router
 
 app = FastAPI(
     title="StationSathi API",
@@ -41,4 +41,4 @@ def health_check():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("backend.app.main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("app.main:app", host="127.0.0.1", port=8000, reload=True)
