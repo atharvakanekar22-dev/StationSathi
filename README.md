@@ -1,16 +1,189 @@
-# StationSathi: Intelligent Railway Station Assistant for Mumbai Central Railway
+# StationSathi 🚉 : Intelligent Railway Station Assistant for Mumbai Central Railway
 
 
 StationSathi is a public-transport technology web application designed to help commuters navigate complex Mumbai Central Railway stations. Unlike standard transit applications that merely provide train timetables or outdoor GPS driving routes, StationSathi models and navigates the **internal built environment** of railway terminals: platforms, foot overbridges , concourses, ticket counters, stairs, accessible elevators, washrooms, drinking water taps, and micro-services like shoe-polishing stands.
 
 ---
 
-## 1. Problem Statement
+🌐 Live Demo
 
-Mumbai suburban railway stations such as Dadar, CSMT, and Thane accommodate millions of daily passengers across multi-tiered layouts spanning multiple foot overbridges, island platforms, and entrances. In this environment:
-- Standard outdoor GPS fails indoors due to concrete roofing, overhead steel girders, and electromagnetic interference.
-- Commuters with heavy luggage, senior citizens, or persons with disabilities struggle to find step-free paths with working elevators and ramps.
-- Essential amenities (washrooms, drinking water, shoe-polishing kiosks, RPF help desks) are difficult to locate during rush hours.
+Open StationSathi
+
+Backend API: https://stationsathi-f3xs.onrender.com
+
+API Documentation: https://stationsathi-f3xs.onrender.com/docs
+
+✨ Features
+
+Station Discovery: Access information about supported railway stations.
+
+Facility Discovery: Find mapped facilities within supported stations.
+
+Indoor Navigation: Calculate routes between mapped station landmarks.
+
+Accessibility-Aware Routing: Support route preferences such as avoiding stairs where the underlying station data supports them.
+
+Assistant: Submit natural-language queries about station information and facilities.
+
+Feedback: Submit feedback through the application.
+
+Fallback Support: Use predefined prototype data when API requests fail, where supported by the frontend.
+
+🏗️ Architecture
+
+StationSathi uses a separate frontend and backend.
+
+Frontend: React and Vite
+
+Backend: Python and FastAPI
+
+API Communication: HTTP requests using REST endpoints
+
+Deployment: Render
+
+User
+  |
+  v
+React + Vite Frontend
+  |
+  | HTTP / REST API
+  v
+FastAPI Backend
+  |
+  +-- Station Information
+  +-- Facility Discovery
+  +-- Indoor Navigation
+  +-- Assistant
+  +-- Feedback
+
+🛠️ Tech Stack
+
+Component
+
+Technology
+
+Frontend
+
+React
+
+Frontend tooling
+
+Vite
+
+Backend
+
+Python, FastAPI
+
+API server
+
+Uvicorn
+
+API communication
+
+HTTP, JSON
+
+Deployment
+
+Render
+
+🚀 Run Locally
+
+Prerequisites
+
+Node.js and npm
+
+Python
+
+Git
+
+Clone the repository
+
+git clone https://github.com/atharvakanekar22-dev/StationSathi.git
+cd StationSathi
+
+- Start the backend
+
+Open a terminal:
+
+cd backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+
+The backend should be available at:
+
+http://127.0.0.1:8000
+
+API documentation:
+
+http://127.0.0.1:8000/docs
+
+Configure the frontend
+
+Open another terminal and navigate to the frontend directory.
+
+Create or update frontend/.env.production:
+
+VITE_API_BASE_URL=https://stationsathi-f3xs.onrender.com
+
+For local development, configure your local Vite environment and proxy according to the existing frontend setup. Ensure API requests resolve to the intended backend before testing.
+
+- Start the frontend
+
+cd frontend
+npm install
+npm run dev
+
+Open the local URL printed by Vite in the terminal.
+
+🔌 API Endpoints
+
+Endpoint
+
+Purpose
+
+GET /api/health
+
+Backend health check
+
+GET /api/stations
+
+Retrieve station information
+
+GET /api/stations/{station_id}
+
+Retrieve a station
+
+GET /api/stations/{station_id}/graph
+
+Retrieve a station graph
+
+GET /docs
+
+Interactive API documentation
+
+Additional endpoints support facilities, navigation, assistant queries, and feedback. Their exact request formats are documented in the API source and interactive documentation.
+
+📁 Project Structure
+
+StationSathi/
+├── frontend/
+│   ├── src/
+│   ├── package.json
+│   └── .env.production
+├── backend/
+│   ├── app/
+│   │   ├── api/
+│   │   ├── models/
+│   │   ├── services/
+│   │   └── main.py
+│   └── requirements.txt
+└── README.md
+
+
+
+
+
+Built to explore more accessible and convenient indoor railway station navigation.
 
 StationSathi addresses this by combining **2D indoor SVG mapping**, **Dijkstra graph-based navigation with accessibility cost constraints**, and a **grounded natural-language query engine**.
 
@@ -281,3 +454,9 @@ For the full spoken presentation script, refer to [`docs/DEMO_SCRIPT.md`](docs/D
 ## 17. Ethical Considerations & Disclaimers
 
 > **Disclaimer**: StationSathi is an academic research and technology demonstration prototype developed for Mumbai Central Railway commuters. It is **not officially endorsed by or affiliated with Indian Railways or Central Railway**. All facility coordinates, walking routes, and distances are prototype estimates under verification.
+
+👨‍💻 Developer
+
+Atharva Kanekar
+
+GitHub: atharvakanekar22-dev
