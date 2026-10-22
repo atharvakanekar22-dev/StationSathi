@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Train,
-  Sparkles,
   ChevronDown,
   Search
 } from 'lucide-react';
@@ -29,9 +28,6 @@ export default function Header({
             <div className="flex items-baseline gap-2">
               <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-950">
                 StationSathi
-              </span>
-              <span className="hidden sm:inline-block text-[10px] tracking-wider uppercase font-semibold text-slate-400">
-                Central Railway
               </span>
             </div>
           </div>
@@ -71,7 +67,7 @@ export default function Header({
               className="px-3.5 py-2 rounded-full text-xs font-medium text-slate-600 hover:text-slate-950 hover:bg-slate-100 transition"
               title="Station Information & Help"
             >
-              Help / About
+              Info
             </button>
           </div>
         </div>

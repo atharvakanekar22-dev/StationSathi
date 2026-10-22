@@ -7,16 +7,11 @@ import BasicStationView from './BasicStationView';
 import ReportIssueModal from './ReportIssueModal';
 import {
   fetchFacilities,
-  fetchRoute,
-  queryAssistant
+  fetchRoute
 } from '../services/api';
 import {
   Navigation,
   Sparkles,
-  Info,
-  ShieldCheck,
-  AlertCircle,
-  RotateCcw,
   Compass,
   MessageSquare
 } from 'lucide-react';
@@ -26,7 +21,6 @@ export default function StationDashboard({
   graph,
   onSelectStation,
   onOpenAssistant,
-  onOpenInfoModal,
   selectedScenario = null
 }) {
   const [facilities, setFacilities] = useState([]);
@@ -55,7 +49,7 @@ export default function StationDashboard({
     loadData();
   }, [currentStation?.station_id, activeCategory, searchTerm]);
 
-  // Respond to Demo Controller Scenarios & Assistant Events
+  // Respond to quick actions and assistant events
   useEffect(() => {
     if (!selectedScenario) return;
 
@@ -195,9 +189,7 @@ export default function StationDashboard({
             <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200">
               {currentStation.code}
             </span>
-            <span className="text-xs text-slate-400 font-medium">
-              {currentStation.platforms_count} Platforms
-            </span>
+            <span className="text-xs text-slate-400 font-medium">{currentStation.platforms_count} platforms</span>
           </div>
           <p className="text-xs text-slate-500 mt-1 max-w-2xl leading-relaxed">
             {currentStation.description}
@@ -212,7 +204,7 @@ export default function StationDashboard({
             title="Provide feedback on station information"
           >
             <MessageSquare className="w-3.5 h-3.5 text-slate-500" />
-            <span>Provide feedback</span>
+            <span>Feedback</span>
           </button>
 
           <button
@@ -221,7 +213,7 @@ export default function StationDashboard({
             title="View Station Information Summary & Platform Layout"
           >
             <Compass className="w-3.5 h-3.5 text-slate-500" />
-            <span>Overview</span>
+            <span>Info</span>
           </button>
 
           <button

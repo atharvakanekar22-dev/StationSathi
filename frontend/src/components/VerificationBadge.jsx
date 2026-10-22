@@ -2,27 +2,27 @@ import React from 'react';
 
 const STATUS_CONFIGS = {
   prototype_data: {
-    label: 'Prototype Data',
+    label: 'Station data',
     bg: 'bg-slate-100 text-slate-700 border-slate-300',
     dot: 'bg-slate-500'
   },
   needs_verification: {
-    label: 'Needs Verification',
+    label: 'Review pending',
     bg: 'bg-amber-50 text-amber-800 border-amber-300',
     dot: 'bg-amber-500'
   },
   publicly_sourced: {
-    label: 'Publicly Sourced',
+    label: 'Public source',
     bg: 'bg-sky-50 text-sky-800 border-sky-300',
     dot: 'bg-sky-500'
   },
   manually_collected: {
-    label: 'Manually Collected',
+    label: 'Field update',
     bg: 'bg-teal-50 text-teal-800 border-teal-300',
     dot: 'bg-teal-500'
   },
   user_reported: {
-    label: 'User Reported',
+    label: 'Reported',
     bg: 'bg-purple-50 text-purple-800 border-purple-300',
     dot: 'bg-purple-500'
   },

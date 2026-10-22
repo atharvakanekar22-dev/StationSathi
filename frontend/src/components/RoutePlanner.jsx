@@ -1,12 +1,9 @@
 import React from 'react';
 import {
   Navigation,
-  MapPin,
-  Compass,
   Accessibility,
   ArrowUpDown,
   RotateCcw,
-  Footprints,
   Zap
 } from 'lucide-react';
 
@@ -50,8 +47,7 @@ export default function RoutePlanner({
     <div className="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-xs flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="text-base font-extrabold text-slate-950 tracking-tight">Indoor Wayfinding</h3>
-          <p className="text-xs text-slate-500">Step-by-step directions inside the station</p>
+          <h3 className="text-base font-extrabold text-slate-950 tracking-tight">Directions</h3>
         </div>
       </div>
 
@@ -62,7 +58,7 @@ export default function RoutePlanner({
           <label className="block text-xs font-semibold text-slate-700 mb-1 flex items-center justify-between">
             <span className="flex items-center gap-1.5 text-emerald-700">
               <span className="w-2 h-2 rounded-full bg-emerald-500" />
-              From: Current location
+              From
             </span>
           </label>
           <select
@@ -70,7 +66,7 @@ export default function RoutePlanner({
             onChange={(e) => onOriginChange(e.target.value)}
             className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 font-medium focus:ring-2 focus:ring-slate-400 focus:bg-white focus:outline-none transition cursor-pointer"
           >
-            <option value="">-- Select starting landmark --</option>
+            <option value="">Select starting point</option>
             <optgroup label="Entrances & Gates">
               {entrances.map((n) => (
                 <option key={n.id} value={n.id}>{n.name} ({n.level})</option>
@@ -115,14 +111,14 @@ export default function RoutePlanner({
         <div>
           <label className="block text-xs font-semibold text-slate-700 mb-1 flex items-center gap-1.5 text-rose-700">
             <span className="w-2 h-2 rounded-full bg-rose-500" />
-            To: Destination
+            To
           </label>
           <select
             value={destinationNodeId}
             onChange={(e) => onDestinationChange(e.target.value)}
             className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 font-medium focus:ring-2 focus:ring-slate-400 focus:bg-white focus:outline-none transition cursor-pointer"
           >
-            <option value="">-- Select destination platform or facility --</option>
+            <option value="">Select destination</option>
             <optgroup label="Platforms">
               {platforms.map((n) => (
                 <option key={n.id} value={n.id}>{n.name}</option>
@@ -150,7 +146,7 @@ export default function RoutePlanner({
       {/* Route Preference Selection */}
       <div>
         <label className="block text-xs font-semibold text-slate-700 mb-2">
-          Route Preference
+          Route
         </label>
         <div className="grid grid-cols-2 gap-2">
           {preferences.map((pref) => (
@@ -190,7 +186,7 @@ export default function RoutePlanner({
           className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-slate-950 hover:bg-blue-600 disabled:bg-slate-200 disabled:text-slate-400 text-white rounded-full text-xs sm:text-sm font-semibold shadow-md shadow-slate-300/30 transition"
         >
           <Navigation className="w-4 h-4" />
-          {isCalculating ? 'Finding Best Route...' : 'Get Directions'}
+          {isCalculating ? 'Finding route...' : 'Get directions'}
         </button>
 
         <button
