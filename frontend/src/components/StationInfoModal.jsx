@@ -42,7 +42,7 @@ export default function StationInfoModal({ isOpen, onClose, station }) {
           {/* Description */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
-              Station Overview
+              Overview
             </h4>
             <p className="leading-relaxed text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-100">
               {station.description}
@@ -53,10 +53,10 @@ export default function StationInfoModal({ isOpen, onClose, station }) {
           <div className="grid grid-cols-2 gap-3">
             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
               <span className="text-[10px] uppercase font-semibold text-slate-400 block mb-0.5">
-                Station Navigation
+                Map
               </span>
               <span className="font-bold text-slate-900 capitalize">
-                Interactive 2D Map
+                Indoor map
               </span>
             </div>
             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
@@ -72,7 +72,7 @@ export default function StationInfoModal({ isOpen, onClose, station }) {
           {/* Entrances */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
-              Main Station Entrances & Gates
+              Entrances
             </h4>
             <ul className="space-y-1.5">
               {station.entrances && station.entrances.map((ent, idx) => (
@@ -87,7 +87,7 @@ export default function StationInfoModal({ isOpen, onClose, station }) {
           {/* Available Facilities Summary */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
-              Key Station Amenities
+              Facilities
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
               {station.facilities_summary && station.facilities_summary.map((fac, idx) => (
@@ -99,20 +99,13 @@ export default function StationInfoModal({ isOpen, onClose, station }) {
             </div>
           </div>
 
-          {/* Station Information & Commuter Notice */}
           <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-xs space-y-1.5">
             <div className="flex items-center gap-1.5 font-semibold text-slate-900">
               <Info className="w-4 h-4 text-blue-600" />
-              <span>Information & Commuter Notice</span>
+              <span>Travel note</span>
             </div>
             <p className="text-[11px] leading-relaxed text-slate-600">
-              Station layout and amenities are cross-referenced with public railway directories, commuter surveys, and station wayfinding guides.
-              <br />
-              <strong>Last Updated:</strong> {station.last_updated}.
-              <br />
-              <span className="text-slate-500 mt-1 block">
-                StationSathi is an independent commuter navigation assistant designed for Mumbai Central Railway passengers. Please follow station signage and official railway staff instructions while travelling.
-              </span>
+              Follow station signs and railway staff instructions while travelling.
             </p>
           </div>
         </div>

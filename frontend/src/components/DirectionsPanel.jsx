@@ -1,12 +1,6 @@
 import React from 'react';
 import {
-  Navigation,
-  CheckCircle2,
   AlertTriangle,
-  Clock,
-  Footprints,
-  Accessibility,
-  ArrowRight,
   ShieldCheck,
   X
 } from 'lucide-react';
@@ -27,7 +21,7 @@ export default function DirectionsPanel({ route, onClose }) {
               {route.explanation || "We don't have enough mapped information to provide a reliable route for this location yet."}
             </p>
             <p className="text-[11px] text-slate-500 mt-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
-              Note: We only provide verified pathways. If a reliable step-free or direct route is not yet verified between these points, we do not estimate or invent one.
+              Try another starting point or destination.
             </p>
           </div>
           {onClose && (

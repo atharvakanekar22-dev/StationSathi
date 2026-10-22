@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Search,
   MapPin,
   Navigation,
-  Sparkles,
-  Info,
-  CheckCircle2,
-  ChevronDown,
-  ChevronUp,
   MessageSquare,
   X
 } from 'lucide-react';
@@ -23,8 +18,6 @@ export default function FacilitySearch({
   selectedFacility = null,
   onProvideFeedback
 }) {
-  const [expandedSourceId, setExpandedSourceId] = useState(null);
-
   const categories = [
     { id: 'all', label: 'All' },
     { id: 'platform', label: 'Platforms' },
@@ -37,21 +30,15 @@ export default function FacilitySearch({
     { id: 'help_desk', label: 'Help Desk' }
   ];
 
-  const toggleSource = (facId, e) => {
-    e.stopPropagation();
-    setExpandedSourceId((prev) => (prev === facId ? null : facId));
-  };
-
   return (
     <div className="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-xs flex flex-col h-full">
       {/* Section Header */}
       <div className="flex items-center justify-between mb-3">
         <div>
-          <h3 className="text-base font-extrabold text-slate-950 tracking-tight">Facility Directory</h3>
-          <p className="text-xs text-slate-500">Discover platforms, elevators, washrooms, and kiosks</p>
+          <h3 className="text-base font-extrabold text-slate-950 tracking-tight">Facilities</h3>
         </div>
         <span className="text-xs font-bold px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-full">
-          {facilities.length} Listed
+          {facilities.length}
         </span>
       </div>
 
@@ -97,16 +84,12 @@ export default function FacilitySearch({
         {facilities.length === 0 ? (
           <div className="text-center py-8 px-4 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
             <Search className="w-7 h-7 text-slate-300 mx-auto mb-2" />
-            <p className="text-xs font-semibold text-slate-700">No facilities matching criteria</p>
-            <p className="text-[11px] text-slate-400 mt-1">
-              Try searching for a platform number, washroom, or shoe polish kiosk.
-            </p>
+            <p className="text-xs font-semibold text-slate-700">No facilities found</p>
+            <p className="text-[11px] text-slate-400 mt-1">Try another search.</p>
           </div>
         ) : (
           facilities.map((fac) => {
             const isSelected = selectedFacility && selectedFacility.facility_id === fac.facility_id;
-            const isSourceExpanded = expandedSourceId === fac.facility_id;
-
             return (
               <div
                 key={fac.facility_id}
@@ -161,26 +144,13 @@ export default function FacilitySearch({
                         className="flex items-center gap-1 px-3 py-1 bg-slate-950 hover:bg-blue-600 text-white rounded-full text-xs font-semibold shadow-xs transition"
                       >
                         <Navigation className="w-3 h-3" />
-                        <span>Get directions</span>
+                        <span>Directions</span>
                       </button>
                     )}
                   </div>
                 </div>
 
-                {/* Subtle Information Source Accordion & Provide Feedback */}
-                <div className="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
-                  <button
-                    onClick={(e) => toggleSource(fac.facility_id, e)}
-                    className="flex items-center gap-1 text-slate-500 hover:text-slate-700 font-medium transition"
-                  >
-                    <span>Information source</span>
-                    {isSourceExpanded ? (
-                      <ChevronUp className="w-3 h-3" />
-                    ) : (
-                      <ChevronDown className="w-3 h-3" />
-                    )}
-                  </button>
-
+                <div className="mt-2 pt-2 border-t border-slate-100 flex justify-end text-[11px]">
                   {onProvideFeedback && (
                     <button
                       onClick={(e) => {
@@ -191,31 +161,10 @@ export default function FacilitySearch({
                       title="Provide feedback on this facility"
                     >
                       <MessageSquare className="w-3 h-3" />
-                      <span>Provide feedback</span>
+                      <span>Feedback</span>
                     </button>
                   )}
                 </div>
-
-                {/* Collapsible Source Details */}
-                {isSourceExpanded && (
-                  <div
-                    onClick={(e) => e.stopPropagation()}
-                    className="mt-2 p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 space-y-1.5 animate-in fade-in duration-100"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-slate-400">Source:</span>
-                      <span className="font-medium text-slate-800">
-                        Station information
-                      </span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-slate-400">Last updated:</span>
-                      <span className="font-medium text-slate-700">
-                        {fac.last_updated || 'Sep 2026'}
-                      </span>
-                    </div>
-                  </div>
-                )}
               </div>
             );
           })
