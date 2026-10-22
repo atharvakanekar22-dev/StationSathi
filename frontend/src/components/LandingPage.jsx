@@ -8,52 +8,52 @@ export default function LandingPage({ stations = [], onSelectStation }) {
 
   const stationData = {
     dadar: {
-      name: 'Dadar Central',
+      name: 'Dadar',
       code: 'DR',
       platforms: '14 Platforms',
-      network: 'Central & Western Railway Interchange',
-      highlight: '3 Elevated Foot Overbridges • East-West Commuter Hub',
-      caption: 'Direct step-free route from East Main Gate to Platform 11 via Central FOB'
+      network: 'Central Railway · Mumbai suburban network',
+      highlight: 'High-footfall interchange with Central and Western line access',
+      caption: 'Indoor map and facility information for the Central Railway station'
     },
     csmt: {
       name: 'Chhatrapati Shivaji Maharaj Terminus',
       code: 'CSMT',
       platforms: '18 Platforms',
-      network: 'UNESCO World Heritage Historic Terminus',
-      highlight: 'Step-free Suburban Star Concourse to Platforms 1–7',
-      caption: 'Direct level path from Walchand Hirachand Marg to Platform 4'
+      network: 'Central Railway · heritage terminus',
+      highlight: 'Suburban and long-distance platforms in a terminal layout',
+      caption: 'Indoor map and facility information for the Central Railway station'
     },
     byculla: {
       name: 'Byculla',
       code: 'BY',
       platforms: '4 Platforms',
-      network: 'Historic Heritage Sub-Terminal',
-      highlight: 'Central Foot Overbridge • Restored Heritage Entrance',
-      caption: 'East Gate access through Central FOB down to Platform 3'
+      network: 'Central Railway · suburban station',
+      highlight: 'Four-platform suburban station with a central footbridge',
+      caption: 'Indoor map and facility information for the Central Railway station'
     },
     ghatkopar: {
       name: 'Ghatkopar',
       code: 'GC',
       platforms: '4 Platforms',
-      network: 'Direct Metro Line 1 Elevated Interchange',
-      highlight: 'High-Capacity Metro Concourse • Step-Free Elevators',
-      caption: 'Direct barrier-free transfer from Metro Concourse to Platform 1'
+      network: 'Central Railway · Metro Line 1 interchange',
+      highlight: 'Suburban platforms connected to the elevated metro concourse',
+      caption: 'Indoor map and facility information for the Central Railway station'
     },
     thane: {
       name: 'Thane',
       code: 'TNA',
       platforms: '10 Platforms',
-      network: 'Major Suburban & Trans-Harbour Junction',
-      highlight: 'SATIS Elevated Bus Deck • Barrier-Free Ramp Access',
-      caption: 'East Concourse and SATIS elevated deck connection to Platform 2'
+      network: 'Central Railway · suburban and Trans-Harbour junction',
+      highlight: 'Large junction with suburban, express and Trans-Harbour services',
+      caption: 'Indoor map and facility information for the Central Railway station'
     },
     kalyan: {
       name: 'Kalyan',
       code: 'KYN',
       platforms: '8 Platforms',
-      network: 'Kasara / Karjat Line Split & Outstation Junction',
-      highlight: 'Step-Free Divyangjan Ramp • South Foot Overbridge',
-      caption: 'Main West Concourse to Platform 4 via South FOB & Ramp'
+      network: 'Central Railway · Kasara and Karjat line junction',
+      highlight: 'Junction station serving suburban and outstation services',
+      caption: 'Indoor map and facility information for the Central Railway station'
     }
   };
 
@@ -89,7 +89,7 @@ export default function LandingPage({ stations = [], onSelectStation }) {
           </h1>
 
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-md font-normal">
-            Find platforms, facilities, and step-free routes.
+            Plan your movement inside Mumbai stations with practical maps, facility locations, and step-free route options.
           </p>
 
           {/* Primary CTA Button (Soft Pill Elevation) */}
@@ -98,7 +98,7 @@ export default function LandingPage({ stations = [], onSelectStation }) {
               onClick={() => onSelectStation(activeStationKey)}
               className="px-7 py-3.5 rounded-full text-sm font-semibold bg-slate-950 hover:bg-blue-600 text-white transition-all shadow-xl shadow-slate-300/50 hover:shadow-blue-500/20 flex items-center gap-2.5 group"
             >
-              <span>Open station map</span>
+              <span>Open station guide</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition" />
             </button>
           </div>
@@ -106,12 +106,12 @@ export default function LandingPage({ stations = [], onSelectStation }) {
           {/* Interactive Station Swatches with Complete Station Names */}
           <div className="pt-3 border-t border-slate-200/80 space-y-2.5">
             <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
-              Stations
+              Select a station
             </span>
             <div className="flex flex-wrap items-center gap-2">
               {[
                 { key: 'dadar', name: 'Dadar Central' },
-                { key: 'csmt', name: 'CSMT Mumbai' },
+                { key: 'csmt', name: 'CSMT' },
                 { key: 'byculla', name: 'Byculla' },
                 { key: 'ghatkopar', name: 'Ghatkopar' },
                 { key: 'thane', name: 'Thane' },
@@ -222,7 +222,7 @@ export default function LandingPage({ stations = [], onSelectStation }) {
                 <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
                   <span className="text-slate-400 font-medium">{st.platforms_count} Platforms</span>
                   <span className="text-slate-900 font-semibold group-hover:text-blue-600 flex items-center gap-1 transition">
-                    <span>Explore</span>
+                    <span>Open guide</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition" />
                   </span>
                 </div>
@@ -234,7 +234,7 @@ export default function LandingPage({ stations = [], onSelectStation }) {
 
       {/* Quiet, Authoritative Notice */}
       <footer className="pt-6 border-t border-slate-200/70 text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p>Station maps and facilities for Central Railway commuters.</p>
+        <p>Information is mapped from public sources and commuter reports. Confirm changes with railway staff.</p>
       </footer>
     </div>
   );

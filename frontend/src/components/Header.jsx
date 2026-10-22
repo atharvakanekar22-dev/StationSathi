@@ -11,8 +11,16 @@ export default function Header({
   onSelectStation,
   onOpenAssistant,
   onOpenInfoModal,
-  onGoHome
+  onGoHome,
+  dataMode = 'checking'
 }) {
+  const modeLabel = dataMode === 'live' ? 'Live data' : dataMode === 'offline' ? 'Offline map' : 'Connecting';
+  const modeClass = dataMode === 'live'
+    ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+    : dataMode === 'offline'
+      ? 'bg-amber-50 text-amber-800 border-amber-200'
+      : 'bg-slate-100 text-slate-600 border-slate-200';
+
   return (
     <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/70 text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
@@ -25,15 +33,20 @@ export default function Header({
             <div className="w-8 h-8 rounded-xl bg-slate-950 flex items-center justify-center text-white shadow-xs group-hover:bg-blue-600 transition">
               <Train className="w-4 h-4" />
             </div>
-            <div className="flex items-baseline gap-2">
-              <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-950">
+            <div>
+              <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-950 block leading-none">
                 StationSathi
               </span>
+              <span className="text-[10px] text-slate-500 tracking-wide">Mumbai station guide</span>
             </div>
           </div>
 
           {/* Station Selector: Clean editorial dropdown */}
           <div className="flex items-center gap-2">
+            <span className={`hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[11px] font-semibold ${modeClass}`}>
+              <span className={`w-1.5 h-1.5 rounded-full ${dataMode === 'live' ? 'bg-emerald-500' : dataMode === 'offline' ? 'bg-amber-500' : 'bg-slate-400'}`} />
+              {modeLabel}
+            </span>
             <div className="relative">
               <select
                 value={currentStationId}
@@ -59,7 +72,7 @@ export default function Header({
               title="Search & Station Assistant"
             >
               <Search className="w-3.5 h-3.5" />
-              <span>Search</span>
+              <span>Search station</span>
             </button>
 
             <button

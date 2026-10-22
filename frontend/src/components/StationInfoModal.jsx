@@ -23,7 +23,7 @@ export default function StationInfoModal({ isOpen, onClose, station }) {
               <div className="flex items-center gap-2">
                 <h3 className="text-base font-bold text-slate-900">{station.name} ({station.code})</h3>
                 <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                  Active
+                  Mapped information
                 </span>
               </div>
               <p className="text-xs text-slate-500">{station.network}</p>
@@ -50,13 +50,21 @@ export default function StationInfoModal({ isOpen, onClose, station }) {
           </div>
 
           {/* Coverage Status Breakdown */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
               <span className="text-[10px] uppercase font-semibold text-slate-400 block mb-0.5">
                 Map
               </span>
               <span className="font-bold text-slate-900 capitalize">
                 Indoor map
+              </span>
+            </div>
+            <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
+              <span className="text-[10px] uppercase font-semibold text-slate-400 block mb-0.5">
+                Last reviewed
+              </span>
+              <span className="font-bold text-slate-900">
+                {station.last_updated || 'Not recorded'}
               </span>
             </div>
             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
@@ -105,7 +113,7 @@ export default function StationInfoModal({ isOpen, onClose, station }) {
               <span>Travel note</span>
             </div>
             <p className="text-[11px] leading-relaxed text-slate-600">
-              Follow station signs and railway staff instructions while travelling.
+              This guide combines public transport information with mapped station facilities. Conditions can change during operations, so follow station signs and railway staff instructions.
             </p>
           </div>
         </div>

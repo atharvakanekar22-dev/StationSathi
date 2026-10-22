@@ -47,7 +47,8 @@ export default function RoutePlanner({
     <div className="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-xs flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="text-base font-extrabold text-slate-950 tracking-tight">Directions</h3>
+          <h3 className="text-base font-extrabold text-slate-950 tracking-tight">Plan a route</h3>
+          <p className="text-xs text-slate-500 mt-0.5">Choose where you are and where you want to go.</p>
         </div>
       </div>
 
@@ -66,7 +67,7 @@ export default function RoutePlanner({
             onChange={(e) => onOriginChange(e.target.value)}
             className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 font-medium focus:ring-2 focus:ring-slate-400 focus:bg-white focus:outline-none transition cursor-pointer"
           >
-            <option value="">Select starting point</option>
+            <option value="">Select your current location</option>
             <optgroup label="Entrances & Gates">
               {entrances.map((n) => (
                 <option key={n.id} value={n.id}>{n.name} ({n.level})</option>
@@ -118,7 +119,7 @@ export default function RoutePlanner({
             onChange={(e) => onDestinationChange(e.target.value)}
             className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 font-medium focus:ring-2 focus:ring-slate-400 focus:bg-white focus:outline-none transition cursor-pointer"
           >
-            <option value="">Select destination</option>
+            <option value="">Select a destination</option>
             <optgroup label="Platforms">
               {platforms.map((n) => (
                 <option key={n.id} value={n.id}>{n.name}</option>
@@ -146,7 +147,7 @@ export default function RoutePlanner({
       {/* Route Preference Selection */}
       <div>
         <label className="block text-xs font-semibold text-slate-700 mb-2">
-          Route
+          Route preference
         </label>
         <div className="grid grid-cols-2 gap-2">
           {preferences.map((pref) => (
