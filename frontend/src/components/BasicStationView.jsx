@@ -3,10 +3,7 @@ import {
   MapPin,
   CheckCircle2,
   Navigation,
-  Clock,
   Info,
-  Layers,
-  PhoneCall
 } from 'lucide-react';
 
 export default function BasicStationView({ station, facilities = [], onSwitchToDadar, onReturnToMap }) {
@@ -30,7 +27,7 @@ export default function BasicStationView({ station, facilities = [], onSwitchToD
               Station Overview
             </span>
             <span className="px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-              Active Service
+              Mapped station information
             </span>
           </div>
 
@@ -46,7 +43,7 @@ export default function BasicStationView({ station, facilities = [], onSwitchToD
           <div className="mt-5 pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-4 text-xs text-slate-400">
               <span>Platforms: <strong className="text-white">{station.platforms_count}</strong></span>
-              <span>Updated: <strong className="text-white">{station.last_updated}</strong></span>
+              <span>Reviewed: <strong className="text-white">{station.last_updated || 'Not recorded'}</strong></span>
             </div>
 
             <button
@@ -131,7 +128,7 @@ export default function BasicStationView({ station, facilities = [], onSwitchToD
         <div>
           <h4 className="font-bold text-slate-800">Station Assistance</h4>
           <p className="mt-0.5 leading-relaxed text-slate-600">
-            For urgent passenger assistance, inquiries, or security concerns, visit the Station Master's office or Railway Protection Force (RPF) assistance booth located near the main concourse or Platform 1.
+            For urgent assistance, service changes, or security concerns, follow station signage and contact railway staff or the Railway Protection Force (RPF) help desk.
           </p>
         </div>
       </div>

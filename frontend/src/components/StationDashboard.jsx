@@ -11,10 +11,10 @@ import {
 } from '../services/api';
 import {
   Navigation,
-  Sparkles,
   Compass,
   MessageSquare
 } from 'lucide-react';
+import VerificationBadge from './VerificationBadge';
 
 export default function StationDashboard({
   currentStation,
@@ -190,9 +190,13 @@ export default function StationDashboard({
               {currentStation.code}
             </span>
             <span className="text-xs text-slate-400 font-medium">{currentStation.platforms_count} platforms</span>
+            <VerificationBadge status={currentStation.verification_status} />
           </div>
           <p className="text-xs text-slate-500 mt-1 max-w-2xl leading-relaxed">
             {currentStation.description}
+          </p>
+          <p className="text-[11px] text-slate-400 mt-1">
+            Last reviewed {currentStation.last_updated || 'not recorded'} · Use station signs for service changes.
           </p>
         </div>
 
@@ -220,8 +224,8 @@ export default function StationDashboard({
             onClick={onOpenAssistant}
             className="flex items-center gap-1.5 px-4 py-2 bg-slate-950 hover:bg-blue-600 text-white rounded-full text-xs font-semibold shadow-xs transition"
           >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Assistant</span>
+            <span className="text-sm leading-none">?</span>
+            <span>Ask about this station</span>
           </button>
         </div>
       </div>

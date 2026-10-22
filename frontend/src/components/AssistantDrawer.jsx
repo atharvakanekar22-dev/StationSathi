@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import {
-  Sparkles,
   Send,
   Navigation,
   X,
+  CircleHelp
 } from 'lucide-react';
 
 export default function AssistantDrawer({
@@ -15,6 +15,8 @@ export default function AssistantDrawer({
 }) {
   const [queryInput, setQueryInput] = useState('');
   const [currentResponse, setCurrentResponse] = useState(null);
+  const [isSending, setIsSending] = useState(false);
+  const [error, setError] = useState('');
 
   if (!isOpen) return null;
 
@@ -31,9 +33,19 @@ export default function AssistantDrawer({
     const text = qText || queryInput;
     if (!text.trim()) return;
 
-    const res = await onAskQuery(text.trim());
-    if (res && res.data) {
-      setCurrentResponse(res.data);
+    setIsSending(true);
+    setError('');
+    try {
+      const res = await onAskQuery(text.trim());
+      if (res && res.data) {
+        setCurrentResponse(res.data);
+      } else {
+        setError('The station search could not return an answer. Try a shorter query.');
+      }
+    } catch {
+      setError('The station search is temporarily unavailable.');
+    } finally {
+      setIsSending(false);
     }
   };
 
@@ -44,9 +56,12 @@ export default function AssistantDrawer({
         <div className="p-4 sm:p-5 border-b border-slate-200 bg-slate-900 text-white flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white shadow-inner">
-              <Sparkles className="w-4 h-4" />
+              <CircleHelp className="w-4 h-4" />
             </div>
-            <h3 className="text-sm sm:text-base font-bold text-white tracking-tight">Station Assistant</h3>
+            <div>
+              <h3 className="text-sm sm:text-base font-bold text-white tracking-tight">Station search</h3>
+              <p className="text-[11px] text-slate-300">Ask about facilities and indoor routes</p>
+            </div>
           </div>
           <button
             onClick={onClose}
@@ -92,7 +107,7 @@ export default function AssistantDrawer({
                 )}
 
                 {/* Apply Result Action Button */}
-                <button
+                {currentResponse.recommended_destination_node_id && <button
                   onClick={() => {
                     onApplyAssistantResult(currentResponse);
                     onClose();
@@ -101,10 +116,11 @@ export default function AssistantDrawer({
                 >
                   <Navigation className="w-3.5 h-3.5" />
                   Show on map
-                </button>
+                </button>}
               </div>
             </div>
           )}
+          {error && <p className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-800">{error}</p>}
         </div>
 
         {/* Drawer Input Bar */}
@@ -125,7 +141,7 @@ export default function AssistantDrawer({
             />
             <button
               type="submit"
-              disabled={!queryInput.trim() || isProcessing}
+              disabled={!queryInput.trim() || isProcessing || isSending}
               className="p-2.5 bg-blue-600 hover:bg-blue-500 disabled:bg-slate-300 text-white rounded-xl shadow-sm transition"
             >
               <Send className="w-4 h-4" />

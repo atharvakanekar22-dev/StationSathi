@@ -2,7 +2,7 @@ import React from 'react';
 
 const STATUS_CONFIGS = {
   prototype_data: {
-    label: 'Station data',
+    label: 'Mapped data',
     bg: 'bg-slate-100 text-slate-700 border-slate-300',
     dot: 'bg-slate-500'
   },

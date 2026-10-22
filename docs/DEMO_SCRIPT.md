@@ -1,10 +1,10 @@
-# StationSathi 5–7 Minute Live Demonstration Script
+# StationSathi 5–7 Minute Product Walkthrough
 
-This script guides presenters through an end-to-end hackathon demonstration of StationSathi.
+This walkthrough covers the main passenger journey through StationSathi: selecting a station, finding a facility, and planning a route.
 
 ---
 
-## Pre-Demo Checklist
+## Before You Start
 - [ ] Backend running on `http://127.0.0.1:8000` (`python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000`).
 - [ ] Frontend running on `http://localhost:5173` (`cmd.exe /c npm.cmd run dev`).
 - [ ] Status indicator in header displays **FastAPI Live** (green dot).
@@ -17,8 +17,8 @@ This script guides presenters through an end-to-end hackathon demonstration of S
 ### Minute 0:00 – 1:00: Problem & Project Intro
 1. **Screen**: Landing page (`http://localhost:5173/`).
 2. **Talking Points**:
-   > "Judges and commuters alike know the challenge: You reach Dadar or CSMT with 6 minutes before your train, and outdoor GPS is completely useless indoors. Where is the elevator? Which bridge has no stairs if you're carrying two heavy suitcases? Where can you get your shoes polished before an interview?"
-   > "Introducing **StationSathi: Intelligent Railway Station Assistant for Mumbai Central Railway**. Our tagline is *'Find your way inside the station.'*"
+   > "StationSathi helps passengers answer practical questions inside a busy station: where a facility is located, which entrance to use, and whether a route can avoid stairs."
+   > "StationSathi is a station guide for Mumbai's Central Railway network. It combines mapped facilities with indoor route planning."
 3. **Action**: Click **Explore Interactive Prototype (Dadar)** or click the Dadar station card.
 
 ---
@@ -97,5 +97,5 @@ This script guides presenters through an end-to-end hackathon demonstration of S
 
 ### Minute 6:30 – 7:00: Architecture & Wrap-Up
 1. **Talking Points**:
-   > "To recap the architecture: A FastAPI Python backend running authoritative Dijkstra graph routing and deterministic intent parsing, coupled with a responsive React 19 frontend and a clean JSON repository ready for PostgreSQL/PostGIS. If network connectivity drops, the app features an offline prototype fallback so commuters are never stranded."
+   > "The app combines a FastAPI backend, a responsive React frontend, a JSON station repository, and a local fallback for basic map access when the backend is unavailable. Mapped information can change, so passengers should follow railway signage and staff instructions."
    > "Thank you! We welcome any questions on StationSathi."

@@ -8,7 +8,8 @@ import ReportIssueModal from './components/ReportIssueModal';
 import {
   fetchStations,
   fetchStationGraph,
-  queryAssistant
+  queryAssistant,
+  checkBackendHealth
 } from './services/api';
 import { FALLBACK_STATIONS, FALLBACK_DADAR_GRAPH } from './data/fallbackData';
 
@@ -18,6 +19,7 @@ export default function App() {
   const [currentStationId, setCurrentStationId] = useState('dadar');
   const [currentStation, setCurrentStation] = useState(FALLBACK_STATIONS[0]);
   const [graph, setGraph] = useState(FALLBACK_DADAR_GRAPH);
+  const [dataMode, setDataMode] = useState('checking');
 
   // Modals & Drawers
   const [isAssistantOpen, setIsAssistantOpen] = useState(false);
@@ -30,8 +32,9 @@ export default function App() {
   // Initial check and station list loading
   useEffect(() => {
     async function init() {
-      const res = await fetchStations();
+      const [res, health] = await Promise.all([fetchStations(), checkBackendHealth()]);
       setStations(res.data);
+      setDataMode(res.fallback || !health.online ? 'offline' : 'live');
 
       const st = res.data.find((s) => s.station_id === currentStationId) || res.data[0];
       setCurrentStation(st);
@@ -93,9 +96,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#e8edf2] py-3 sm:py-6 lg:py-8 px-2 sm:px-6 lg:px-8 flex flex-col items-center justify-center font-sans text-slate-900 antialiased">
-      {/* Main Floating Application Shell (Vespa & Luxury Watch Canvas) */}
-      <div className="w-full max-w-[1400px] min-h-[92vh] bg-[#fbfcfd] rounded-[2.25rem] sm:rounded-[2.75rem] shadow-2xl shadow-slate-400/25 border border-white/80 overflow-hidden flex flex-col relative">
+    <div className="min-h-screen bg-slate-100 font-sans text-slate-900 antialiased">
+      <div className="min-h-screen bg-white flex flex-col">
         {/* Top Header */}
         <Header
           stations={stations}
@@ -103,13 +105,13 @@ export default function App() {
           onSelectStation={handleSelectStation}
           onOpenAssistant={() => setIsAssistantOpen(true)}
           onOpenInfoModal={() => setIsInfoModalOpen(true)}
+          dataMode={dataMode}
           onGoHome={() => {
             window.location.hash = '';
             setView('landing');
           }}
         />
 
-        {/* Main View Area */}
         <main className="flex-1 flex flex-col">
           {view === 'landing' ? (
             <LandingPage
@@ -127,13 +129,12 @@ export default function App() {
           )}
         </main>
 
-        {/* Passenger Footer */}
-        <footer className="bg-white/80 backdrop-blur-xs border-t border-slate-200/70 py-4 px-6 sm:px-10 text-xs text-slate-500">
+        <footer className="bg-slate-50 border-t border-slate-200 py-4 px-6 sm:px-10 text-xs text-slate-500">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <span className="font-extrabold text-slate-900">StationSathi</span>
               <span>•</span>
-              <span>Indoor station navigation</span>
+              <span>Station maps, facilities and step-free directions</span>
             </div>
             <div className="flex items-center gap-5">
               <button
