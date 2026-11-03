@@ -3,7 +3,6 @@ import Header from './components/Header';
 import LandingPage from './components/LandingPage';
 import StationDashboard from './components/StationDashboard';
 import AssistantDrawer from './components/AssistantDrawer';
-import StationInfoModal from './components/StationInfoModal';
 import ReportIssueModal from './components/ReportIssueModal';
 import {
   fetchStations,
@@ -21,7 +20,6 @@ export default function App() {
 
   // Modals & Drawers
   const [isAssistantOpen, setIsAssistantOpen] = useState(false);
-  const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
   const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState(false);
 
   // Pass scenario triggers down to dashboard
@@ -74,6 +72,16 @@ export default function App() {
     });
   };
 
+  const handleNavigateToStations = () => {
+    setView('landing');
+    window.setTimeout(() => {
+      document.getElementById('popular-stations')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 0);
+  };
+
   // Natural Language query handler
   const handleAskQuery = async (queryText) => {
     return await queryAssistant(queryText, currentStationId, null);
@@ -102,8 +110,8 @@ export default function App() {
           currentStationId={currentStationId}
           onSelectStation={handleSelectStation}
           onNavigateToSection={handleNavigateToDashboardSection}
+          onNavigateToStations={handleNavigateToStations}
           onOpenAssistant={() => setIsAssistantOpen(true)}
-          onOpenInfoModal={() => setIsInfoModalOpen(true)}
           onGoHome={() => {
             window.location.hash = '';
             setView('landing');
@@ -120,7 +128,6 @@ export default function App() {
             <StationDashboard
               currentStation={currentStation}
               graph={graph}
-              onSelectStation={handleSelectStation}
               onOpenAssistant={() => setIsAssistantOpen(true)}
               selectedScenario={scenarioEvent}
             />
@@ -132,7 +139,7 @@ export default function App() {
             <div className="flex items-center gap-2">
               <span className="footer-brand">StationSathi</span>
               <span className="footer-divider">/</span>
-              <span>Station maps, facilities and step-free directions</span>
+              <span>Maps and directions for Mumbai stations</span>
             </div>
             <div className="footer-links">
               <button
@@ -154,12 +161,6 @@ export default function App() {
                 Map
               </button>
               <button
-                onClick={() => setIsInfoModalOpen(true)}
-                className="footer-link"
-              >
-                Info
-              </button>
-              <button
                 onClick={() => setIsFeedbackModalOpen(true)}
                 className="footer-link"
               >
@@ -176,13 +177,6 @@ export default function App() {
         onClose={() => setIsAssistantOpen(false)}
         onApplyAssistantResult={handleApplyAssistantResult}
         onAskQuery={handleAskQuery}
-      />
-
-      {/* Station Information Modal */}
-      <StationInfoModal
-        isOpen={isInfoModalOpen}
-        onClose={() => setIsInfoModalOpen(false)}
-        station={currentStation}
       />
 
       {/* Provide Feedback Modal */}

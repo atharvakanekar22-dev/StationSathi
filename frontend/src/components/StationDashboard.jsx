@@ -3,23 +3,16 @@ import InteractiveStationMap from './InteractiveStationMap';
 import RoutePlanner from './RoutePlanner';
 import DirectionsPanel from './DirectionsPanel';
 import FacilitySearch from './FacilitySearch';
-import BasicStationView from './BasicStationView';
 import ReportIssueModal from './ReportIssueModal';
 import {
   fetchFacilities,
   fetchRoute
 } from '../services/api';
-import {
-  Navigation,
-  Compass,
-  MessageSquare
-} from 'lucide-react';
-import VerificationBadge from './VerificationBadge';
+import { MessageSquare } from 'lucide-react';
 
 export default function StationDashboard({
   currentStation,
   graph,
-  onSelectStation,
   onOpenAssistant,
   selectedScenario = null
 }) {
@@ -35,7 +28,6 @@ export default function StationDashboard({
   const [activeRoute, setActiveRoute] = useState(null);
   const [isCalculatingRoute, setIsCalculatingRoute] = useState(false);
 
-  const [showFactsheet, setShowFactsheet] = useState(false);
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [reportingItem, setReportingItem] = useState(null);
   const routePlannerRef = useRef(null);
@@ -65,7 +57,6 @@ export default function StationDashboard({
       setSelectedFacility(null);
       setSearchTerm('');
       setActiveCategory('all');
-      setShowFactsheet(false);
     } else if (selectedScenario.type === 'SCENARIO_1') {
       setSearchTerm('washroom');
       setActiveCategory('washroom');
@@ -157,31 +148,6 @@ export default function StationDashboard({
     );
   }
 
-  // Toggleable factsheet view
-  if (showFactsheet) {
-    return (
-      <div className="space-y-4">
-        <div className="max-w-5xl mx-auto px-4 pt-4 flex justify-end">
-          <button
-            onClick={() => setShowFactsheet(false)}
-            className="flex items-center gap-1.5 px-3.5 py-2 bg-blue-600 text-white rounded-xl text-xs font-semibold hover:bg-blue-500 transition shadow-xs"
-          >
-            <Navigation className="w-3.5 h-3.5" />
-            <span>Return to Interactive Map</span>
-          </button>
-        </div>
-        <BasicStationView
-          station={currentStation}
-          facilities={facilities}
-          onSwitchToDadar={() => {
-            setShowFactsheet(false);
-            onSelectStation('dadar');
-          }}
-        />
-      </div>
-    );
-  }
-
   return (
     <div className="dashboard-page flex-1 px-4 sm:px-8 py-6 space-y-6 flex flex-col">
       {/* Station Overview & Action Strip */}
@@ -195,14 +161,7 @@ export default function StationDashboard({
               {currentStation.code}
             </span>
             <span className="text-xs text-slate-400 font-medium">{currentStation.platforms_count} platforms</span>
-            <VerificationBadge status={currentStation.verification_status} />
           </div>
-          <p className="text-xs text-slate-500 mt-1 max-w-2xl leading-relaxed">
-            {currentStation.description}
-          </p>
-          <p className="text-[11px] text-slate-400 mt-1">
-            Last reviewed {currentStation.last_updated || 'not recorded'} · Use station signs for service changes.
-          </p>
         </div>
 
         <div className="flex items-center gap-2">
@@ -214,15 +173,6 @@ export default function StationDashboard({
           >
             <MessageSquare className="w-3.5 h-3.5 text-slate-500" />
             <span>Feedback</span>
-          </button>
-
-          <button
-            onClick={() => setShowFactsheet(true)}
-            className="flex items-center gap-1.5 px-3.5 py-2 bg-white hover:bg-slate-100 text-slate-700 rounded-full text-xs font-semibold border border-slate-200 shadow-xs transition"
-            title="View Station Information Summary & Platform Layout"
-          >
-            <Compass className="w-3.5 h-3.5 text-slate-500" />
-            <span>Info</span>
           </button>
 
           <button

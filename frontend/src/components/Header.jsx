@@ -12,9 +12,9 @@ export default function Header({
   currentStationId = 'dadar',
   onSelectStation,
   onOpenAssistant,
-  onOpenInfoModal,
   onGoHome,
-  onNavigateToSection
+  onNavigateToSection,
+  onNavigateToStations
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
@@ -32,17 +32,15 @@ export default function Header({
               <span className="brand-name">
                 StationSathi
               </span>
-              <span className="brand-subtitle">Mumbai station guide</span>
             </div>
           </div>
 
           <nav className={`main-nav ${isMenuOpen ? 'is-open' : ''}`} aria-label="Primary navigation">
             <button type="button" onClick={onGoHome} className="nav-link active">Home</button>
-            <button type="button" onClick={onGoHome} className="nav-link">Stations</button>
+            <button type="button" onClick={onNavigateToStations} className="nav-link">Stations</button>
             <button type="button" onClick={() => onNavigateToSection?.('facilities')} className="nav-link">Facilities</button>
             <button type="button" onClick={() => onNavigateToSection?.('route')} className="nav-link">Plan a route</button>
             <button type="button" onClick={onOpenAssistant} className="nav-link">Assistant</button>
-            <button type="button" onClick={onOpenInfoModal} className="nav-link">About</button>
           </nav>
           <div className="header-actions">
             <div className="relative">
@@ -70,13 +68,6 @@ export default function Header({
               <span>Ask Sathi</span>
             </button>
 
-            <button
-              onClick={onOpenInfoModal}
-              className="header-info"
-              title="Station Information & Help"
-            >
-              Info
-            </button>
           </div>
           </div>
           <button type="button" className="menu-toggle" onClick={() => setIsMenuOpen((open) => !open)} aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}>

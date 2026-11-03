@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Accessibility,
   ArrowRight,
@@ -6,10 +6,8 @@ import {
   ChevronRight,
   Compass,
   Map,
-  Search,
   Sparkles,
-  TrainFront,
-  X
+  ChevronDown
 } from 'lucide-react';
 
 const stationDetails = {
@@ -30,50 +28,29 @@ const features = [
 
 export default function LandingPage({ stations = [], onSelectStation }) {
   const [activeStationKey, setActiveStationKey] = useState('dadar');
-  const [search, setSearch] = useState('');
   const active = stationDetails[activeStationKey] || stationDetails.dadar;
-
-  const filteredStations = useMemo(() => {
-    const query = search.trim().toLowerCase();
-    if (!query) return stations;
-    return stations.filter((station) =>
-      `${station.name} ${station.code} ${station.network}`.toLowerCase().includes(query)
-    );
-  }, [search, stations]);
 
   const openStation = (id = activeStationKey) => {
     setActiveStationKey(id);
     onSelectStation?.(id);
   };
 
+  const scrollToStations = () => {
+    document.getElementById('popular-stations')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
+
   return (
     <div className="landing-page">
       <section className="hero-section page-shell">
         <div className="hero-copy">
-          <div className="eyebrow"><span className="eyebrow-dot" /> Mumbai station guide</div>
-          <h1>Find your way at every station.</h1>
-          <p className="hero-lede">
-            Explore stations, discover facilities, plan indoor routes, and get instant answers when you need them.
-          </p>
-          <div className="hero-search">
-            <Search size={19} aria-hidden="true" />
-            <input
-              value={search}
-              onChange={(event) => setSearch(event.target.value)}
-              placeholder="Search a station by name or code"
-              aria-label="Search a station"
-            />
-            {search && (
-              <button type="button" className="icon-button" onClick={() => setSearch('')} aria-label="Clear station search">
-                <X size={17} />
-              </button>
-            )}
-            <button type="button" className="search-submit" onClick={() => openStation(filteredStations[0]?.station_id)} disabled={!filteredStations.length}>
-              Explore
-              <ArrowRight size={16} />
-            </button>
-          </div>
-          <p className="search-hint">Try “Dadar”, “CSMT” or “Thane”</p>
+        <h1>Find your way at every station.</h1>
+        <button type="button" className="scroll-stations-button" onClick={scrollToStations}>
+            View {stations.length || 6} stations
+            <ChevronDown size={17} />
+          </button>
         </div>
 
         <div className="hero-visual" role="img" aria-label="Mumbai railway station platform">
@@ -82,20 +59,19 @@ export default function LandingPage({ stations = [], onSelectStation }) {
             <span className="caption-kicker">Make the connection</span>
             <strong>Less guessing. More moving.</strong>
           </div>
-          <div className="hero-stamp"><TrainFront size={17} /> Built for Mumbai</div>
         </div>
       </section>
 
-      <section className="page-shell station-section">
+      <section className="page-shell station-section" id="popular-stations">
         <div className="section-heading">
           <div>
             <div className="eyebrow">Start with a station</div>
             <h2>Popular stations</h2>
           </div>
-          <span className="section-count">{filteredStations.length} mapped</span>
+          <span className="section-count">{stations.length || 6} stations</span>
         </div>
         <div className="station-grid">
-          {filteredStations.map((station, index) => {
+          {stations.map((station, index) => {
             const detail = stationDetails[station.station_id] || {};
             const isActive = station.station_id === activeStationKey;
             return (
@@ -117,7 +93,6 @@ export default function LandingPage({ stations = [], onSelectStation }) {
             );
           })}
         </div>
-        {!filteredStations.length && <div className="empty-search">No mapped station matches “{search}”. Try another name.</div>}
       </section>
 
       <section className="page-shell quick-start">

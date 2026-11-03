@@ -29,10 +29,10 @@ export default function RoutePlanner({
   const facilities = nodes.filter((n) => n.type === 'facility' || n.type === 'elevator');
 
   const preferences = [
-    { id: 'shortest', label: 'Fastest', desc: 'Minimal walking distance' },
-    { id: 'avoid_stairs', label: 'Avoid stairs', desc: 'Step-free elevators & ramps only' },
-    { id: 'prefer_elevator', label: 'Prefer elevators', desc: 'Elevators prioritized over stairs' },
-    { id: 'accessible_route', label: 'Accessible route', desc: 'Wheelchair & luggage path' }
+    { id: 'shortest', label: 'Fastest' },
+    { id: 'avoid_stairs', label: 'Avoid stairs' },
+    { id: 'prefer_elevator', label: 'Prefer elevators' },
+    { id: 'accessible_route', label: 'Accessible route' }
   ];
 
   const handleSwap = () => {
@@ -48,7 +48,6 @@ export default function RoutePlanner({
       <div className="flex items-center justify-between">
         <div>
           <h3 className="text-base font-extrabold text-slate-950 tracking-tight">Plan a route</h3>
-          <p className="text-xs text-slate-500 mt-0.5">Choose where you are and where you want to go.</p>
         </div>
       </div>
 
@@ -173,7 +172,6 @@ export default function RoutePlanner({
                 )}
                 <span className="truncate">{pref.label}</span>
               </div>
-              <p className="text-[10px] text-slate-500 font-normal mt-0.5 truncate">{pref.desc}</p>
             </button>
           ))}
         </div>

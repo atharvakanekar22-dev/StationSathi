@@ -6,7 +6,6 @@ import {
   MessageSquare,
   X
 } from 'lucide-react';
-import VerificationBadge from './VerificationBadge';
 
 export default function FacilitySearch({
   facilities = [],
@@ -124,9 +123,8 @@ export default function FacilitySearch({
 
                 {/* Actions */}
                 <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
-                  <span className="flex items-center gap-2 text-[11px] text-slate-400 font-medium">
-                  <VerificationBadge status={fac.verification_status} showDot={false} className="text-[10px] px-1.5 py-0" />
-                  <span>{fac.last_updated ? `Reviewed ${fac.last_updated}` : 'Review date not recorded'}</span>
+                  <span className="text-[11px] text-slate-400 font-medium">
+                    {fac.floor_level || 'Station level'}
                   </span>
                   <div className="flex items-center gap-2">
                     <button
