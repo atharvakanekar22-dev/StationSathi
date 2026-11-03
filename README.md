@@ -11,7 +11,7 @@ Open StationSathi
 
 Backend API: https://stationsathi-f3xs.onrender.com
 
-API Documentation: https://stationsathi-f3xs.onrender.com/docs
+
 
 
 StationSathi addresses this by combining **2D indoor SVG mapping**, **Dijkstra graph-based navigation with accessibility cost constraints**, and a **grounded natural-language query engine**.
