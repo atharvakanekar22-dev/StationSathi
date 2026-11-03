@@ -19,7 +19,7 @@ export async function checkBackendHealth() {
       return { online: true, authoritative: data.authoritative ?? true };
     }
     return { online: false, authoritative: false };
-  } catch (err) {
+  } catch {
     return { online: false, authoritative: false };
   }
 }
@@ -31,7 +31,7 @@ export async function fetchStations() {
       return { data: await res.json(), fallback: false };
     }
     throw new Error('API request failed');
-  } catch (err) {
+  } catch {
     return { data: FALLBACK_STATIONS, fallback: true };
   }
 }
@@ -43,7 +43,7 @@ export async function fetchStation(stationId) {
       return { data: await res.json(), fallback: false };
     }
     throw new Error('API request failed');
-  } catch (err) {
+  } catch {
     const station = FALLBACK_STATIONS.find((s) => s.station_id === stationId.toLowerCase()) || FALLBACK_STATIONS[0];
     return { data: station, fallback: true };
   }
@@ -56,7 +56,7 @@ export async function fetchStationGraph(stationId) {
       return { data: await res.json(), fallback: false };
     }
     throw new Error('API request failed');
-  } catch (err) {
+  } catch {
     const graph = FALLBACK_GRAPHS[stationId.toLowerCase()] || FALLBACK_DADAR_GRAPH;
     return { data: graph, fallback: true };
   }
@@ -75,7 +75,7 @@ export async function fetchFacilities(stationId, category = null, search = null)
       return { data: await res.json(), fallback: false };
     }
     throw new Error('API request failed');
-  } catch (err) {
+  } catch {
     let list = FALLBACK_FACILITIES[stationId.toLowerCase()] || [];
 
     if (category && category !== 'all') {
@@ -109,7 +109,7 @@ export async function fetchRoute(stationId, originId, destinationId, preference 
     }
     const errData = await res.json().catch(() => ({}));
     throw new Error(errData.detail || 'Navigation route failed');
-  } catch (err) {
+  } catch {
     // Check if matching predefined scenario exists
     const key = `${originId}-${destinationId}-${preference}`;
     if (DEMO_FALLBACK_ROUTES[key]) {
@@ -156,7 +156,7 @@ export async function queryAssistant(query, stationId = 'dadar', currentNodeId =
       return { data: await res.json(), fallback: false };
     }
     throw new Error('Assistant API failed');
-  } catch (err) {
+  } catch {
     const q = query.toLowerCase();
     const stationFacs = FALLBACK_FACILITIES[stationId.toLowerCase()] || FALLBACK_DADAR_FACILITIES;
 
@@ -270,7 +270,7 @@ export async function submitFeedback(reportData) {
       return await res.json();
     }
     throw new Error('Feedback API failed');
-  } catch (err) {
+  } catch {
     // Save to localStorage review queue if offline
     try {
       const existing = JSON.parse(localStorage.getItem('stationsathi_feedback_queue') || '[]');
@@ -285,7 +285,7 @@ export async function submitFeedback(reportData) {
         message: 'Feedback saved locally and will sync when backend is available.',
         report_id: `local_${Date.now()}`
       };
-    } catch (e) {
+    } catch {
       return { success: false, message: 'Could not store feedback' };
     }
   }

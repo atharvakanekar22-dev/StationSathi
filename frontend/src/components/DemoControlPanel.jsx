@@ -99,7 +99,7 @@ export default function DemoControlPanel({
       stationId: 'kalyan',
       stationName: 'Kalyan',
       title: 'West Bus Depot to Express Platform 4',
-      icon: <Navigation className="w-4 h-4 text-orange-600" />,
+      icon: <Navigation className="w-4 h-4 text-blue-600" />,
       desc: 'West Bus Depot Entrance across South FOB to Platform 4 (Kasara/Nashik Express).',
       action: () => onRunScenario('kalyan_west_pf4')
     }

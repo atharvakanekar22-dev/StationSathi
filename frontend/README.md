@@ -1,6 +1,27 @@
-# React + Vite
+# StationSathi frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Local development
+
+Run the backend first from the repository root:
+
+```powershell
+cd backend
+python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
+```
+
+In a second terminal, start Vite:
+
+```powershell
+cd frontend
+npm run dev
+```
+
+The frontend is available at `http://localhost:5173`. Vite proxies API requests
+to `http://127.0.0.1:8000`. Override that target with
+`$env:VITE_API_PROXY_TARGET = "https://example.test"` when needed.
+
+The app also has client-side fallback data, but the backend is required for live
+station data, routing, assistant queries, and feedback submission.
 
 Currently, two official plugins are available:
 

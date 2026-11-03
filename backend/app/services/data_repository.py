@@ -48,10 +48,18 @@ class JsonStationRepository(StationRepository):
                     station = Station(**item)
                     self._stations[station.station_id] = station
 
-        station_ids = ["dadar", "csmt", "byculla", "ghatkopar", "thane", "kalyan"]
+        station_ids = set(self._stations)
+        station_ids.update(
+            path.name.removeprefix("facilities_").removesuffix(".json")
+            for path in self.data_dir.glob("facilities_*.json")
+        )
+        station_ids.update(
+            path.name.removeprefix("graph_").removesuffix(".json")
+            for path in self.data_dir.glob("graph_*.json")
+        )
 
         # Load facilities for all stations
-        for station_id in station_ids:
+        for station_id in sorted(station_ids):
             fac_path = self.data_dir / f"facilities_{station_id}.json"
             if fac_path.exists():
                 with open(fac_path, "r", encoding="utf-8") as f:
@@ -61,7 +69,7 @@ class JsonStationRepository(StationRepository):
                 self._facilities[station_id] = []
 
         # Load graphs for all stations
-        for station_id in station_ids:
+        for station_id in sorted(station_ids):
             graph_path = self.data_dir / f"graph_{station_id}.json"
             if graph_path.exists():
                 with open(graph_path, "r", encoding="utf-8") as f:

@@ -7,15 +7,7 @@ import {
   Database,
   Cpu,
   ArrowLeft,
-  Search,
   ExternalLink,
-  ShieldCheck,
-  CheckCircle2,
-  Navigation,
-  Accessibility,
-  Train,
-  Layers,
-  Info
 } from 'lucide-react';
 
 export default function DeveloperPortal({
@@ -31,7 +23,6 @@ export default function DeveloperPortal({
   const [activeTab, setActiveTab] = useState('scenarios'); // 'scenarios' | 'graph' | 'routing' | 'provenance' | 'system'
   const [selectedStationTab, setSelectedStationTab] = useState(currentStationId);
 
-  const activeStation = stations.find((s) => s.station_id === selectedStationTab) || stations[0];
   const nodesList = graph?.nodes ? Object.values(graph.nodes) : [];
   const edgesList = graph?.edges || [];
 

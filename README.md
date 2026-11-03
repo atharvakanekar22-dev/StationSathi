@@ -215,7 +215,8 @@ cd ..
 
 ### Terminal 1: Launch Backend Server
 ```powershell
-python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload
+cd backend
+python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
 *Backend runs on: `http://127.0.0.1:8000` (API Docs: `http://127.0.0.1:8000/docs`)*
 
@@ -225,6 +226,10 @@ cd frontend
 cmd.exe /c npm.cmd run dev
 ```
 *Frontend runs on: `http://localhost:5173`*
+
+> Start the backend before opening the frontend. Vite proxies `/api/*` requests to
+> `http://127.0.0.1:8000` by default. To use another backend, set
+> `VITE_API_PROXY_TARGET` before running `npm run dev`.
 
 ---
 

@@ -8,8 +8,7 @@ import ReportIssueModal from './components/ReportIssueModal';
 import {
   fetchStations,
   fetchStationGraph,
-  queryAssistant,
-  checkBackendHealth
+  queryAssistant
 } from './services/api';
 import { FALLBACK_STATIONS, FALLBACK_DADAR_GRAPH } from './data/fallbackData';
 
@@ -19,7 +18,6 @@ export default function App() {
   const [currentStationId, setCurrentStationId] = useState('dadar');
   const [currentStation, setCurrentStation] = useState(FALLBACK_STATIONS[0]);
   const [graph, setGraph] = useState(FALLBACK_DADAR_GRAPH);
-  const [dataMode, setDataMode] = useState('checking');
 
   // Modals & Drawers
   const [isAssistantOpen, setIsAssistantOpen] = useState(false);
@@ -32,17 +30,8 @@ export default function App() {
   // Initial check and station list loading
   useEffect(() => {
     async function init() {
-      const [res, health] = await Promise.all([fetchStations(), checkBackendHealth()]);
+      const res = await fetchStations();
       setStations(res.data);
-      setDataMode(res.fallback || !health.online ? 'offline' : 'live');
-
-      const st = res.data.find((s) => s.station_id === currentStationId) || res.data[0];
-      setCurrentStation(st);
-
-      const gRes = await fetchStationGraph(currentStationId);
-      if (gRes?.data) {
-        setGraph(gRes.data);
-      }
     }
 
     init();
@@ -76,6 +65,15 @@ export default function App() {
     }
   };
 
+  const handleNavigateToDashboardSection = (section) => {
+    setView('dashboard');
+    setScenarioEvent({
+      type: 'NAVIGATE_SECTION',
+      section,
+      timestamp: Date.now()
+    });
+  };
+
   // Natural Language query handler
   const handleAskQuery = async (queryText) => {
     return await queryAssistant(queryText, currentStationId, null);
@@ -96,16 +94,16 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 font-sans text-slate-900 antialiased">
-      <div className="min-h-screen bg-white flex flex-col">
+    <div className="app-shell">
+      <div className="app-frame">
         {/* Top Header */}
         <Header
           stations={stations}
           currentStationId={currentStationId}
           onSelectStation={handleSelectStation}
+          onNavigateToSection={handleNavigateToDashboardSection}
           onOpenAssistant={() => setIsAssistantOpen(true)}
           onOpenInfoModal={() => setIsInfoModalOpen(true)}
-          dataMode={dataMode}
           onGoHome={() => {
             window.location.hash = '';
             setView('landing');
@@ -129,20 +127,20 @@ export default function App() {
           )}
         </main>
 
-        <footer className="bg-slate-50 border-t border-slate-200 py-4 px-6 sm:px-10 text-xs text-slate-500">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+        <footer className="site-footer">
+          <div className="page-shell footer-inner">
             <div className="flex items-center gap-2">
-              <span className="font-extrabold text-slate-900">StationSathi</span>
-              <span>•</span>
+              <span className="footer-brand">StationSathi</span>
+              <span className="footer-divider">/</span>
               <span>Station maps, facilities and step-free directions</span>
             </div>
-            <div className="flex items-center gap-5">
+            <div className="footer-links">
               <button
                 onClick={() => {
                   window.location.hash = '';
                   setView('landing');
                 }}
-                className="text-slate-500 hover:text-slate-950 font-medium transition"
+                className="footer-link"
               >
                 Home
               </button>
@@ -151,19 +149,19 @@ export default function App() {
                   window.location.hash = '';
                   setView('dashboard');
                 }}
-                className="text-slate-500 hover:text-slate-950 font-medium transition"
+                className="footer-link"
               >
                 Map
               </button>
               <button
                 onClick={() => setIsInfoModalOpen(true)}
-                className="text-slate-500 hover:text-slate-950 font-medium transition"
+                className="footer-link"
               >
                 Info
               </button>
               <button
                 onClick={() => setIsFeedbackModalOpen(true)}
-                className="text-slate-500 hover:text-slate-950 font-medium transition"
+                className="footer-link"
               >
                 Feedback
               </button>

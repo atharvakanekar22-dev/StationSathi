@@ -52,5 +52,14 @@
     "description": "Yash mhatre",
     "timestamp": "2026-09-19T11:29:01.333Z",
     "status": "pending_review"
+  },
+  {
+    "report_id": "rep_ead16a49",
+    "station_id": "dadar",
+    "item_id": "dadar_fac_washroom_east",
+    "issue_type": "facility_unavailable",
+    "description": "Cleaning in progress between 2-3 PM",
+    "timestamp": "2026-09-19T10:00:00Z",
+    "status": "pending_review"
   }
 ]

@@ -1,4 +1,4 @@
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, Literal
 from pydantic import BaseModel, Field
 
 class Station(BaseModel):
@@ -88,10 +88,10 @@ class StationGraph(BaseModel):
     edges: List[GraphEdge]
 
 class RouteRequest(BaseModel):
-    station_id: str
-    origin_node_id: str
-    destination_node_id: str
-    preference: str = "shortest"  # shortest, avoid_stairs, prefer_elevator, accessible_route
+    station_id: str = Field(min_length=1)
+    origin_node_id: str = Field(min_length=1)
+    destination_node_id: str = Field(min_length=1)
+    preference: Literal["shortest", "avoid_stairs", "prefer_elevator", "accessible_route"] = "shortest"
 
 class RouteStep(BaseModel):
     step_number: int

@@ -4,14 +4,7 @@ import {
   ZoomOut,
   Maximize2,
   Navigation,
-  Sparkles,
   Layers,
-  MapPin,
-  CheckCircle2,
-  AlertCircle,
-  HelpCircle,
-  Clock,
-  ExternalLink,
   MessageSquare
 } from 'lucide-react';
 
@@ -482,7 +475,7 @@ export default function InteractiveStationMap({
                     y1={u.y}
                     x2={v.x}
                     y2={v.y}
-                    stroke={edge.edge_type === 'stairs' ? '#f59e0b' : edge.edge_type === 'elevator' ? '#10b981' : edge.edge_type === 'ramp' ? '#06b6d4' : '#64748b'}
+                    stroke={edge.edge_type === 'stairs' ? '#2856c7' : edge.edge_type === 'elevator' ? '#10b981' : edge.edge_type === 'ramp' ? '#06b6d4' : '#64748b'}
                     strokeWidth={edge.edge_type === 'elevator' ? 2.5 : 1.5}
                     strokeDasharray={edge.edge_type === 'stairs' ? '3 3' : undefined}
                   />
@@ -521,8 +514,7 @@ export default function InteractiveStationMap({
               if (!fac.svg_coords) return null;
               const { x, y } = fac.svg_coords;
               const isSelected = selectedFacility && selectedFacility.facility_id === fac.facility_id;
-              const isOrigin = originNodeId === fac.node_id;
-              const isDestination = destinationNodeId === fac.node_id;
+
 
               let markerColor = '#3b82f6';
               let badgeText = 'FAC';
@@ -531,7 +523,7 @@ export default function InteractiveStationMap({
                 markerColor = '#818cf8';
                 badgeText = 'WC';
               } else if (fac.category === 'shoepolish') {
-                markerColor = '#f59e0b';
+                markerColor = '#2856c7';
                 badgeText = 'SP';
               } else if (fac.category === 'elevator') {
                 markerColor = '#10b981';
@@ -540,7 +532,7 @@ export default function InteractiveStationMap({
                 markerColor = '#0284c7';
                 badgeText = 'UTS';
               } else if (fac.category === 'food_stall') {
-                markerColor = '#f97316';
+                markerColor = '#1f3f99';
                 badgeText = 'FOOD';
               } else if (fac.category === 'drinking_water') {
                 markerColor = '#06b6d4';
@@ -769,7 +761,7 @@ export default function InteractiveStationMap({
               <span>Ticket Office / ATVM</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-orange-500" />
+              <span className="w-3 h-3 rounded-full bg-blue-600" />
               <span>IRCTC Food Stall</span>
             </div>
             <div className="flex items-center gap-2">

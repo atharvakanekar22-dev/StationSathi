@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import InteractiveStationMap from './InteractiveStationMap';
 import RoutePlanner from './RoutePlanner';
 import DirectionsPanel from './DirectionsPanel';
@@ -38,6 +38,8 @@ export default function StationDashboard({
   const [showFactsheet, setShowFactsheet] = useState(false);
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [reportingItem, setReportingItem] = useState(null);
+  const routePlannerRef = useRef(null);
+  const facilitiesRef = useRef(null);
 
   // Load facilities on station change
   useEffect(() => {
@@ -53,7 +55,10 @@ export default function StationDashboard({
   useEffect(() => {
     if (!selectedScenario) return;
 
-    if (selectedScenario.type === 'RESET') {
+    if (selectedScenario.type === 'NAVIGATE_SECTION') {
+      const target = selectedScenario.section === 'route' ? routePlannerRef.current : facilitiesRef.current;
+      target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (selectedScenario.type === 'RESET') {
       setActiveRoute(null);
       setOriginNodeId('');
       setDestinationNodeId('');
@@ -109,7 +114,7 @@ export default function StationDashboard({
   }, [selectedScenario]);
 
   // Route calculation
-  const handleCalculateRoute = async (customOrigin, customDest, customPref) => {
+  async function handleCalculateRoute(customOrigin, customDest, customPref) {
     const orig = customOrigin || originNodeId;
     const dest = customDest || destinationNodeId;
     const pref = customPref || routePreference;
@@ -120,7 +125,7 @@ export default function StationDashboard({
     const res = await fetchRoute(currentStation.station_id, orig, dest, pref);
     setActiveRoute(res.data);
     setIsCalculatingRoute(false);
-  };
+  }
 
   const handleClearRoute = () => {
     setActiveRoute(null);
@@ -178,7 +183,7 @@ export default function StationDashboard({
   }
 
   return (
-    <div className="flex-1 px-4 sm:px-8 py-6 space-y-6 flex flex-col">
+    <div className="dashboard-page flex-1 px-4 sm:px-8 py-6 space-y-6 flex flex-col">
       {/* Station Overview & Action Strip */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200/80">
         <div>
@@ -267,36 +272,40 @@ export default function StationDashboard({
         {/* Right Column: Route Planner & Facility Discovery Search */}
         <div className="lg:col-span-4 space-y-4">
           {/* Indoor Route Planner */}
-          <RoutePlanner
-            graph={graph}
-            originNodeId={originNodeId}
-            destinationNodeId={destinationNodeId}
-            routePreference={routePreference}
-            onOriginChange={(nodeId) => setOriginNodeId(nodeId)}
-            onDestinationChange={(nodeId) => setDestinationNodeId(nodeId)}
-            onPreferenceChange={(pref) => setRoutePreference(pref)}
-            onCalculateRoute={() => handleCalculateRoute()}
-            onClearRoute={handleClearRoute}
-            isCalculating={isCalculatingRoute}
-          />
+          <div ref={routePlannerRef} className="dashboard-section-anchor">
+            <RoutePlanner
+              graph={graph}
+              originNodeId={originNodeId}
+              destinationNodeId={destinationNodeId}
+              routePreference={routePreference}
+              onOriginChange={(nodeId) => setOriginNodeId(nodeId)}
+              onDestinationChange={(nodeId) => setDestinationNodeId(nodeId)}
+              onPreferenceChange={(pref) => setRoutePreference(pref)}
+              onCalculateRoute={() => handleCalculateRoute()}
+              onClearRoute={handleClearRoute}
+              isCalculating={isCalculatingRoute}
+            />
+          </div>
 
           {/* Facility Discovery Search */}
-          <FacilitySearch
-            facilities={facilities}
-            searchTerm={searchTerm}
-            onSearchChange={setSearchTerm}
-            activeCategory={activeCategory}
-            onCategorySelect={setActiveCategory}
-            onSelectFacility={handleSelectFacility}
-            onSetDestination={(nodeId) => {
-              setDestinationNodeId(nodeId);
-              if (originNodeId) {
-                handleCalculateRoute(originNodeId, nodeId, routePreference);
-              }
-            }}
-            selectedFacility={selectedFacility}
-            onReportIssue={handleOpenReport}
-          />
+          <div ref={facilitiesRef} className="dashboard-section-anchor">
+            <FacilitySearch
+              facilities={facilities}
+              searchTerm={searchTerm}
+              onSearchChange={setSearchTerm}
+              activeCategory={activeCategory}
+              onCategorySelect={setActiveCategory}
+              onSelectFacility={handleSelectFacility}
+              onSetDestination={(nodeId) => {
+                setDestinationNodeId(nodeId);
+                if (originNodeId) {
+                  handleCalculateRoute(originNodeId, nodeId, routePreference);
+                }
+              }}
+              selectedFacility={selectedFacility}
+              onReportIssue={handleOpenReport}
+            />
+          </div>
         </div>
       </div>
 

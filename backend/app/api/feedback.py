@@ -21,7 +21,7 @@ async def submit_feedback(report: UserFeedbackReport):
     Submits passenger feedback / issue reports into a moderation review queue.
     Verified station data is NEVER automatically altered by user submissions.
     """
-    if not report.station_id or not report.description.strip():
+    if not report.station_id.strip() or not report.description.strip():
         raise HTTPException(status_code=400, detail="Station ID and description are required")
 
     _ensure_queue_file()
@@ -40,13 +40,25 @@ async def submit_feedback(report: UserFeedbackReport):
     try:
         with open(QUEUE_FILE, "r", encoding="utf-8") as f:
             queue = json.load(f)
-    except Exception:
-        queue = []
+    except (OSError, json.JSONDecodeError) as exc:
+        raise HTTPException(
+            status_code=503,
+            detail="Feedback queue is temporarily unavailable."
+        ) from exc
+
+    if not isinstance(queue, list):
+        raise HTTPException(status_code=503, detail="Feedback queue has an invalid format.")
 
     queue.append(record)
 
-    with open(QUEUE_FILE, "w", encoding="utf-8") as f:
-        json.dump(queue, f, indent=2)
+    try:
+        with open(QUEUE_FILE, "w", encoding="utf-8") as f:
+            json.dump(queue, f, indent=2)
+    except OSError as exc:
+        raise HTTPException(
+            status_code=503,
+            detail="Feedback queue is temporarily unavailable."
+        ) from exc
 
     return FeedbackResponse(
         success=True,
@@ -63,5 +75,8 @@ async def list_feedback_queue():
     try:
         with open(QUEUE_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
-    except Exception:
-        return []
+    except (OSError, json.JSONDecodeError) as exc:
+        raise HTTPException(
+            status_code=503,
+            detail="Feedback queue is temporarily unavailable."
+        ) from exc
